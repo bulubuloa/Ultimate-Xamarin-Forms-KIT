@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="DemoXF.MainPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DemoXF"
+             xmlns:ultimate="clr-namespace:UltimateXF.Widget;assembly=UltimateXF">
+    <ScrollView>
+        <StackLayout Margin="10,40,10,10" Orientation="Vertical">
+            <ultimate:SupportEntry HeightRequest="40" HorizontalOptions="FillAndExpand" CornerWidth="1" CornerRadius="5" EntryCornerColor="Green"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
