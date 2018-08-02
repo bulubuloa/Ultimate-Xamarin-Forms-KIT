@@ -13,5 +13,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Widget\" />
+    <Folder Include="Widget\Charts\" />
+    <Folder Include="Widget\Charts\Models\" />
   </ItemGroup>
 </Project>

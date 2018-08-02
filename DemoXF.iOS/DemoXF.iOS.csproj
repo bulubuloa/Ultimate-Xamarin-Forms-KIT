@@ -27,6 +27,9 @@
     <MtouchArch>x86_64</MtouchArch>
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -145,6 +148,9 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Xamarin.iOS" />
+    <Reference Include="UltimateXF.iOS">
+      <HintPath>..\UltimateXF.iOS\obj\Debug\UltimateXF.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms">
@@ -155,10 +161,6 @@
     <ProjectReference Include="..\DemoXF\DemoXF.csproj">
       <Project>{887E4C26-578A-4576-BEE6-2A7F2263AFD2}</Project>
       <Name>DemoXF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UltimateXF.iOS\UltimateXF.iOS.csproj">
-      <Project>{B31AC013-E3D3-4696-9985-DC7D4104A4E9}</Project>
-      <Name>UltimateXF.iOS</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
