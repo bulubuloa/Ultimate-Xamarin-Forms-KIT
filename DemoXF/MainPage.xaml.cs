@@ -21,7 +21,7 @@ namespace DemoXF
             entries.Add(new UltimateXF.Widget.Charts.Models.Entry(3,3));
             var dataSet = new BaseDataSet<UltimateXF.Widget.Charts.Models.Entry>(entries,"Line Chart");
             var data = new BaseData<UltimateXF.Widget.Charts.Models.Entry>(new List<IBaseDataSet<UltimateXF.Widget.Charts.Models.Entry>>{dataSet} ,new List<string>());
-            //lineChart.ChartData = data;
+            lineChart.ChartData = data;
         }
     }
 }

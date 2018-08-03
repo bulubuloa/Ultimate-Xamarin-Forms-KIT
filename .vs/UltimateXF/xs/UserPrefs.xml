@@ -1,25 +1,31 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Properties/AssemblyInfo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/MainPage.xaml">
     <Files>
       <File FileName="DemoXF.iOS/AppDelegate.cs" Line="33" Column="1" />
-      <File FileName="UltimateXF.iOS/packages.config" Line="1" Column="1" />
-      <File FileName="DemoXF.iOS/Info.plist" />
-      <File FileName="DemoXF.iOS/Entitlements.plist" />
-      <File FileName="UltimateXF.iOS/Properties/AssemblyInfo.cs" Line="1" Column="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="56" Column="71" NotebookId="1" />
+      <File FileName="DemoXF/MainPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="DemoXF/MainPage.xaml" Line="14" Column="15" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="13" Column="83" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
             <Node name="DemoAPP" expanded="True">
-              <Node name="DemoXF.iOS" expanded="True" />
+              <Node name="DemoXF" expanded="True">
+                <Node name="MainPage.xaml" expanded="True" selected="True" />
+              </Node>
+              <Node name="DemoXF.Android" expanded="True">
+                <Node name="Properties" expanded="True" />
+              </Node>
+              <Node name="DemoXF.iOS" expanded="True">
+                <Node name="Packages" expanded="True" />
+              </Node>
             </Node>
             <Node name="Library" expanded="True">
-              <Node name="UltimateXF" expanded="True" />
               <Node name="UltimateXF.iOS" expanded="True">
-                <Node name="References" expanded="True" />
-                <Node name="NativeReferenceFolder" expanded="True" />
+                <Node name="Packages" expanded="True" />
+                <Node name="Properties" expanded="True" />
+                <Node name="Renderers" expanded="True" />
               </Node>
             </Node>
           </Node>
@@ -29,9 +35,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/QuachHoang/Projects/UltimateXF/UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" relfile="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" line="23" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
