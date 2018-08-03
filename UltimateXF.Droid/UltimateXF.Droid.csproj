@@ -118,6 +118,7 @@
     <Compile Include="UltimateXF.cs" />
     <Compile Include="Renderers\SupportLineChartRenderer.cs" />
     <Compile Include="Renderers\SupportBarChartRenderer.cs" />
+    <Compile Include="Renderers\SupportChart.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

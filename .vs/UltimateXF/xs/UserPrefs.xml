@@ -1,32 +1,10 @@
-﻿<Properties StartupConfiguration="{69DDDC64-AE48-4836-980A-2863207BFF23}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs">
+﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs">
     <Files>
-      <File FileName="DemoXF.iOS/AppDelegate.cs" Line="29" Column="1" />
-      <File FileName="DemoXF/MainPage.xaml.cs" Line="47" Column="2" />
-      <File FileName="DemoXF/MainPage.xaml" Line="24" Column="70" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseEntry.cs" Line="1" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/EntryChart.cs" Line="23" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseDataSet.cs" Line="42" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="234" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportEntryRenderer.cs" Line="1" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarDataSet.cs" Line="12" Column="6" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/ILineDataSet.cs" Line="7" Column="60" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarChartData.cs" Line="12" Column="6" />
-      <File FileName="UltimateXF/Widget/Charts/Models/IBaseData.cs" Line="11" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/SupportBarChart.cs" Line="19" Column="10" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="10" Column="32" />
-      <File FileName="UltimateXF/Widget/SupportEntry.cs" Line="146" Column="10" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/SupportView.cs" Line="13" Column="1" NotebookId="1" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="212" Column="48" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/ChartEnums.cs" Line="13" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportChartView.cs" Line="39" Column="10" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineDataSet.cs" Line="7" Column="54" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportBarChartRenderer.cs" Line="227" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/IBarDataSet.cs" Line="8" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportLineChart.cs" Line="21" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseData.cs" Line="27" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/IBaseDataSet.cs" Line="11" Column="33" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineChartData.cs" Line="6" Column="66" NotebookId="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportChart.cs" Line="39" Column="47" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="100" Column="60" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="49" Column="93" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportChart.cs" Line="70" Column="50" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -51,7 +29,7 @@
               </Node>
               <Node name="UltimateXF.Droid" expanded="True">
                 <Node name="Renderers" expanded="True">
-                  <Node name="SupportBarChartRenderer.cs" selected="True" />
+                  <Node name="SupportLineChartRenderer.cs" selected="True" />
                 </Node>
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
