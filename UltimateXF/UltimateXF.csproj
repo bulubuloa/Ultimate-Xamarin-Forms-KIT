@@ -15,5 +15,7 @@
     <Folder Include="Widget\" />
     <Folder Include="Widget\Charts\" />
     <Folder Include="Widget\Charts\Models\" />
+    <Folder Include="Widget\Charts\Models\LineChart\" />
+    <Folder Include="Widget\Charts\Models\BarChart\" />
   </ItemGroup>
 </Project>

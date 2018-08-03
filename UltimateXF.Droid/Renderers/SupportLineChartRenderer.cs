@@ -48,98 +48,98 @@ namespace UltimateXF.Droid.Renderers
             {
                 InitializeChart();
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowXAxisProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowXAxisProperty.PropertyName))
             {
                 if(lineChart!=null && supportLineChart!=null)
                 {
                     lineChart.XAxis.SetDrawGridLines(supportLineChart.IsShowXAxis);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowXAxisLineProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowXAxisLineProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.XAxis.SetDrawAxisLine(supportLineChart.IsShowXAxisLine);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowLeftAxisProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowLeftAxisProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.AxisLeft.SetDrawGridLines(supportLineChart.IsShowLeftAxis);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowRightAxisProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowRightAxisProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.AxisRight.SetDrawGridLines(supportLineChart.IsShowRightAxis);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.DescriptionProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.DescriptionProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.Description.Text = supportLineChart.Description;
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowLeftAxisValueProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowLeftAxisValueProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.AxisLeft.SetDrawLabels(supportLineChart.IsShowLeftAxisValue);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowRightAxisValueProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowRightAxisValueProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.AxisRight.SetDrawLabels(supportLineChart.IsShowRightAxisValue);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsShowXAxisValueProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsShowXAxisValueProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.XAxis.SetDrawLabels(supportLineChart.IsShowXAxisValue);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.XAxisPositionProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.XAxisPositionProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.XAxis.Position = GetXAxisPosition(supportLineChart.XAxisPosition);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsDragEnabledProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsDragEnabledProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.DragEnabled = supportLineChart.IsDragEnabled;
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsTouchEnabledProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsTouchEnabledProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.SetTouchEnabled(supportLineChart.IsTouchEnabled);
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsDoubleTapToZoomEnabledProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsDoubleTapToZoomEnabledProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.DoubleTapToZoomEnabled = supportLineChart.IsDoubleTapToZoomEnabled;
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsScaleXEnabledProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsScaleXEnabledProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {
                     lineChart.ScaleXEnabled = supportLineChart.IsScaleXEnabled;
                 }
             }
-            else if (e.PropertyName.Equals(SupportLineChart.IsScaleYEnabledProperty.PropertyName))
+            else if (e.PropertyName.Equals(SupportChartView.IsScaleYEnabledProperty.PropertyName))
             {
                 if (lineChart != null && supportLineChart != null)
                 {

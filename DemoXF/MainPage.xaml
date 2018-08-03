@@ -8,7 +8,7 @@
     <ScrollView>
         <StackLayout Margin="10,40,10,10" Orientation="Vertical">
             
-            <ultimateChart:SupportLineChart x:Name="lineChart"
+            <ultimateChart:SupportBarChart x:Name="lineChart"
                                             VerticalOptions="FillAndExpand"
                                             HorizontalOptions="FillAndExpand"
                                             Description="Renderer"
@@ -23,7 +23,7 @@
                                             IsShowXAxisValue="true"
                                             XAxisPosition="BOTTOM" />
 
-            <ultimateChart:SupportLineChart x:Name="lineChart2"
+            <ultimateChart:SupportBarChart x:Name="lineChart2"
                                             VerticalOptions="FillAndExpand"
                                             HorizontalOptions="FillAndExpand"
                                             IsShowLeftAxis="true"
