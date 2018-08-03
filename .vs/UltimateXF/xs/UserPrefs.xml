@@ -1,8 +1,12 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Nuget/readme.txt">
     <Files>
       <File FileName="UltimateXF.Droid/Renderers/SupportChart.cs" Line="39" Column="47" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="100" Column="60" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="15" Column="2" />
+      <File FileName="DemoXF/MainPage.xaml" Line="24" Column="70" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportEntryRenderer.cs" Line="12" Column="10" />
+      <File FileName="DemoXF/MainPage.xaml.cs" Line="43" Column="40" />
+      <File FileName="UltimateXF.Nuget/readme.txt" Line="3" Column="1" />
       <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="49" Column="93" NotebookId="1" />
       <File FileName="UltimateXF.iOS/Renderers/SupportChart.cs" Line="70" Column="50" NotebookId="1" />
     </Files>
@@ -10,30 +14,16 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
-            <Node name="DemoAPP" expanded="True">
-              <Node name="DemoXF" expanded="True">
-                <Node name="MainPage.xaml" expanded="True" />
-              </Node>
-              <Node name="DemoXF.iOS" expanded="True" />
-            </Node>
+            <Node name="DemoAPP" expanded="True" />
             <Node name="Library" expanded="True">
-              <Node name="UltimateXF" expanded="True">
-                <Node name="Widget" expanded="True">
-                  <Node name="Charts" expanded="True">
-                    <Node name="Models" expanded="True">
-                      <Node name="BarChart" expanded="True" />
-                      <Node name="LineChart" expanded="True" />
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="UltimateXF.Droid" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="SupportLineChartRenderer.cs" selected="True" />
-                </Node>
-              </Node>
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True" />
+              </Node>
+              <Node name="UltimateXF.Nuget" expanded="True">
+                <Node name="References" expanded="True" />
+                <Node name="Packages" expanded="True">
+                  <Node name="NuGet.Build.Packaging" selected="True" />
+                </Node>
               </Node>
             </Node>
           </Node>
