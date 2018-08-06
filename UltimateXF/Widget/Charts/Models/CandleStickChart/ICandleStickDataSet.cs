@@ -1,10 +1,7 @@
 ﻿using System;
 namespace UltimateXF.Widget.Charts.Models.CandleStickChart
 {
-    public class ICandleStickDataSet
+    public interface ICandleStickDataSet : IBaseDataSet<CandleStickEntry>
     {
-        public ICandleStickDataSet()
-        {
-        }
     }
 }

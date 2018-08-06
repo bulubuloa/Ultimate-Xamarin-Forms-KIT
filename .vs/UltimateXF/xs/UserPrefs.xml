@@ -1,39 +1,12 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF/Widget/Charts/SupportCandleStickChart.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Droid/Renderers/SupportCombinedChartRenderer.cs">
     <Files>
-      <File FileName="UltimateXF/Widget/Charts/SupportPieChart.cs" Line="20" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/SupportChartView.cs" Line="8" Column="18" />
-      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/IPieDataSet.cs" Line="7" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/PieDataSet.cs" Line="12" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/PieChartData.cs" Line="20" Column="2" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportPieChartRenderer.cs" Line="50" Column="64" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseDataSet.cs" Line="42" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseDataSingleSet.cs" Line="17" Column="42" />
-      <File FileName="UltimateXF/Widget/Charts/Models/IBaseDataSingleSet.cs" Line="11" Column="2" />
-      <File FileName="DemoXF/MainPage.xaml.cs" Line="54" Column="38" />
-      <File FileName="DemoXF/MainPage.xaml" Line="41" Column="15" />
-      <File FileName="DemoXF.Android/MainActivity.cs" Line="25" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/PieEntry.cs" Line="34" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseEntry.cs" Line="23" Column="2" />
-      <File FileName="UltimateXF.Droid/ObjectWrapper.cs" Line="15" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportEntryRenderer.cs" Line="178" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportBarChartRenderer.cs" Line="73" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="27" Column="49" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="41" Column="9" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportChart.cs" Line="30" Column="51" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Formatters/BaseChartAxisFormatter.cs" Line="10" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportBarChart.cs" Line="21" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/ILineDataSet.cs" Line="16" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/IBarDataSet.cs" Line="8" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineDataSet.cs" Line="7" Column="54" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarDataSet.cs" Line="13" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarChartData.cs" Line="13" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseData.cs" Line="27" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/IBaseData.cs" Line="11" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="44" Column="54" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/EntryChart.cs" Line="18" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportPieChartRenderer.cs" Line="61" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportCandleStickChart.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportBubbleChartRenderer.cs" Line="10" Column="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportCandleStickChartRenderer.cs" Line="59" Column="2" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportPieChartRenderer.cs" Line="57" Column="10" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs" Line="57" Column="2" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/SupportCombinedChart.cs" Line="4" Column="38" NotebookId="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportCombinedChartRenderer.cs" Line="1" Column="14" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -50,16 +23,18 @@
                   <Node name="Charts" expanded="True">
                     <Node name="Models" expanded="True">
                       <Node name="BarChart" expanded="True" />
+                      <Node name="CandleStickChart" expanded="True" />
                       <Node name="Formatters" expanded="True" />
                       <Node name="LineChart" expanded="True" />
                       <Node name="PieChart" expanded="True" />
                     </Node>
-                    <Node name="SupportCandleStickChart.cs" selected="True" />
                   </Node>
                 </Node>
               </Node>
               <Node name="UltimateXF.Droid" expanded="True">
-                <Node name="Renderers" expanded="True" />
+                <Node name="Renderers" expanded="True">
+                  <Node name="SupportCombinedChartRenderer.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True" />

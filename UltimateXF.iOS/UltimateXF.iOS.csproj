@@ -124,6 +124,9 @@
     <Compile Include="Renderers\SupportBarChartRenderer.cs" />
     <Compile Include="Renderers\SupportChart.cs" />
     <Compile Include="Renderers\SupportPieChartRenderer.cs" />
+    <Compile Include="Renderers\SupportCandleStickChartRenderer.cs" />
+    <Compile Include="Renderers\SupportBubbleChartRenderer.cs" />
+    <Compile Include="Renderers\SupportCombinedChartRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

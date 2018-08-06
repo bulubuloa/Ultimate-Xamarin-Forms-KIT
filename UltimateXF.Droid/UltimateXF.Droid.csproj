@@ -122,6 +122,9 @@
     <Compile Include="Renderers\StringXAxisFormaterRenderer.cs" />
     <Compile Include="Renderers\SupportPieChartRenderer.cs" />
     <Compile Include="ObjectWrapper.cs" />
+    <Compile Include="Renderers\SupportCandleStickChartRenderer.cs" />
+    <Compile Include="Renderers\SupportBubbleChartRenderer.cs" />
+    <Compile Include="Renderers\SupportCombinedChartRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
