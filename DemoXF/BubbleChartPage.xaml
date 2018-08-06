@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="DemoXF.BubbleChartPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10" Spacing="20">
+            <ultimateChart:SupportBubbleChart x:Name="bubbleChart"
+                                              Description="Bubble Chart 1"
+                                              HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand"
+                                              IsShowLeftAxis="false"
+                                              IsShowLeftAxisLine="false"
+                                              IsShowLeftAxisValue="false"
+                                              IsShowRightAxis="false"
+                                              IsShowRightAxisLine="false"
+                                              IsShowRightAxisValue="false"
+                                              IsShowXAxis="false"
+                                              IsShowXAxisLine="false"
+                                              XAxisPosition="BOTTOM"
+                                              IsShowXAxisValue="true" />
+            
+            <ultimateChart:SupportBubbleChart x:Name="bubbleChart2"
+                                              Description="Bubble Chart 2"
+                                              XAxisPosition="BOTTOM"
+                                              HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

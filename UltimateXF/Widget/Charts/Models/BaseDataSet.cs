@@ -8,14 +8,13 @@ namespace UltimateXF.Widget.Charts.Models
     {
         protected List<TEntry> EntryItems { set; get; }
         protected string Title { set; get; }
-        public Color DataColor { set; private get; }
+        public List<Color> DataColorScheme { set; private get; }
         public bool DrawValue { set; private get; }
 
         public BaseDataSet(List<TEntry> _EntryItems,string _Title)
         {
             EntryItems = _EntryItems;
             Title = _Title;
-            DataColor = Color.Black;
             DrawValue = true;
         }
 
@@ -29,14 +28,14 @@ namespace UltimateXF.Widget.Charts.Models
             return Title;
         }
 
-        public Color IF_GetDataColor()
-        {
-            return DataColor;
-        }
-
         public bool IF_GetDrawValue()
         {
             return DrawValue;
+        }
+
+        public List<Color> IF_GetDataColorScheme()
+        {
+            return DataColorScheme;
         }
     }
 }

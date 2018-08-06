@@ -20,5 +20,6 @@
     <Folder Include="Widget\Charts\Models\Formatters\" />
     <Folder Include="Widget\Charts\Models\PieChart\" />
     <Folder Include="Widget\Charts\Models\CandleStickChart\" />
+    <Folder Include="Widget\Charts\Models\BubbleChart\" />
   </ItemGroup>
 </Project>

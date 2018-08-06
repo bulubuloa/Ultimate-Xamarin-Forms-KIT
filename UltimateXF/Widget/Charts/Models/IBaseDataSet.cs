@@ -8,7 +8,7 @@ namespace UltimateXF.Widget.Charts.Models
     {
         List<TEntry> IF_GetEntry();
         string IF_GetTitle();
-        Color IF_GetDataColor();
+        List<Color> IF_GetDataColorScheme();
         bool IF_GetDrawValue();
     }
 }

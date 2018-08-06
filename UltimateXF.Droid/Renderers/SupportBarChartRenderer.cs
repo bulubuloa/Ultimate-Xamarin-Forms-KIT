@@ -61,7 +61,8 @@ namespace UltimateXF.Droid.Renderers
                 {
                     var entryOriginal = itemChild.IF_GetEntry().Select (item => new MikePhil.Charting.Data.BarEntry(item.GetXPosition(), item.GetYPosition()));
                     BarDataSet lineDataSet = new BarDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    lineDataSet.Color = itemChild.IF_GetDataColor().ToAndroid();
+                    if(itemChild.IF_GetDataColorScheme()!=null)
+                        lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
                     lineDataSet.SetDrawValues(itemChild.IF_GetDrawValue());
                     dataSetItems.Add(lineDataSet);
                 }

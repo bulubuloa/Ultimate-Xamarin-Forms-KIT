@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.BarChart;
+using UltimateXF.Widget.Charts.Models.BubbleChart;
 using UltimateXF.Widget.Charts.Models.PieChart;
 using Xamarin.Forms;
 
@@ -22,7 +23,7 @@ namespace DemoXF
             entries.Add(new EntryChart(6, 2));
             var dataSet = new BarDataSet(entries, "Line Chart")
             {
-                DataColor = Color.Red,
+                //DataColor = Color.Red,
                 DrawValue = false,
             };
 
@@ -36,7 +37,7 @@ namespace DemoXF
             entries2.Add(new EntryChart(6, 7));
             var dataSet2 = new BarDataSet(entries2, "Line Chart 2")
             {
-                DataColor = Color.Blue,
+                //DataColor = Color.Blue,
             };
 
             var entries3 = new List<PieEntry>();
@@ -54,7 +55,9 @@ namespace DemoXF
                 TextDisplaySize = 10,
                 TextDisplayColor = Color.Green
             };
-            pieChart.ChartData = data;
+
+
+            //pieChart.ChartData = data;
             //lineChart.ChartData = data;
             //lineChart.XAxisLabels = new List<string>
             //{

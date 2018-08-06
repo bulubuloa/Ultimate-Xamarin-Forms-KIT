@@ -62,7 +62,9 @@ namespace UltimateXF.Droid.Renderers
                 {
                     var entryOriginal = itemChild.IF_GetEntry().Select (item => new MikePhil.Charting.Data.Entry(item.GetXPosition(), item.GetYPosition()));
                     LineDataSet lineDataSet = new LineDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    lineDataSet.Color = itemChild.IF_GetDataColor().ToAndroid();
+                    if (itemChild.IF_GetDataColorScheme() != null)
+                        lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
+                    
                     lineDataSet.SetMode(SupportChart.GetDrawLineMode(itemChild.IF_GetDrawMode()));
                     lineDataSet.CircleRadius = itemChild.IF_GetCircleRadius();
                     lineDataSet.CircleHoleRadius = itemChild.IF_GetCircleHoleRadius();

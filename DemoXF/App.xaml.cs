@@ -11,7 +11,7 @@ namespace DemoXF
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new BubbleChartPage();
         }
 
         protected override void OnStart()

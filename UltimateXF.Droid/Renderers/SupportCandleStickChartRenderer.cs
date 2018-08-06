@@ -47,7 +47,7 @@ namespace UltimateXF.Droid.Renderers
 
                 foreach (var itemChild in dataSetItems)
                 {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new CandleEntry(item.GetXPosition(),item.GetHigh(),item.GetLow(),item.GetOpen(),item.GetClose())));
+                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new CandleEntry(item.GetXPosition(),item.GetHigh(),item.GetLow(),item.GetOpen(),item.GetClose()));
                     CandleDataSet dataSet = new CandleDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
                     listDataSetItems.Add(dataSet);
                 }
