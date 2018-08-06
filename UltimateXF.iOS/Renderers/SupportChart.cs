@@ -7,6 +7,11 @@ namespace UltimateXF.iOS.Renderers
 {
     public class SupportChart
     {
+        public static void OnSetFormatter(SupportChartView supportChart, BarLineChartViewBase chartOriginal)
+        {
+            chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.XAxisLabels.ToArray());
+        }
+
         public static XAxisLabelPosition GetXAxisPosition(XAXISPosition mode)
         {
             switch (mode)
@@ -65,6 +70,7 @@ namespace UltimateXF.iOS.Renderers
             chartOriginal.DoubleTapToZoomEnabled = supportChart.IsDoubleTapToZoomEnabled;
             chartOriginal.ScaleXEnabled = supportChart.IsScaleXEnabled;
             chartOriginal.ScaleYEnabled = supportChart.IsScaleYEnabled;
+            OnSetFormatter(supportChart,chartOriginal);
         }
 
         public static void OnChartPropertyChanged(string propertyName,SupportChartView supportChart, BarLineChartViewBase chartOriginal)
@@ -165,6 +171,13 @@ namespace UltimateXF.iOS.Renderers
                 if (chartOriginal != null && supportChart != null)
                 {
                     chartOriginal.ScaleYEnabled = supportChart.IsScaleYEnabled;
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.XAxisLabelsProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.XAxisLabels.ToArray());
                 }
             }
         }

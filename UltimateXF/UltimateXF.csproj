@@ -17,5 +17,8 @@
     <Folder Include="Widget\Charts\Models\" />
     <Folder Include="Widget\Charts\Models\LineChart\" />
     <Folder Include="Widget\Charts\Models\BarChart\" />
+    <Folder Include="Widget\Charts\Models\Formatters\" />
+    <Folder Include="Widget\Charts\Models\PieChart\" />
+    <Folder Include="Widget\Charts\Models\CandleStickChart\" />
   </ItemGroup>
 </Project>

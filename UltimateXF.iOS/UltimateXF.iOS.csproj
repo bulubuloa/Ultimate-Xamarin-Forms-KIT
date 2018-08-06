@@ -123,6 +123,7 @@
     <Compile Include="Renderers\SupportLineChartRenderer.cs" />
     <Compile Include="Renderers\SupportBarChartRenderer.cs" />
     <Compile Include="Renderers\SupportChart.cs" />
+    <Compile Include="Renderers\SupportPieChartRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

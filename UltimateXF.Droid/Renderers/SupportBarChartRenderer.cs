@@ -68,7 +68,6 @@ namespace UltimateXF.Droid.Renderers
 
                 BarData lineData = new BarData(dataSetItems.ToArray());
                 chartOriginal.Data = lineData;
-
             }
         }
     }

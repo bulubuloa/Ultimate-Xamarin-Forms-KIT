@@ -14,10 +14,5 @@ namespace UltimateXF.Widget.Charts.Models
         {
             return XPosition;
         }
-
-        public float GetYPosition()
-        {
-            return YPosition;
-        }
     }
 }

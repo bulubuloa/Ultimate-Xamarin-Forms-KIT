@@ -119,6 +119,9 @@
     <Compile Include="Renderers\SupportLineChartRenderer.cs" />
     <Compile Include="Renderers\SupportBarChartRenderer.cs" />
     <Compile Include="Renderers\SupportChart.cs" />
+    <Compile Include="Renderers\StringXAxisFormaterRenderer.cs" />
+    <Compile Include="Renderers\SupportPieChartRenderer.cs" />
+    <Compile Include="ObjectWrapper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

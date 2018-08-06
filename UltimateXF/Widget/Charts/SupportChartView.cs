@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models;
 using Xamarin.Forms;
 
@@ -6,6 +7,13 @@ namespace UltimateXF.Widget.Charts
 {
     public class SupportChartView : SupportView
     {
+        public static readonly BindableProperty XAxisLabelsProperty = BindableProperty.Create("XAxisLabels", typeof(List<string>), typeof(SupportChartView), new List<string>());
+        public List<string> XAxisLabels
+        {
+            get => (List<string>)GetValue(XAxisLabelsProperty);
+            set => SetValue(XAxisLabelsProperty, value);
+        }
+
         public static readonly BindableProperty IsShowXAxisProperty = BindableProperty.Create("IsShowXAxis", typeof(bool), typeof(SupportChartView), true);
         public bool IsShowXAxis
         {

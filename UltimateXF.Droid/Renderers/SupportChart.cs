@@ -9,6 +9,11 @@ namespace UltimateXF.Droid.Renderers
 {
     public class SupportChart
     {
+        public static void OnSetFormatter(SupportChartView supportChart, BarLineChartBase chartOriginal)
+        {
+            chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.XAxisLabels);
+        }
+
         public static LineDataSet.Mode GetDrawLineMode(LineDataSetMode mode)
         {
             switch (mode)
@@ -67,6 +72,8 @@ namespace UltimateXF.Droid.Renderers
             chartOriginal.DoubleTapToZoomEnabled = supportChart.IsDoubleTapToZoomEnabled;
             chartOriginal.ScaleXEnabled = supportChart.IsScaleXEnabled;
             chartOriginal.ScaleYEnabled = supportChart.IsScaleYEnabled;
+
+            OnSetFormatter(supportChart,chartOriginal);
         }
 
         public static void OnChartPropertyChanged(string propertyName, SupportChartView supportChart, BarLineChartBase chartOriginal)
@@ -167,6 +174,13 @@ namespace UltimateXF.Droid.Renderers
                 if (chartOriginal != null && supportChart != null)
                 {
                     chartOriginal.ScaleYEnabled = supportChart.IsScaleYEnabled;
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.XAxisLabelsProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.XAxisLabels);
                 }
             }
         }

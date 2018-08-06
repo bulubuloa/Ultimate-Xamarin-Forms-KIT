@@ -8,7 +8,7 @@
     <ScrollView>
         <StackLayout Margin="10,40,10,10" Orientation="Vertical">
             
-            <ultimateChart:SupportBarChart x:Name="lineChart"
+            <!--<ultimateChart:SupportBarChart x:Name="lineChart"
                                             VerticalOptions="FillAndExpand"
                                             HorizontalOptions="FillAndExpand"
                                             Description="Renderer"
@@ -28,7 +28,14 @@
                                             HorizontalOptions="FillAndExpand"
                                             IsShowLeftAxis="true"
                                             IsShowRightAxis="true"
-                                            IsShowXAxis="true" />
+                                            IsShowXAxis="true" />-->
+
+            <ultimateChart:SupportPieChart 
+                x:Name="pieChart"
+                HeightRequest="400"
+                VerticalOptions="FillAndExpand"
+                HorizontalOptions="FillAndExpand"/>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>
