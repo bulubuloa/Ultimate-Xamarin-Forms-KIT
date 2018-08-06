@@ -60,6 +60,8 @@ namespace UltimateXF.iOS.Renderers
                 {
                     var entryOriginal = itemChild.IF_GetEntry().Select(item => new BubbleChartDataEntry(item.GetXPosition(), item.GetYPosition(), item.GetSize()));
                     BubbleChartDataSet dataSet = new BubbleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                    if (itemChild.IF_GetDataColorScheme() != null)
+                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(),1f);
                     listDataSetItems.Add(dataSet);
                 }
 

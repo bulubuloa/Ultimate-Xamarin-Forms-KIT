@@ -61,7 +61,8 @@ namespace UltimateXF.iOS.Renderers
                 {
                     var entryOriginal = itemChild.IF_GetEntry().Select(item => new iOSCharts.ChartDataEntry(item.GetXPosition(), item.GetYPosition()));
                     LineChartDataSet lineDataSet = new LineChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    lineDataSet.SetColor(itemChild.IF_GetDataColor().ToUIColor());
+                    if (itemChild.IF_GetDataColorScheme() != null)
+                        lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
                     lineDataSet.Mode = (SupportChart.GetDrawLineMode(itemChild.IF_GetDrawMode()));
                     lineDataSet.CircleRadius = itemChild.IF_GetCircleRadius();
                     lineDataSet.CircleHoleRadius = itemChild.IF_GetCircleHoleRadius();

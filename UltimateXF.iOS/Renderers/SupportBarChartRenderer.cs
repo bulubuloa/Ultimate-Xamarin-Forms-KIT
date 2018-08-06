@@ -60,7 +60,8 @@ namespace UltimateXF.iOS.Renderers
                 {
                     var entryOriginal = itemChild.IF_GetEntry().Select(item => new iOSCharts.BarChartDataEntry(item.GetXPosition(), item.GetYPosition()));
                     BarChartDataSet lineDataSet = new BarChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    lineDataSet.SetColor(itemChild.IF_GetDataColor().ToUIColor());
+                    if (itemChild.IF_GetDataColorScheme() != null)
+                        lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
                     lineDataSet.DrawValuesEnabled = (itemChild.IF_GetDrawValue());
                     dataSetItems.Add(lineDataSet);
                 }

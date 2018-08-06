@@ -1,30 +1,10 @@
-﻿<Properties StartupConfiguration="{69DDDC64-AE48-4836-980A-2863207BFF23}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs">
+﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs">
     <Files>
-      <File FileName="DemoXF/BubbleChartPage.xaml" Line="30" Column="15" />
-      <File FileName="DemoXF/App.xaml.cs" Line="14" Column="46" />
-      <File FileName="DemoXF/MainPage.xaml.cs" Line="19" Column="47" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="68" Column="18" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportChart.cs" Line="14" Column="81" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportCandleStickChartRenderer.cs" Line="60" Column="2" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportPieChartRenderer.cs" Line="59" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportChart.cs" Line="22" Column="51" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs" Line="72" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/PieEntry.cs" Line="34" Column="2" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="65" Column="51" />
-      <File FileName="UltimateXF/Widget/Charts/Models/EntryChart.cs" Line="18" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/IPieDataSet.cs" Line="7" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarDataSet.cs" Line="13" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarChartData.cs" Line="13" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportBubbleChartRenderer.cs" Line="67" Column="18" NotebookId="1" />
-      <File FileName="DemoXF/BubbleChartPage.xaml.cs" Line="45" Column="38" NotebookId="1" />
-      <File FileName="DemoXF/MainPage.xaml" Line="23" Column="68" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BubbleChart/BubbleDataSet.cs" Line="12" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BaseDataSet.cs" Line="37" Column="10" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/IBaseDataSet.cs" Line="14" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BubbleChart/IBubbleDataSet.cs" Line="4" Column="36" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/IBaseData.cs" Line="11" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/BubbleChart/BubbleChartData.cs" Line="6" Column="33" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportBarChartRenderer.cs" Line="74" Column="2" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="82" Column="2" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportBubbleChartRenderer.cs" Line="65" Column="130" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs" Line="64" Column="124" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -53,12 +33,12 @@
                 </Node>
               </Node>
               <Node name="UltimateXF.Droid" expanded="True">
+                <Node name="Renderers" expanded="True" />
+              </Node>
+              <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True">
                   <Node name="SupportLineChartRenderer.cs" selected="True" />
                 </Node>
-              </Node>
-              <Node name="UltimateXF.iOS" expanded="True">
-                <Node name="Renderers" expanded="True" />
               </Node>
               <Node name="UltimateXF.Nuget" expanded="True">
                 <Node name="References" expanded="True" />
