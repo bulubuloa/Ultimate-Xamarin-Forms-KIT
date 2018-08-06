@@ -1,13 +1,19 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/SupportCombinedChartRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs">
     <Files>
       <File FileName="UltimateXF.Droid/Renderers/SupportBubbleChartRenderer.cs" Line="57" Column="2" />
       <File FileName="UltimateXF.iOS/Renderers/SupportCandleStickChartRenderer.cs" Line="59" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportCombinedChartRenderer.cs" Line="1" Column="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportCombinedChartRenderer.cs" Line="31" Column="23" />
+      <File FileName="UltimateXF/Widget/Charts/SupportRadarChart.cs" Line="4" Column="35" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportRadarChartRenderer.cs" Line="13" Column="43" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportRadarChartRenderer.cs" Line="57" Column="2" />
+      <File FileName="UltimateXF/Widget/Charts/SupportScatterChart.cs" Line="11" Column="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportScatterChartRenderer.cs" Line="13" Column="45" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportScatterChartRenderer.cs" Line="1" Column="1" />
       <File FileName="UltimateXF.Droid/Renderers/SupportPieChartRenderer.cs" Line="57" Column="10" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs" Line="57" Column="2" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs" Line="8" Column="91" NotebookId="1" />
       <File FileName="UltimateXF/Widget/Charts/SupportCombinedChart.cs" Line="4" Column="38" NotebookId="1" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportCombinedChartRenderer.cs" Line="57" Column="2" NotebookId="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportCombinedChartRenderer.cs" Line="13" Column="98" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -37,7 +43,7 @@
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True">
-                  <Node name="SupportCombinedChartRenderer.cs" selected="True" />
+                  <Node name="SupportBubbleChartRenderer.cs" selected="True" />
                 </Node>
               </Node>
               <Node name="UltimateXF.Nuget" expanded="True">

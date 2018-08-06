@@ -125,6 +125,8 @@
     <Compile Include="Renderers\SupportCandleStickChartRenderer.cs" />
     <Compile Include="Renderers\SupportBubbleChartRenderer.cs" />
     <Compile Include="Renderers\SupportCombinedChartRenderer.cs" />
+    <Compile Include="Renderers\SupportRadarChartRenderer.cs" />
+    <Compile Include="Renderers\SupportScatterChartRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
