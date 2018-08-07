@@ -14,7 +14,27 @@ Setup for Android project (add to MainActivity before LoadApplication)
 
     UltimateXF.Droid.UltimateXF.Initialize(this);
 
- 
+ **Required:**
+ - ***[Xamarin.Forms](>= 3.1.0.697729)***
+ - ***Install Xamarin.Swift4 package for iOS project (this app could not run on simulator - only real device)*** 
+		[Xamarin.Swift4] (>= 4.0.0)
+		[Xamarin.Swift4.Core]  (>= 4.1.2)
+		[Xamarin.Swift4.CoreAudio](>= 4.1.2)
+		[Xamarin.Swift4.CoreData]  (>= 4.1.2)
+		[Xamarin.Swift4.CoreFoundation] (>= 4.1.2)
+		[Xamarin.Swift4.CoreGraphics]  (>= 4.1.2)
+		[Xamarin.Swift4.CoreImage] (>= 4.1.2)
+		[Xamarin.Swift4.CoreMedia] (>= 4.1.2)
+		[Xamarin.Swift4.Darwin] (>= 4.1.2)
+		[Xamarin.Swift4.Dispatch]  (>= 4.1.2)
+		[Xamarin.Swift4.Foundation] (>= 4.1.2)
+		[Xamarin.Swift4.Metal] (>= 4.1.2)
+		[Xamarin.Swift4.ObjectiveC] (>= 4.1.2)
+		[Xamarin.Swift4.OS] (>= 4.1.2)
+		[Xamarin.Swift4.QuartzCore]  (>= 4.1.2)
+		[Xamarin.Swift4.UIKit] (>= 4.1.2)
+- ***You can downgrade swift support version for you project or your device (just download this project source and downgrade version of library for each project)***
+
 #### LineChart & BarChart
 
     <ultimateChart:SupportBarChart  
