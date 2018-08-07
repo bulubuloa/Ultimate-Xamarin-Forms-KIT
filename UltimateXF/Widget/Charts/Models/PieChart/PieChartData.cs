@@ -15,6 +15,10 @@ namespace UltimateXF.Widget.Charts.Models.PieChart
 
         public PieChartData(IPieDataSet _DataSetItems, List<string> _TitleItems) : base(_DataSetItems, _TitleItems)
         {
+            ValueDisplaySize = 13;
+            TextDisplaySize = 13;
+            ValueDisplayColor = Color.Black;
+            TextDisplayColor = Color.Black;
         }
     }
 }

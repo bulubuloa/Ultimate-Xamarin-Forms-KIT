@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="DemoXF.LineChartPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Padding="10" Spacing="20">
+            <ultimateChart:SupportLineChart x:Name="chart"
+                                              Description="Line Chart 1"
+                                              HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand"
+                                              IsShowLeftAxis="false"
+                                              IsShowLeftAxisLine="false"
+                                              IsShowLeftAxisValue="false"
+                                              IsShowRightAxis="false"
+                                              IsShowRightAxisLine="false"
+                                              IsShowRightAxisValue="false"
+                                              IsShowXAxis="true"
+                                              IsShowXAxisLine="true"
+                                              XAxisPosition="BOTTOM"
+                                              IsShowXAxisValue="true" />
+            
+            <ultimateChart:SupportLineChart x:Name="chart2"
+                                              Description="Line Chart 2"
+                                              XAxisPosition="BOTTOM"
+                                              HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

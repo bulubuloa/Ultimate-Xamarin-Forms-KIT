@@ -45,7 +45,7 @@ namespace UltimateXF.iOS.Renderers
 
                 var entryOriginal = data.IF_GetEntry().Select(item => new ChartDataEntry(item.GetPercent(),item.GetPercent()));
                 PieChartDataSet lineDataSet = new PieChartDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-                lineDataSet.SetColors(data.IF_GetEntry().Select(item => item.GetColorFill().ToUIColor()).ToArray(),1f);
+                lineDataSet.SetColors(data.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(),1f);
                 PieChartData lineData = new PieChartData(new PieChartDataSet[]{lineDataSet} );
 
                 //lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);

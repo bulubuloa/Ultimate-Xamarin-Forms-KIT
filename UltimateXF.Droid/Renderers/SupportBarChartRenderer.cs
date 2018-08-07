@@ -59,7 +59,7 @@ namespace UltimateXF.Droid.Renderers
 
                 foreach (var itemChild in data.IF_GetDataSet())
                 {
-                    var entryOriginal = itemChild.IF_GetEntry().Select (item => new MikePhil.Charting.Data.BarEntry(item.GetXPosition(), item.GetYPosition()));
+                    var entryOriginal = itemChild.IF_GetEntry().Select (item => new BarEntry(item.GetXPosition(), item.GetYPosition()));
                     BarDataSet lineDataSet = new BarDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
                     if(itemChild.IF_GetDataColorScheme()!=null)
                         lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
@@ -68,6 +68,7 @@ namespace UltimateXF.Droid.Renderers
                 }
 
                 BarData lineData = new BarData(dataSetItems.ToArray());
+                chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(data.TitleItems);
                 chartOriginal.Data = lineData;
             }
         }

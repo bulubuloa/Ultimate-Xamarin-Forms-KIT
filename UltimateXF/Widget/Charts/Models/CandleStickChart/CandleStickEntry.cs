@@ -42,5 +42,10 @@ namespace UltimateXF.Widget.Charts.Models.CandleStickChart
         {
             return CloseValue;
         }
+
+        private float GetYPosition()
+        {
+            return 0;
+        }
     }
 }

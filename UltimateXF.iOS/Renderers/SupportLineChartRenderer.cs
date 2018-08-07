@@ -75,6 +75,7 @@ namespace UltimateXF.iOS.Renderers
                 }
 
                 LineChartData lineData = new LineChartData(dataSetItems.ToArray());
+                lineChart.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(data.TitleItems.ToArray());
                 lineChart.Data = lineData;
             }
         }

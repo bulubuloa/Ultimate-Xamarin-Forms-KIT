@@ -77,6 +77,7 @@ namespace UltimateXF.Droid.Renderers
                 }
 
                 LineData lineData = new LineData(dataSetItems.ToArray());
+                lineChart.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(data.TitleItems);
                 lineChart.Data = lineData;
             }
         }

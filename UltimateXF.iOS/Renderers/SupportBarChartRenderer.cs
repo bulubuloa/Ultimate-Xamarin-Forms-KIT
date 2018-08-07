@@ -67,6 +67,7 @@ namespace UltimateXF.iOS.Renderers
                 }
 
                 BarChartData lineData = new BarChartData(dataSetItems.ToArray());
+                chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(data.TitleItems.ToArray());
                 chartOriginal.Data = lineData;
             }
         }

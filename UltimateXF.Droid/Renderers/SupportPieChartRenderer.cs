@@ -41,18 +41,19 @@ namespace UltimateXF.Droid.Renderers
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
-                var data = supportChart.ChartData.IF_GetDataSet();
+                var dataSupport = supportChart.ChartData.IF_GetDataSet();
 
-                var entryOriginal = data.IF_GetEntry().Select(item => new MikePhil.Charting.Data.PieEntry(item.GetPercent(),item.GetText()));
-                PieDataSet lineDataSet = new PieDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-                lineDataSet.SetColors(data.IF_GetEntry().Select(item => item.GetColorFill().ToAndroid().ToArgb()).ToArray());
-                PieData lineData = new PieData(lineDataSet);
-                lineData.SetValueFormatter(new PercentFormatter());
-                lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
-                lineData.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
+                var entryOriginal = dataSupport.IF_GetEntry().Select(item => new PieEntry(item.GetPercent(),item.GetText()));
+                PieDataSet dataSet = new PieDataSet(entryOriginal.ToArray(), dataSupport.IF_GetTitle());
+                dataSet.SetColors(dataSupport.IF_GetDataColorScheme().Select(item=>item.ToAndroid().ToArgb()).ToArray());
+
+                PieData data = new PieData(dataSet);
+                data.SetValueFormatter(new PercentFormatter());
+                data.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
+                data.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
                 chartOriginal.SetEntryLabelColor(supportChart.ChartData.TextDisplayColor.ToAndroid());
                 chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
-                chartOriginal.Data = lineData;
+                chartOriginal.Data = data;
             }
         }
     }

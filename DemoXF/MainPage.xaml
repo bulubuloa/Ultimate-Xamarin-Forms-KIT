@@ -7,7 +7,39 @@
              xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF">
     <ScrollView>
         <StackLayout Margin="10,40,10,10" Orientation="Vertical">
-
+            <Button x:Name="bttLine"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Line Chart" />
+            <Button x:Name="bttBar"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Bar Chart" />
+            <Button x:Name="bttCandle"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Candle Stick Chart" />
+            <Button x:Name="bttCombined"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Combined Chart" />
+            <Button x:Name="bttPie"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Pie Chart" />
+            <Button x:Name="bttRadar"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Radar Chart" />
+            <Button x:Name="bttScatter"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Scatter Chart" />
+            <Button x:Name="bttBuble"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Bubble Chart" />
+            
             <!--<ultimateChart:SupportBarChart x:Name="lineChart"
                                             VerticalOptions="FillAndExpand"
                                             HorizontalOptions="FillAndExpand"
@@ -36,7 +68,7 @@
                 VerticalOptions="FillAndExpand"
                 HorizontalOptions="FillAndExpand"/>-->
 
-            <ultimateChart:SupportBubbleChart x:Name="bubbleChart"
+            <!-- <ultimateChart:SupportBubbleChart x:Name="bubbleChart"
                                               HeightRequest="400"
                                               HorizontalOptions="FillAndExpand"
                                               VerticalOptions="FillAndExpand"
@@ -49,7 +81,7 @@
                                               IsShowRightAxisValue="false"
                                               IsShowXAxis="false"
                                               IsShowXAxisLine="true"
-                                              IsShowXAxisValue="true" />
+                                              IsShowXAxisValue="true" />-->
 
         </StackLayout>
     </ScrollView>

@@ -1,10 +1,40 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/MainPage.xaml.cs">
     <Files>
-      <File FileName="UltimateXF.iOS/Renderers/SupportBarChartRenderer.cs" Line="74" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="82" Column="2" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportBubbleChartRenderer.cs" Line="65" Column="130" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportBubbleChartRenderer.cs" Line="64" Column="124" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/PieChart/PieEntry.cs" Line="27" Column="2" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportPieChartRenderer.cs" Line="41" Column="10" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportRadarChartRenderer.cs" Line="38" Column="14" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportPieChartRenderer.cs" Line="52" Column="98" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportRadarChartRenderer.cs" Line="62" Column="2" />
+      <File FileName="DemoXF/MainPage.xaml.cs" Line="28" Column="58" />
+      <File FileName="DemoXF/BubbleChartPage.xaml.cs" Line="54" Column="2" />
+      <File FileName="DemoXF/RadarChartPage.xaml.cs" Line="21" Column="13" />
+      <File FileName="DemoXF/PieChartPage.xaml" Line="23" Column="62" />
+      <File FileName="UltimateXF/Widget/Charts/SupportRadarChart.cs" Line="20" Column="2" />
+      <File FileName="DemoXF/BubbleChartPage.xaml" Line="30" Column="15" />
+      <File FileName="DemoXF/PieChartPage.xaml.cs" Line="38" Column="34" />
+      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="57" Column="2" />
+      <File FileName="DemoXF/CandleStickChartPage.xaml.cs" Line="16" Column="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="52" Column="39" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="9" Column="32" />
+      <File FileName="DemoXF/LineChartPage.xaml" Line="15" Column="41" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportLineChartRenderer.cs" Line="83" Column="2" />
+      <File FileName="DemoXF.iOS/Main.cs" Line="14" Column="10" />
+      <File FileName="DemoXF/MainPage.xaml" Line="41" Column="33" />
+      <File FileName="DemoXF/ScatterChartPage.xaml" Line="6" Column="1" />
+      <File FileName="DemoXF/ScatterChartPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="DemoXF/CombinedChartPage.xaml" Line="6" Column="1" />
+      <File FileName="DemoXF/CombinedChartPage.xaml.cs" Line="1" Column="1" />
+      <File FileName="DemoXF/BarChartPage.xaml.cs" Line="52" Column="41" NotebookId="1" />
+      <File FileName="DemoXF/App.xaml.cs" Line="14" Column="59" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportBarChartRenderer.cs" Line="15" Column="46" NotebookId="1" />
+      <File FileName="DemoXF/BarChartPage.xaml" Line="29" Column="65" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/EntryChart.cs" Line="25" Column="2" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarChartData.cs" Line="8" Column="16" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportChart.cs" Line="6" Column="35" NotebookId="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportChart.cs" Line="50" Column="50" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineDataSet.cs" Line="23" Column="39" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/ChartEnums.cs" Line="4" Column="32" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,9 +43,19 @@
             <Node name="DemoAPP" expanded="True">
               <Node name="DemoXF" expanded="True">
                 <Node name="App.xaml" expanded="True" />
+                <Node name="BarChartPage.xaml" expanded="True" />
                 <Node name="BubbleChartPage.xaml" expanded="True" />
-                <Node name="MainPage.xaml" expanded="True" />
+                <Node name="CandleStickChartPage.xaml" expanded="True" />
+                <Node name="CombinedChartPage.xaml" expanded="True" />
+                <Node name="LineChartPage.xaml" expanded="True" />
+                <Node name="MainPage.xaml" expanded="True">
+                  <Node name="MainPage.xaml.cs" selected="True" />
+                </Node>
+                <Node name="PieChartPage.xaml" expanded="True" />
+                <Node name="RadarChartPage.xaml" expanded="True" />
+                <Node name="ScatterChartPage.xaml" expanded="True" />
               </Node>
+              <Node name="DemoXF.iOS" expanded="True" />
             </Node>
             <Node name="Library" expanded="True">
               <Node name="UltimateXF" expanded="True">
@@ -28,6 +68,7 @@
                       <Node name="Formatters" expanded="True" />
                       <Node name="LineChart" expanded="True" />
                       <Node name="PieChart" expanded="True" />
+                      <Node name="RadarChart" expanded="True" />
                     </Node>
                   </Node>
                 </Node>
@@ -36,13 +77,10 @@
                 <Node name="Renderers" expanded="True" />
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="SupportLineChartRenderer.cs" selected="True" />
-                </Node>
+                <Node name="Renderers" expanded="True" />
               </Node>
               <Node name="UltimateXF.Nuget" expanded="True">
                 <Node name="References" expanded="True" />
-                <Node name="Packages" expanded="True" />
               </Node>
             </Node>
           </Node>

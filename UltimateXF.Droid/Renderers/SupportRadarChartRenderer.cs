@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
+using MikePhil.Charting.Data;
 using UltimateXF.Droid.Renderers;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
@@ -37,21 +40,24 @@ namespace UltimateXF.Droid.Renderers
 
         private void InitializeChart()
         {
-            //if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
-            //{
-            //    var data = supportChart.ChartData.IF_GetDataSet();
+            if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
+            {
+                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
+                var listDataSetItems = new List<RadarDataSet>();
 
-            //    var entryOriginal = data.IF_GetEntry().Select(item => new MikePhil.Charting.Data.PieEntry(item.GetPercent(), item.GetText()));
-            //    PieDataSet lineDataSet = new PieDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-            //    lineDataSet.SetColors(data.IF_GetEntry().Select(item => item.GetColorFill().ToAndroid().ToArgb()).ToArray());
-            //    PieData lineData = new PieData(lineDataSet);
-            //    lineData.SetValueFormatter(new PercentFormatter());
-            //    lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
-            //    lineData.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
-            //    chartOriginal.SetEntryLabelColor(supportChart.ChartData.TextDisplayColor.ToAndroid());
-            //    chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
-            //    chartOriginal.Data = lineData;
-            //}
+                foreach (var itemChild in dataSetItems)
+                {
+                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new RadarEntry(item.GetValue()));
+                    RadarDataSet dataSet = new RadarDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                    if (itemChild.IF_GetDataColorScheme() != null)
+                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
+                    listDataSetItems.Add(dataSet);
+                }
+
+                RadarData data = new RadarData(listDataSetItems.ToArray());
+                chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
+                chartOriginal.Data = data;
+            }
         }
     }
 }
