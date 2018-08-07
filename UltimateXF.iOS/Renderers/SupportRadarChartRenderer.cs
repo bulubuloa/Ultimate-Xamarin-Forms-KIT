@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers;
@@ -34,6 +35,15 @@ namespace UltimateXF.iOS.Renderers
                     InitializeChart();
                     SetNativeControl(chartOriginal);
                 }
+            }
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName.Equals(SupportLineChart.ChartDataProperty.PropertyName))
+            {
+                InitializeChart();
             }
         }
 

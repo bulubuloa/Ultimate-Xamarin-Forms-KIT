@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.ComponentModel;
+using System.Linq;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
@@ -34,6 +35,15 @@ namespace UltimateXF.Droid.Renderers
                     InitializeChart();
                     SetNativeControl(chartOriginal);
                 }
+            }
+        }
+
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName.Equals(SupportLineChart.ChartDataProperty.PropertyName))
+            {
+                InitializeChart();
             }
         }
 

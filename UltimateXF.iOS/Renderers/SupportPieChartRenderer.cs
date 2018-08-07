@@ -37,6 +37,15 @@ namespace UltimateXF.iOS.Renderers
             }
         }
 
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName.Equals(SupportLineChart.ChartDataProperty.PropertyName))
+            {
+                InitializeChart();
+            }
+        }
+
         private void InitializeChart()
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
