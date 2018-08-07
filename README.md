@@ -2,9 +2,17 @@
 I create this package for sharing all my xamarin forms custom controls
 
 ## MPAndroidChart Binding
-add assembly references
+Add assembly references
 
     xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF"
+
+Setup for iOS project (add to AppDelegate before LoadApplication)
+
+    UltimateXF.iOS.UltimateXF.Initialize();
+
+Setup for Android project (add to MainActivity before LoadApplication)
+
+    UltimateXF.Droid.UltimateXF.Initialize(this);
 
  
 #### LineChart & BarChart
