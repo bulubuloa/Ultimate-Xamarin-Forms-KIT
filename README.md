@@ -2,7 +2,7 @@
 I create this package for sharing all my xamarin forms custom controls
 
 ### MPAndroidChart Binding   
-[![NuGet](https://img.shields.io/badge/NUGET-1.1-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
+[![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-v.1.1-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
 <p>Add assembly references
 
     xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF"
