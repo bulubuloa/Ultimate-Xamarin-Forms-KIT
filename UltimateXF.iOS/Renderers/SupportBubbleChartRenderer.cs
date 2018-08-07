@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using iOSCharts;
 using UltimateXF.iOS.Renderers;
+using UltimateXF.iOS.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -15,9 +13,11 @@ namespace UltimateXF.iOS.Renderers
     {
         private SupportBubbleChart supportChart;
         private BubbleChartView chartOriginal;
+        private BubbleChartExport ChartExport;
 
         public SupportBubbleChartRenderer()
         {
+            ChartExport = new BubbleChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SupportBubbleChart> e)
@@ -53,21 +53,8 @@ namespace UltimateXF.iOS.Renderers
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
                 SupportChart.OnInitializeChart(supportChart, chartOriginal);
-                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
-                var listDataSetItems = new List<BubbleChartDataSet>();
-
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new BubbleChartDataEntry(item.GetXPosition(), item.GetYPosition(), item.GetSize()));
-                    BubbleChartDataSet dataSet = new BubbleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    if (itemChild.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(),1f);
-                    listDataSetItems.Add(dataSet);
-                }
-
-                BubbleChartData data = new BubbleChartData(listDataSetItems.ToArray());
                 chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
-                chartOriginal.Data = data;
+                chartOriginal.Data = ChartExport.Export(supportChart.ChartData);
             }
         }
     }

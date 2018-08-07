@@ -127,6 +127,11 @@
     <Compile Include="Renderers\SupportCombinedChartRenderer.cs" />
     <Compile Include="Renderers\SupportRadarChartRenderer.cs" />
     <Compile Include="Renderers\SupportScatterChartRenderer.cs" />
+    <Compile Include="Renderers\Exporters\BarChartExport.cs" />
+    <Compile Include="Renderers\Exporters\BubbleChartExport.cs" />
+    <Compile Include="Renderers\Exporters\CandleStickChartExport.cs" />
+    <Compile Include="Renderers\Exporters\LineChartExport.cs" />
+    <Compile Include="Renderers\Exporters\ScatterChartExport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -137,6 +142,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
+    <Folder Include="Renderers\Exporters\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UltimateXF\UltimateXF.csproj">

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using iOSCharts;
 using UltimateXF.iOS.Renderers;
+using UltimateXF.iOS.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -15,9 +13,11 @@ namespace UltimateXF.iOS.Renderers
     {
         private SupportScatterChart supportChart;
         private ScatterChartView chartOriginal;
+        private ScatterChartExport ChartExport;
 
         public SupportScatterChartRenderer()
         {
+            ChartExport = new ScatterChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SupportScatterChart> e)
@@ -52,20 +52,9 @@ namespace UltimateXF.iOS.Renderers
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
-                SupportChart.OnInitializeChart(supportChart,chartOriginal);
-                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
-                var listDataSetItems = new List<ScatterChartDataSet>();
-
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new ChartDataEntry(item.GetXPosition(), item.GetYPosition()));
-                    var dataSet = new ScatterChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    listDataSetItems.Add(dataSet);
-                }
-
-                ScatterChartData data = new ScatterChartData(listDataSetItems.ToArray());
+                SupportChart.OnInitializeChart(supportChart, chartOriginal);
                 chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
-                chartOriginal.Data = data;
+                chartOriginal.Data = ChartExport.Export(supportChart.ChartData);
             }
         }
     }

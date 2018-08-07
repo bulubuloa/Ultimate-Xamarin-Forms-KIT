@@ -1,11 +1,9 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
-using MikePhil.Charting.Data;
 using UltimateXF.Droid.Renderers;
+using UltimateXF.Droid.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -17,10 +15,11 @@ namespace UltimateXF.Droid.Renderers
     {
         private SupportBarChart supportChart;
         private BarChart chartOriginal;
+        private BarChartExport ChartExport;
 
         public SupportBarChartRenderer(Context context) : base(context)
         {
-            
+            ChartExport = new BarChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SupportBarChart> e)
@@ -55,21 +54,8 @@ namespace UltimateXF.Droid.Renderers
             {
                 SupportChart.OnInitializeChart(supportChart,chartOriginal);
                 var data = supportChart.ChartData;
-                var dataSetItems = new List<BarDataSet>();
-
-                foreach (var itemChild in data.IF_GetDataSet())
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select (item => new BarEntry(item.GetXPosition(), item.GetYPosition()));
-                    BarDataSet lineDataSet = new BarDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    if(itemChild.IF_GetDataColorScheme()!=null)
-                        lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
-                    lineDataSet.SetDrawValues(itemChild.IF_GetDrawValue());
-                    dataSetItems.Add(lineDataSet);
-                }
-
-                BarData lineData = new BarData(dataSetItems.ToArray());
                 chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(data.TitleItems);
-                chartOriginal.Data = lineData;
+                chartOriginal.Data = ChartExport.Export(data);
             }
         }
     }

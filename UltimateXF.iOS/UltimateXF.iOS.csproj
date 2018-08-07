@@ -115,6 +115,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Renderers\" />
+    <Folder Include="Renderers\Exporters\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -129,6 +130,11 @@
     <Compile Include="Renderers\SupportCombinedChartRenderer.cs" />
     <Compile Include="Renderers\SupportRadarChartRenderer.cs" />
     <Compile Include="Renderers\SupportScatterChartRenderer.cs" />
+    <Compile Include="Renderers\Exporters\LineChartExport.cs" />
+    <Compile Include="Renderers\Exporters\BarChartExport.cs" />
+    <Compile Include="Renderers\Exporters\BubbleChartExport.cs" />
+    <Compile Include="Renderers\Exporters\ScatterChartExport.cs" />
+    <Compile Include="Renderers\Exporters\CandleStickChartExport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

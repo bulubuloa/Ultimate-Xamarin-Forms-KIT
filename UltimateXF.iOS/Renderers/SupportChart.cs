@@ -1,5 +1,4 @@
-﻿using System;
-using iOSCharts;
+﻿using iOSCharts;
 using UltimateXF.Widget.Charts;
 using UltimateXF.Widget.Charts.Models;
 

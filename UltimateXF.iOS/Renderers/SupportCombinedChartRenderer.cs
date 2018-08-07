@@ -1,7 +1,7 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using iOSCharts;
 using UltimateXF.iOS.Renderers;
+using UltimateXF.iOS.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
@@ -14,8 +14,19 @@ namespace UltimateXF.iOS.Renderers
         private SupportCombinedChart supportChart;
         private CombinedChartView chartOriginal;
 
+        private LineChartExport lineChartExport;
+        private ScatterChartExport scatterChartExport;
+        private CandleStickChartExport candleStickChartExport;
+        private BarChartExport barChartExport;
+        private BubbleChartExport bubbleChartExport;
+
         public SupportCombinedChartRenderer()
         {
+            lineChartExport = new LineChartExport();
+            scatterChartExport = new ScatterChartExport();
+            candleStickChartExport = new CandleStickChartExport();
+            barChartExport = new BarChartExport();
+            bubbleChartExport = new BubbleChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SupportCombinedChart> e)
@@ -48,21 +59,20 @@ namespace UltimateXF.iOS.Renderers
 
         private void InitializeChart()
         {
-            //if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
-            //{
-            //    var dataSetItems = supportChart.ChartData.IF_GetDataSet();
-            //    var listDataSetItems = new List<CandleChartDataSet>();
+            if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
+            {
+                SupportChart.OnInitializeChart(supportChart,chartOriginal);
 
-            //    foreach (var itemChild in dataSetItems)
-            //    {
-            //        var entryOriginal = itemChild.IF_GetEntry().Select(item => new CandleChartDataEntry(item.GetXPosition(), item.GetHigh(), item.GetLow(), item.GetOpen(), item.GetClose())));
-            //        CandleChartDataSet dataSet = new CandleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-            //        listDataSetItems.Add(dataSet);
-            //    }
+                var data = supportChart.ChartData;
 
-            //    CandleChartData data = new CandleChartData(listDataSetItems.ToArray());
-            //    chartOriginal.Data = data;
-            //}
+                var CombinChartData = new CombinedChartData();
+                CombinChartData.LineData = lineChartExport.Export(data.GetLineData());
+                CombinChartData.BarData = barChartExport.Export(data.GetBarData());
+                CombinChartData.BubbleData = bubbleChartExport.Export(data.GetBubbleData());
+                CombinChartData.CandleData = candleStickChartExport.Export(data.GetCandleData());
+                CombinChartData.ScatterData = scatterChartExport.Export(data.GetScatterData());
+                chartOriginal.Data = CombinChartData;
+            }
         }
     }
 }

@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
-using MikePhil.Charting.Data;
 using UltimateXF.Droid.Renderers;
+using UltimateXF.Droid.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -18,9 +15,11 @@ namespace UltimateXF.Droid.Renderers
     {
         private SupportScatterChart supportChart;
         private ScatterChart chartOriginal;
+        private ScatterChartExport ChartExport;
 
         public SupportScatterChartRenderer(Context context) : base(context)
         {
+            ChartExport = new ScatterChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SupportScatterChart> e)
@@ -54,19 +53,8 @@ namespace UltimateXF.Droid.Renderers
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
                 SupportChart.OnInitializeChart(supportChart, chartOriginal);
-                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
-                var listDataSetItems = new List<ScatterDataSet>();
-
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new MikePhil.Charting.Data.Entry(item.GetXPosition(), item.GetYPosition()));
-                    var dataSet = new ScatterDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    listDataSetItems.Add(dataSet);
-                }
-
-                ScatterData data = new ScatterData(listDataSetItems.ToArray());
                 chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
-                chartOriginal.Data = data;
+                chartOriginal.Data = ChartExport.Export(supportChart.ChartData);
             }
         }
     }

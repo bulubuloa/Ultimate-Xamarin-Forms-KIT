@@ -1,8 +1,10 @@
-﻿using System;
+﻿using System.ComponentModel;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
+using MikePhil.Charting.Data;
 using UltimateXF.Droid.Renderers;
+using UltimateXF.Droid.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
@@ -15,8 +17,19 @@ namespace UltimateXF.Droid.Renderers
         private SupportCombinedChart supportChart;
         private CombinedChart chartOriginal;
 
+        private LineChartExport lineChartExport;
+        private ScatterChartExport scatterChartExport;
+        private CandleStickChartExport candleStickChartExport;
+        private BarChartExport barChartExport;
+        private BubbleChartExport bubbleChartExport;
+
         public SupportCombinedChartRenderer(Context context) : base(context)
         {
+            lineChartExport = new LineChartExport();
+            scatterChartExport = new ScatterChartExport();
+            candleStickChartExport = new CandleStickChartExport();
+            barChartExport = new BarChartExport();
+            bubbleChartExport = new BubbleChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<SupportCombinedChart> e)
@@ -35,23 +48,31 @@ namespace UltimateXF.Droid.Renderers
             }
         }
 
+        protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            base.OnElementPropertyChanged(sender, e);
+            if (e.PropertyName.Equals(SupportLineChart.ChartDataProperty.PropertyName))
+            {
+                InitializeChart();
+            }
+            SupportChart.OnChartPropertyChanged(e.PropertyName, supportChart, chartOriginal);
+        }
+
         private void InitializeChart()
         {
-            //if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
-            //{
-            //    var data = supportChart.ChartData.IF_GetDataSet();
+            if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
+            {
+                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+                var data = supportChart.ChartData;
 
-            //    var entryOriginal = data.IF_GetEntry().Select(item => new MikePhil.Charting.Data.PieEntry(item.GetPercent(), item.GetText()));
-            //    PieDataSet lineDataSet = new PieDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-            //    lineDataSet.SetColors(data.IF_GetEntry().Select(item => item.GetColorFill().ToAndroid().ToArgb()).ToArray());
-            //    PieData lineData = new PieData(lineDataSet);
-            //    lineData.SetValueFormatter(new PercentFormatter());
-            //    lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
-            //    lineData.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
-            //    chartOriginal.SetEntryLabelColor(supportChart.ChartData.TextDisplayColor.ToAndroid());
-            //    chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
-            //    chartOriginal.Data = lineData;
-            //}
+                var CombinChartData = new CombinedData();
+                CombinChartData.SetData(lineChartExport.Export(data.GetLineData()));
+                CombinChartData.SetData(barChartExport.Export(data.GetBarData()));
+                CombinChartData.SetData(bubbleChartExport.Export(data.GetBubbleData()));
+                CombinChartData.SetData(candleStickChartExport.Export(data.GetCandleData()));
+                CombinChartData.SetData(scatterChartExport.Export(data.GetScatterData()));
+                chartOriginal.Data = CombinChartData;
+            }
         }
     }
 }
