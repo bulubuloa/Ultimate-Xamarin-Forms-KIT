@@ -1,11 +1,11 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/CombinedChartPage.xaml.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF/Widget/Charts/SupportCombinedChart.cs">
     <Files>
       <File FileName="DemoXF/CandleStickChartPage.xaml.cs" Line="44" Column="2" />
       <File FileName="DemoXF/BubbleChartPage.xaml.cs" Line="21" Column="52" />
       <File FileName="DemoXF/CandleStickChartPage.xaml" Line="31" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportCombinedChart.cs" Line="19" Column="6" />
-      <File FileName="DemoXF/CombinedChartPage.xaml.cs" Line="107" Column="14" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/SupportCombinedChart.cs" Line="20" Column="2" />
+      <File FileName="DemoXF/CombinedChartPage.xaml.cs" Line="108" Column="41" NotebookId="1" />
       <File FileName="UltimateXF/Widget/Charts/Models/CombinedChart/CombinedChartData.cs" Line="18" Column="9" NotebookId="1" />
       <File FileName="DemoXF/CombinedChartPage.xaml" Line="31" Column="1" NotebookId="1" />
     </Files>
@@ -19,9 +19,7 @@
                 <Node name="BarChartPage.xaml" expanded="True" />
                 <Node name="BubbleChartPage.xaml" expanded="True" />
                 <Node name="CandleStickChartPage.xaml" expanded="True" />
-                <Node name="CombinedChartPage.xaml" expanded="True">
-                  <Node name="CombinedChartPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="CombinedChartPage.xaml" expanded="True" />
                 <Node name="LineChartPage.xaml" expanded="True" />
                 <Node name="MainPage.xaml" expanded="True" />
                 <Node name="PieChartPage.xaml" expanded="True" />
@@ -57,7 +55,7 @@
                   <Node name="Exporters" expanded="True" />
                 </Node>
               </Node>
-              <Node name="UltimateXF.Nuget" expanded="True">
+              <Node name="UltimateXF.Nuget" expanded="True" selected="True">
                 <Node name="References" expanded="True" />
                 <Node name="Packages" expanded="True" />
               </Node>
@@ -67,7 +65,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -7,7 +7,7 @@
     <ProjectGuid>{C814FC45-D4DE-4B79-ADF1-40AE8276A0AC}</ProjectGuid>
     <Description>A powerful Android/iOS chart view / graph view library, binding support for Xamarin.Forms, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, dragging and animations.</Description>
     <PackageId>UltimateXF</PackageId>
-    <PackageVersion>1.0.1</PackageVersion>
+    <PackageVersion>1.1</PackageVersion>
     <Authors>QuachHoang</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
@@ -19,6 +19,7 @@
     <Owners>HoangQuach</Owners>
     <Copyright>HoangQuach2018</Copyright>
     <PackageProjectUrl>https://github.com/bulubuloa/Ultimate-Xamarin-Forms-KIT</PackageProjectUrl>
+    <Title>UltimateXF MPAndroidChart for Xamarin.Forms</Title>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
