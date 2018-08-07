@@ -4,6 +4,7 @@ using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers;
 using UltimateXF.Widget.Charts;
+using UltimateXF.Widget.Charts.Models.LineChart;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -59,25 +60,42 @@ namespace UltimateXF.iOS.Renderers
 
                 foreach (var itemChild in data.IF_GetDataSet())
                 {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new iOSCharts.ChartDataEntry(item.GetXPosition(), item.GetYPosition()));
-                    LineChartDataSet lineDataSet = new LineChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new ChartDataEntry(item.GetXPosition(), item.GetYPosition()));
+                    var dataSet = new LineChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
                     if (itemChild.IF_GetDataColorScheme() != null)
-                        lineDataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
-                    lineDataSet.Mode = (SupportChart.GetDrawLineMode(itemChild.IF_GetDrawMode()));
-                    lineDataSet.CircleRadius = itemChild.IF_GetCircleRadius();
-                    lineDataSet.CircleHoleRadius = itemChild.IF_GetCircleHoleRadius();
-                    lineDataSet.DrawCirclesEnabled = (itemChild.IF_GetDrawCircle());
-                    lineDataSet.DrawValuesEnabled = (itemChild.IF_GetDrawValue());
-
-                    var arrColor = itemChild.IF_GetCircleColors().Select(item => item.ToUIColor());
-                    lineDataSet.SetCircleColor(itemChild.IF_GetCircleColor().ToUIColor());
-                    dataSetItems.Add(lineDataSet);
+                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
+                    IntializeDataSet(itemChild, dataSet);
+                    dataSetItems.Add(dataSet);
                 }
 
-                LineChartData lineData = new LineChartData(dataSetItems.ToArray());
+                var lineData = new iOSCharts.LineChartData(dataSetItems.ToArray());
                 lineChart.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(data.TitleItems.ToArray());
                 lineChart.Data = lineData;
             }
+        }
+
+        private void IntializeDataSet(ILineDataSet source, LineChartDataSet original)
+        {
+            if (source.IF_GetDrawMode().HasValue)
+                original.Mode = (SupportChart.GetDrawLineMode(source.IF_GetDrawMode().Value));
+
+            if (source.IF_GetCircleRadius().HasValue)
+                original.CircleRadius = source.IF_GetCircleRadius().Value;
+
+            if (source.IF_GetCircleHoleRadius().HasValue)
+                original.CircleHoleRadius = source.IF_GetCircleHoleRadius().Value;
+
+            if (source.IF_GetDrawCircle().HasValue)
+                original.DrawCirclesEnabled = (source.IF_GetDrawCircle().Value);
+
+            if (source.IF_GetCircleColors().Count > 0)
+                original.CircleColors = source.IF_GetCircleColors().Select(item => item.ToUIColor()).ToArray();
+
+            if (source.IF_GetDrawFilled().HasValue)
+                original.DrawFilledEnabled = (source.IF_GetDrawFilled().Value);
+
+            if (source.IF_GetLineWidth().HasValue)
+                original.LineWidth = source.IF_GetLineWidth().Value;
         }
     }
 }

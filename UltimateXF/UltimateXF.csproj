@@ -22,5 +22,6 @@
     <Folder Include="Widget\Charts\Models\CandleStickChart\" />
     <Folder Include="Widget\Charts\Models\BubbleChart\" />
     <Folder Include="Widget\Charts\Models\RadarChart\" />
+    <Folder Include="Widget\Charts\Models\ScatterChart\" />
   </ItemGroup>
 </Project>

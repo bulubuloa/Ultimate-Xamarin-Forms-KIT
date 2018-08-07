@@ -24,4 +24,9 @@ namespace UltimateXF.Widget
         Send,
         Search
     }
+
+    public enum PaintStyleEnum
+    {
+        STROKE, FILL
+    }
 }

@@ -1,5 +1,32 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DemoXF.ScatterChartPage">
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage x:Class="DemoXF.ScatterChartPage"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF">
     <ContentPage.Content>
+        <StackLayout Orientation="Vertical"
+                     Padding="10"
+                     Spacing="20">
+            <ultimateChart:SupportScatterChart x:Name="scatterChart"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="FillAndExpand"
+                                               Description="Scatter Chart 1"
+                                               IsShowLeftAxis="false"
+                                               IsShowLeftAxisLine="false"
+                                               IsShowLeftAxisValue="false"
+                                               IsShowRightAxis="false"
+                                               IsShowRightAxisLine="false"
+                                               IsShowRightAxisValue="false"
+                                               IsShowXAxis="false"
+                                               IsShowXAxisLine="false"
+                                               IsShowXAxisValue="true"
+                                               XAxisPosition="BOTTOM" />
+
+            <ultimateChart:SupportScatterChart x:Name="scatterChart2"
+                                               HorizontalOptions="FillAndExpand"
+                                               VerticalOptions="FillAndExpand"
+                                               Description="Scatter Chart 2"
+                                               XAxisPosition="BOTTOM" />
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>

@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
+using MikePhil.Charting.Data;
 using UltimateXF.Droid.Renderers;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
@@ -48,21 +51,23 @@ namespace UltimateXF.Droid.Renderers
 
         private void InitializeChart()
         {
-            //if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
-            //{
-            //    var data = supportChart.ChartData.IF_GetDataSet();
+            if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
+            {
+                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
+                var listDataSetItems = new List<ScatterDataSet>();
 
-            //    var entryOriginal = data.IF_GetEntry().Select(item => new MikePhil.Charting.Data.PieEntry(item.GetPercent(), item.GetText()));
-            //    PieDataSet lineDataSet = new PieDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-            //    lineDataSet.SetColors(data.IF_GetEntry().Select(item => item.GetColorFill().ToAndroid().ToArgb()).ToArray());
-            //    PieData lineData = new PieData(lineDataSet);
-            //    lineData.SetValueFormatter(new PercentFormatter());
-            //    lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
-            //    lineData.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
-            //    chartOriginal.SetEntryLabelColor(supportChart.ChartData.TextDisplayColor.ToAndroid());
-            //    chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
-            //    chartOriginal.Data = lineData;
-            //}
+                foreach (var itemChild in dataSetItems)
+                {
+                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new MikePhil.Charting.Data.Entry(item.GetXPosition(), item.GetYPosition()));
+                    var dataSet = new ScatterDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                    listDataSetItems.Add(dataSet);
+                }
+
+                ScatterData data = new ScatterData(listDataSetItems.ToArray());
+                chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
+                chartOriginal.Data = data;
+            }
         }
     }
 }

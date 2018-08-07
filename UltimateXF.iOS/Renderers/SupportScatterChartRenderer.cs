@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers;
 using UltimateXF.Widget.Charts;
@@ -48,21 +50,23 @@ namespace UltimateXF.iOS.Renderers
 
         private void InitializeChart()
         {
-            //if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
-            //{
-            //    var dataSetItems = supportChart.ChartData.IF_GetDataSet();
-            //    var listDataSetItems = new List<CandleChartDataSet>();
+            if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
+            {
+                SupportChart.OnInitializeChart(supportChart,chartOriginal);
+                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
+                var listDataSetItems = new List<ScatterChartDataSet>();
 
-            //    foreach (var itemChild in dataSetItems)
-            //    {
-            //        var entryOriginal = itemChild.IF_GetEntry().Select(item => new CandleChartDataEntry(item.GetXPosition(), item.GetHigh(), item.GetLow(), item.GetOpen(), item.GetClose())));
-            //        CandleChartDataSet dataSet = new CandleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-            //        listDataSetItems.Add(dataSet);
-            //    }
+                foreach (var itemChild in dataSetItems)
+                {
+                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new ChartDataEntry(item.GetXPosition(), item.GetYPosition()));
+                    var dataSet = new ScatterChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                    listDataSetItems.Add(dataSet);
+                }
 
-            //    CandleChartData data = new CandleChartData(listDataSetItems.ToArray());
-            //    chartOriginal.Data = data;
-            //}
+                ScatterChartData data = new ScatterChartData(listDataSetItems.ToArray());
+                chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
+                chartOriginal.Data = data;
+            }
         }
     }
 }

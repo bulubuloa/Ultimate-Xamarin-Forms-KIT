@@ -1,15 +1,23 @@
-﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/SupportChart.cs">
+﻿<Properties StartupConfiguration="{69DDDC64-AE48-4836-980A-2863207BFF23}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.Droid/Renderers/SupportScatterChartRenderer.cs">
     <Files>
-      <File FileName="DemoXF/CandleStickChartPage.xaml.cs" Line="32" Column="15" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportBarChartRenderer.cs" Line="48" Column="14" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportBarChartRenderer.cs" Line="20" Column="10" />
-      <File FileName="UltimateXF/Widget/Charts/Models/CandleStickChart/CandleStickDataSet.cs" Line="25" Column="44" />
-      <File FileName="UltimateXF/Widget/Charts/Models/CandleStickChart/CandleStickEntry.cs" Line="36" Column="31" />
-      <File FileName="UltimateXF/Widget/Charts/Models/CandleStickChart/ICandleStickDataSet.cs" Line="6" Column="57" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportCandleStickChartRenderer.cs" Line="68" Column="87" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportCandleStickChartRenderer.cs" Line="55" Column="36" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/SupportChart.cs" Line="51" Column="28" NotebookId="1" />
+      <File FileName="DemoXF/ScatterChartPage.xaml" Line="32" Column="15" />
+      <File FileName="DemoXF/ScatterChartPage.xaml.cs" Line="55" Column="2" />
+      <File FileName="UltimateXF/Widget/Charts/Models/ScatterChart/IScatterDataSet.cs" Line="7" Column="2" />
+      <File FileName="UltimateXF/Widget/Charts/Models/ScatterChart/ScatterDataSet.cs" Line="12" Column="2" />
+      <File FileName="UltimateXF/Widget/Charts/Models/ScatterChart/ScatterChartData.cs" Line="12" Column="2" />
+      <File FileName="UltimateXF/Widget/Charts/SupportRadarChart.cs" Line="14" Column="10" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportScatterChartRenderer.cs" Line="66" Column="17" />
+      <File FileName="DemoXF/PieChartPage.xaml" Line="4" Column="14" NotebookId="1" />
+      <File FileName="DemoXF/PieChartPage.xaml.cs" Line="17" Column="50" NotebookId="1" />
+      <File FileName="DemoXF/BarChartPage.xaml.cs" Line="27" Column="32" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/IBarDataSet.cs" Line="8" Column="2" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarDataSet.cs" Line="6" Column="67" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/Models/BarChart/BarChartData.cs" Line="6" Column="66" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/SupportScatterChart.cs" Line="20" Column="2" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportPieChartRenderer.cs" Line="33" Column="23" NotebookId="1" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportScatterChartRenderer.cs" Line="67" Column="63" NotebookId="1" />
+      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="64" Column="113" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -41,17 +49,18 @@
                       <Node name="LineChart" expanded="True" />
                       <Node name="PieChart" expanded="True" />
                       <Node name="RadarChart" expanded="True" />
+                      <Node name="ScatterChart" expanded="True" />
                     </Node>
                   </Node>
                 </Node>
               </Node>
               <Node name="UltimateXF.Droid" expanded="True">
-                <Node name="Renderers" expanded="True" />
+                <Node name="Renderers" expanded="True">
+                  <Node name="SupportScatterChartRenderer.cs" selected="True" />
+                </Node>
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="SupportChart.cs" selected="True" />
-                </Node>
+                <Node name="Renderers" expanded="True" />
               </Node>
               <Node name="UltimateXF.Nuget" expanded="True">
                 <Node name="References" expanded="True" />

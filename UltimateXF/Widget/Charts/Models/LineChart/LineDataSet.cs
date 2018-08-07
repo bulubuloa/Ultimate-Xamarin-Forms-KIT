@@ -6,39 +6,36 @@ namespace UltimateXF.Widget.Charts.Models.LineChart
 {
     public class LineDataSet : BaseDataSet<EntryChart>, ILineDataSet
     {
-        public LineDataSetMode DrawMode { set; private get; }
-        public float CircleRadius { set; private get; }
-        public float CircleHoleRadius { set; private get; }
-        public bool DrawCircle { set; private get; }
+        public LineDataSetMode? DrawMode { set; private get; }
+        public float? CircleRadius { set; private get; }
+        public float? CircleHoleRadius { set; private get; }
+        public bool? DrawCircle { set; private get; }
         public List<Color> CircleColors { set; private get; }
-        public Color CircleColor { set; private get; }
+
+        public int? LineWidth { set; private get; }
+        public bool? DrawFilled { set; private get; }
 
         public LineDataSet(List<EntryChart> _EntryItems, string _Title) : base(_EntryItems,_Title)
         {
-            DrawMode = LineDataSetMode.STEPPED;
-            CircleRadius = 3f;
-            CircleHoleRadius = 3f;
-            DrawCircle = true;
             CircleColors = new List<Color>();
-            CircleColor = Color.Black;
         }
 
-        public LineDataSetMode IF_GetDrawMode()
+        public LineDataSetMode? IF_GetDrawMode()
         {
             return DrawMode;
         }
 
-        public float IF_GetCircleRadius()
+        public float? IF_GetCircleRadius()
         {
             return CircleRadius;
         }
 
-        public float IF_GetCircleHoleRadius()
+        public float? IF_GetCircleHoleRadius()
         {
             return CircleHoleRadius;
         }
 
-        public bool IF_GetDrawCircle()
+        public bool? IF_GetDrawCircle()
         {
             return DrawCircle;
         }
@@ -48,9 +45,14 @@ namespace UltimateXF.Widget.Charts.Models.LineChart
             return CircleColors;
         }
 
-        public Color IF_GetCircleColor()
+        public bool? IF_GetDrawFilled()
         {
-            return CircleColor;
+            return DrawFilled;
+        }
+
+        public int? IF_GetLineWidth()
+        {
+            return LineWidth;
         }
     }
 }

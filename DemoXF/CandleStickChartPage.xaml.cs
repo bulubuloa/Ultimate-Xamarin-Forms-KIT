@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
 using Xamarin.Forms;
 
@@ -18,13 +17,13 @@ namespace DemoXF
             entries.Add(new CandleStickEntry(3, 6f, 3.25f, 4.40f, 5.0f));
             entries.Add(new CandleStickEntry(4, 5.57f, 2f, 2.80f, 4.5f));
 
+
             var labels = new List<string>();
             labels.Add("col1");
             labels.Add("col2");
             labels.Add("col3");
             labels.Add("col4");
             labels.Add("col5");
-
 
             var dataSet4 = new CandleStickDataSet(entries, "Candle DataSet")
             {
