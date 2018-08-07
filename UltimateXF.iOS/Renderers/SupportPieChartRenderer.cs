@@ -44,12 +44,15 @@ namespace UltimateXF.iOS.Renderers
             {
                 InitializeChart();
             }
+            SupportChart.OnChartPropertyChanged(e.PropertyName, supportChart, chartOriginal);
         }
 
         private void InitializeChart()
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
+                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+
                 var data = supportChart.ChartData.IF_GetDataSet();
 
                 var entryOriginal = data.IF_GetEntry().Select(item => new ChartDataEntry(item.GetPercent(),item.GetPercent()));

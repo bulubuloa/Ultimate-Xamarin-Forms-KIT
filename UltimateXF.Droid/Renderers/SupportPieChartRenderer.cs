@@ -45,12 +45,15 @@ namespace UltimateXF.Droid.Renderers
             {
                 InitializeChart();
             }
+            SupportChart.OnChartPropertyChanged(e.PropertyName,supportChart, chartOriginal);
         }
 
         private void InitializeChart()
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
+                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+
                 var dataSupport = supportChart.ChartData.IF_GetDataSet();
 
                 var entryOriginal = dataSupport.IF_GetEntry().Select(item => new PieEntry(item.GetPercent(),item.GetText()));

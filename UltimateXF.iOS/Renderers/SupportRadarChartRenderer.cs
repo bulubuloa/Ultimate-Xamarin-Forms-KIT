@@ -45,12 +45,15 @@ namespace UltimateXF.iOS.Renderers
             {
                 InitializeChart();
             }
+            SupportChart.OnChartPropertyChanged(e.PropertyName, supportChart, chartOriginal);
         }
 
         private void InitializeChart()
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
+                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+
                 var dataSetItems = supportChart.ChartData.IF_GetDataSet();
                 var listDataSetItems = new List<RadarChartDataSet>();
 

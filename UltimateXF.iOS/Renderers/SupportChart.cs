@@ -7,11 +7,6 @@ namespace UltimateXF.iOS.Renderers
 {
     public class SupportChart
     {
-        //public static void OnSetFormatter(SupportChartView supportChart, BarLineChartViewBase chartOriginal)
-        //{
-        //    chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.XAxisLabels.ToArray());
-        //}
-
         public static XAxisLabelPosition GetXAxisPosition(XAXISPosition mode)
         {
             switch (mode)
@@ -48,6 +43,16 @@ namespace UltimateXF.iOS.Renderers
             }
         }
 
+        public static void OnInitializeChart(SupportChartView supportChart, PieRadarChartViewBase chartOriginal)
+        {
+            chartOriginal.XAxis.DrawGridLinesEnabled = (supportChart.IsShowXAxis);
+            chartOriginal.XAxis.DrawAxisLineEnabled = (supportChart.IsShowXAxisLine);
+            chartOriginal.XAxis.DrawLabelsEnabled = (supportChart.IsShowXAxisValue);
+            chartOriginal.XAxis.LabelPosition = GetXAxisPosition(supportChart.XAxisPosition);
+            chartOriginal.ChartDescription.Text = supportChart.Description;
+            chartOriginal.MultipleTouchEnabled = (supportChart.IsTouchEnabled);
+        }
+
         public static void OnInitializeChart(SupportChartView supportChart, BarLineChartViewBase chartOriginal)
         {
             chartOriginal.XAxis.DrawGridLinesEnabled = (supportChart.IsShowXAxis);
@@ -70,7 +75,52 @@ namespace UltimateXF.iOS.Renderers
             chartOriginal.DoubleTapToZoomEnabled = supportChart.IsDoubleTapToZoomEnabled;
             chartOriginal.ScaleXEnabled = supportChart.IsScaleXEnabled;
             chartOriginal.ScaleYEnabled = supportChart.IsScaleYEnabled;
-            //OnSetFormatter(supportChart,chartOriginal);
+        }
+
+        public static void OnChartPropertyChanged(string propertyName, SupportChartView supportChart, PieRadarChartViewBase chartOriginal)
+        {
+            if (propertyName.Equals(SupportChartView.IsShowXAxisProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.XAxis.DrawGridLinesEnabled = (supportChart.IsShowXAxis);
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.IsShowXAxisLineProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.XAxis.DrawAxisLineEnabled = (supportChart.IsShowXAxisLine);
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.DescriptionProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.ChartDescription.Text = supportChart.Description;
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.IsShowXAxisValueProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.XAxis.DrawLabelsEnabled = (supportChart.IsShowXAxisValue);
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.XAxisPositionProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.XAxis.LabelPosition = GetXAxisPosition(supportChart.XAxisPosition);
+                }
+            }
+            else if (propertyName.Equals(SupportChartView.IsTouchEnabledProperty.PropertyName))
+            {
+                if (chartOriginal != null && supportChart != null)
+                {
+                    chartOriginal.MultipleTouchEnabled = (supportChart.IsTouchEnabled);
+                }
+            }
         }
 
         public static void OnChartPropertyChanged(string propertyName,SupportChartView supportChart, BarLineChartViewBase chartOriginal)
