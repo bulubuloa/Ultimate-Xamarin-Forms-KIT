@@ -1,12 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models;
+using UltimateXF.Widget.Charts.Models.Component;
 using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts
 {
     public class SupportChartView : SupportView
     {
+        public static readonly BindableProperty XAxisProperty = BindableProperty.Create("XAxis", typeof(XAxisConfig), typeof(SupportChartView), new XAxisConfig());
+        public XAxisConfig XAxis
+        {
+            private get => (XAxisConfig)GetValue(XAxisProperty);
+            set => SetValue(XAxisProperty, value);
+        }
+
+        public static readonly BindableProperty LeftAxisProperty = BindableProperty.Create("LeftAxis", typeof(YAxisConfig), typeof(SupportChartView), new YAxisConfig());
+        public YAxisConfig LeftAxis
+        {
+            private get => (YAxisConfig)GetValue(LeftAxisProperty);
+            set => SetValue(LeftAxisProperty, value);
+        }
+
+        public static readonly BindableProperty RightAxisProperty = BindableProperty.Create("RightAxis", typeof(YAxisConfig), typeof(SupportChartView), new YAxisConfig());
+        public YAxisConfig RightAxis
+        {
+            private get => (YAxisConfig)GetValue(XAxisProperty);
+            set => SetValue(XAxisProperty, value);
+        }
+
         public static readonly BindableProperty IsShowXAxisProperty = BindableProperty.Create("IsShowXAxis", typeof(bool), typeof(SupportChartView), true);
         public bool IsShowXAxis
         {
@@ -125,6 +147,9 @@ namespace UltimateXF.Widget.Charts
             get => (bool)GetValue(IsScaleYEnabledProperty);
             set => SetValue(IsScaleYEnabledProperty, value);
         }
+
+        //Color templates
+
 
         public SupportChartView()
         {

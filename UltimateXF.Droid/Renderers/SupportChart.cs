@@ -4,6 +4,7 @@ using MikePhil.Charting.Components;
 using MikePhil.Charting.Data;
 using UltimateXF.Widget.Charts;
 using UltimateXF.Widget.Charts.Models;
+using UltimateXF.Widget.Charts.Models.Component;
 
 namespace UltimateXF.Droid.Renderers
 {
@@ -45,8 +46,29 @@ namespace UltimateXF.Droid.Renderers
             }
         }
 
+        public static void ConfigXAxis(XAxisConfig source, Chart chartOriginal)
+        {
+            if (source.LabelHeight.HasValue)
+                chartOriginal.XAxis.MLabelHeight = source.LabelHeight.Value;
+            if (source.LabelWidth.HasValue)
+                chartOriginal.XAxis.MLabelWidth = source.LabelWidth.Value;
+            if (source.XAXISPosition.HasValue)
+                chartOriginal.XAxis.Position = GetXAxisPosition(source.XAXISPosition.Value);
+        }
+
+        public static void ConfigLeftAxis(YAxisConfig source, Chart chartOriginal)
+        {
+            if (source.LabelHeight.HasValue)
+                chartOriginal.XAxis.MLabelHeight = source.LabelHeight.Value;
+            if (source.LabelWidth.HasValue)
+                chartOriginal.XAxis.MLabelWidth = source.LabelWidth.Value;
+            if (source.XAXISPosition.HasValue)
+                chartOriginal.XAxis.Position = GetXAxisPosition(source.XAXISPosition.Value);
+        }
+
         public static void OnInitializeChart(SupportChartView supportChart, BarLineChartBase chartOriginal)
         {
+            
             chartOriginal.XAxis.SetDrawGridLines(supportChart.IsShowXAxis);
             chartOriginal.XAxis.SetDrawAxisLine(supportChart.IsShowXAxisLine);
             chartOriginal.XAxis.SetDrawLabels(supportChart.IsShowXAxisValue);

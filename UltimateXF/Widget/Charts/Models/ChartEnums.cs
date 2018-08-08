@@ -10,4 +10,10 @@ namespace UltimateXF.Widget.Charts.Models
     {
         BOTTOM, TOP, BOTTOM_INSIDE, TOP_INSIDE, BOTH
     }
+    public enum YAXISLabelPosition
+    {
+        OUTSIDE_CHART, INSIDE_CHART
+    }
+
+
 }

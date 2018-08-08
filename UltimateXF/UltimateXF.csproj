@@ -24,5 +24,6 @@
     <Folder Include="Widget\Charts\Models\RadarChart\" />
     <Folder Include="Widget\Charts\Models\ScatterChart\" />
     <Folder Include="Widget\Charts\Models\CombinedChart\" />
+    <Folder Include="Widget\Charts\Models\Component\" />
   </ItemGroup>
 </Project>

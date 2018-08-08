@@ -33,7 +33,12 @@ namespace DemoXF
             var dataSet4 = new LineDataSet(entries, "Line DataSet")
             {
                 DrawValue = true,
+                CircleRadius = 5,
+                CircleHoleRadius = 0,
                 DataColorScheme = new List<Color>(){
+                    Color.Accent
+                },
+                CircleColors =  new List<Color>(){
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
                 DrawMode = LineDataSetMode.CUBIC_BEZIER,

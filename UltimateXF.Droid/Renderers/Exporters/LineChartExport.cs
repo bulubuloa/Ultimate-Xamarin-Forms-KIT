@@ -19,6 +19,7 @@ namespace UltimateXF.Droid.Renderers.Exporters
 
                 if (itemChild.IF_GetDataColorScheme() != null)
                     dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
+                
 
                 IntializeDataSet(itemChild, dataSet);
                 dataSetItems.Add(dataSet);
