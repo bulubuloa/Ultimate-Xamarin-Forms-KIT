@@ -19,7 +19,8 @@ Setup for Android project (add to MainActivity before LoadApplication)
 
  **Required:**
  - ***[Xamarin.Forms](>= 3.1.0.697729)***
- - ***Install Xamarin.Swift4 package for iOS project (this app could not run on simulator - only real device)*** 
+ - ***Your app could not run on simulator(iOS) - only real device)***
+ - ***Install Xamarin.Swift4 package for iOS project(maybe if your app can't start)*** 
 		
 
     [Xamarin.Swift4] (>= 4.0.0)
