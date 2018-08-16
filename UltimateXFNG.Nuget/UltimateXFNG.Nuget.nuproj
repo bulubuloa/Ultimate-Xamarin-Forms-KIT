@@ -4,22 +4,18 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C814FC45-D4DE-4B79-ADF1-40AE8276A0AC}</ProjectGuid>
-    <Description>A powerful Android/iOS chart view / graph view library, binding support for Xamarin.Forms, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, dragging and animations.</Description>
+    <ProjectGuid>{F8F797F3-275E-4C6F-A28D-C5F8D5EADD5B}</ProjectGuid>
+    <Description>UltimateXF</Description>
     <PackageId>UltimateXF</PackageId>
-    <PackageVersion>1.1</PackageVersion>
+    <PackageVersion>1.25</PackageVersion>
     <Authors>QuachHoang</Authors>
     <DevelopmentDependency>false</DevelopmentDependency>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UltimateXF.Nuget</RootNamespace>
+    <RootNamespace>UltimateXFNG.Nuget</RootNamespace>
     <UsePartialTypes>false</UsePartialTypes>
-    <AssemblyName>UltimateXF.Nuget</AssemblyName>
+    <AssemblyName>UltimateXFNG.Nuget</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <Owners>HoangQuach</Owners>
-    <Copyright>HoangQuach2018</Copyright>
-    <PackageProjectUrl>https://github.com/bulubuloa/Ultimate-Xamarin-Forms-KIT</PackageProjectUrl>
-    <Title>UltimateXF MPAndroidChart for Xamarin.Forms</Title>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
