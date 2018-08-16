@@ -33,8 +33,8 @@ namespace DemoXF
             var dataSet4 = new LineDataSet(entries, "Line DataSet")
             {
                 DrawValue = true,
-                CircleRadius = 5,
-                CircleHoleRadius = 0,
+                CircleRadius = 10,
+                CircleHoleRadius = 0.5f,
                 DataColorScheme = new List<Color>(){
                     Color.Accent
                 },
@@ -56,6 +56,11 @@ namespace DemoXF
             var data5 = new LineChartData(new List<ILineDataSet>() { dataSet5 }, labels);
 
             chart.ChartData = data4;
+            chart.DescriptionChart.Text = "Test label";
+            chart.AxisRight.DrawAxisLine = false;
+            chart.AxisRight.DrawGridLines = false;
+            chart.AxisRight.Enabled = false;
+
             chart2.ChartData = data5;
         }
     }

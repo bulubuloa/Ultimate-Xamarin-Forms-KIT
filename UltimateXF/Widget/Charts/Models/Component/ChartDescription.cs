@@ -8,7 +8,6 @@ namespace UltimateXF.Widget.Charts.Models.Component
 
         public ChartDescription()
         {
-            Text = "Description Chart";
         }
     }
 }

@@ -58,12 +58,12 @@ namespace UltimateXF.Droid.Renderers
 
         public static void ConfigLeftAxis(YAxisConfig source, Chart chartOriginal)
         {
-            if (source.LabelHeight.HasValue)
-                chartOriginal.XAxis.MLabelHeight = source.LabelHeight.Value;
-            if (source.LabelWidth.HasValue)
-                chartOriginal.XAxis.MLabelWidth = source.LabelWidth.Value;
-            if (source.XAXISPosition.HasValue)
-                chartOriginal.XAxis.Position = GetXAxisPosition(source.XAXISPosition.Value);
+            //if (source.LabelHeight.HasValue)
+            //    chartOriginal.XAxis.MLabelHeight = source.LabelHeight.Value;
+            //if (source.LabelWidth.HasValue)
+            //    chartOriginal.XAxis.MLabelWidth = source.LabelWidth.Value;
+            //if (source.XAXISPosition.HasValue)
+                //chartOriginal.XAxis.Position = GetXAxisPosition(source.XAXISPosition.Value);
         }
 
         public static void OnInitializeChart(SupportChartView supportChart, BarLineChartBase chartOriginal)

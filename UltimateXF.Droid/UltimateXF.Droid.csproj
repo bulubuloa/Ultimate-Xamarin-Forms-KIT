@@ -133,6 +133,7 @@
     <Compile Include="Renderers\Exporters\LineChartExport.cs" />
     <Compile Include="Renderers\Exporters\ScatterChartExport.cs" />
     <Compile Include="Renderers\SupportLineChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\SupportChartExtended.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -15,5 +15,13 @@ namespace UltimateXF.Widget.Charts.Models
         OUTSIDE_CHART, INSIDE_CHART
     }
 
+    public enum AXISDependency
+    {
+        LEFT, RIGHT
+    }
 
+    public enum PaintAlign
+    {
+        LEFT, RIGHT, CENTER
+    }
 }

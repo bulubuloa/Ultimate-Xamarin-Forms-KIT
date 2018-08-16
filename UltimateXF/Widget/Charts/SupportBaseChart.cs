@@ -14,11 +14,11 @@ namespace UltimateXF.Widget.Charts
             set => SetValue(XAxisProperty, value);
         }
 
-        public static readonly BindableProperty DescriptionProperty = BindableProperty.Create("Description", typeof(ChartDescription), typeof(SupportBaseChart), new ChartDescription());
-        public ChartDescription Description
+        public static readonly BindableProperty DescriptionChartProperty = BindableProperty.Create("DescriptionChart", typeof(ChartDescription), typeof(SupportBaseChart), new ChartDescription());
+        public ChartDescription DescriptionChart
         {
-            get => (ChartDescription)GetValue(DescriptionProperty);
-            set => SetValue(DescriptionProperty, value);
+            get => (ChartDescription)GetValue(DescriptionChartProperty);
+            set => SetValue(DescriptionChartProperty, value);
         }
 
         public static readonly BindableProperty LogEnabledProperty = BindableProperty.Create("LogEnabled", typeof(bool?), typeof(SupportBaseChart), null);
