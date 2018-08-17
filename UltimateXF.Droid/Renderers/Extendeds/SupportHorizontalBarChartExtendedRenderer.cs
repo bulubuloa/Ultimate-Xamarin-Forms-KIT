@@ -1,10 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using Android.Content;
 using MikePhil.Charting.Charts;
 using UltimateXF.Droid.Renderers.Extendeds;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.Android;
 
 [assembly: ExportRenderer(typeof(SupportHorizontalBarChartExtended), typeof(SupportHorizontalBarChartExtendedRenderer))]
 namespace UltimateXF.Droid.Renderers.Extendeds

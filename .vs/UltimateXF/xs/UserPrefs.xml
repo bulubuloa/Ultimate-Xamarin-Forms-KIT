@@ -1,26 +1,30 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/Extendeds/SupportHorizontalBarChartExtendedRenderer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF/Widget/Charts/Models/RadarChart/RadarDataSet.cs">
     <Files>
-      <File FileName="UltimateXF.Droid/Renderers/Extendeds/SupportHorizontalBarChartExtendedRenderer.cs" Line="52" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/SupportHorizontalBarChartExtended.cs" Line="10" Column="2" />
-      <File FileName="UltimateXF.iOS/Renderers/Extendeds/SupportBarChartExtendedRenderer.cs" Line="27" Column="10" />
-      <File FileName="UltimateXF.Droid/Renderers/Extendeds/SupportBarChartExtendedRenderer.cs" Line="50" Column="10" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/Renderers/Extendeds/SupportHorizontalBarChartExtendedRenderer.cs" Line="26" Column="1" NotebookId="1" />
+      <File FileName="DemoXF/RadarChartPage.xaml.cs" Line="35" Column="38" />
+      <File FileName="DemoXF/RadarChartPage.xaml" Line="20" Column="1" />
+      <File FileName="UltimateXF/Widget/Charts/Archive/SupportRadarChart.cs" Line="20" Column="6" />
+      <File FileName="UltimateXF/Widget/Charts/Models/RadarChart/RadarDataSet.cs" Line="6" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
             <Node name="DemoAPP" expanded="True">
-              <Node name="DemoXF" expanded="True" />
+              <Node name="DemoXF" expanded="True">
+                <Node name="RadarChartPage.xaml" expanded="True" />
+              </Node>
               <Node name="DemoXF.iOS" expanded="True" />
             </Node>
             <Node name="Library" expanded="True">
               <Node name="UltimateXF" expanded="True">
                 <Node name="Widget" expanded="True">
                   <Node name="Charts" expanded="True">
+                    <Node name="Archive" expanded="True" />
                     <Node name="Models" expanded="True">
-                      <Node name="BubbleChart" expanded="True" />
+                      <Node name="RadarChart" expanded="True">
+                        <Node name="RadarDataSet.cs" selected="True" />
+                      </Node>
                     </Node>
                   </Node>
                 </Node>
@@ -34,9 +38,7 @@
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True">
                   <Node name="Exporters" expanded="True" />
-                  <Node name="Extendeds" expanded="True">
-                    <Node name="SupportHorizontalBarChartExtendedRenderer.cs" selected="True" />
-                  </Node>
+                  <Node name="Extendeds" expanded="True" />
                 </Node>
               </Node>
               <Node name="UltimateXF.Nuget" expanded="True" />

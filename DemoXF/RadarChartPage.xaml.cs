@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using UltimateXF.Widget.Charts.Models;
+﻿using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.RadarChart;
 using Xamarin.Forms;
 
@@ -13,18 +11,26 @@ namespace DemoXF
             InitializeComponent();
 
             var entries = new List<RadarEntry>();
-            entries.Add(new RadarEntry(5));
-            entries.Add(new RadarEntry(7));
-            entries.Add(new RadarEntry(10));
-            entries.Add(new RadarEntry(8));
-            entries.Add(new RadarEntry(14));
+            entries.Add(new RadarEntry(40));
+            entries.Add(new RadarEntry(50));
+            entries.Add(new RadarEntry(20));
+            entries.Add(new RadarEntry(70));
+            entries.Add(new RadarEntry(60));
+            entries.Add(new RadarEntry(50));
+            entries.Add(new RadarEntry(100));
+            entries.Add(new RadarEntry(70));
+            entries.Add(new RadarEntry(75));
 
             var labels = new List<string>();
-            labels.Add("col1");
-            labels.Add("col2");
-            labels.Add("col3");
-            labels.Add("col4");
-            labels.Add("col5");
+            labels.Add("Party A");
+            labels.Add("Party B");
+            labels.Add("Party C");
+            labels.Add("Party D");
+            labels.Add("Party E");
+            labels.Add("Party F");
+            labels.Add("Party G");
+            labels.Add("Party H");
+            labels.Add("Party I");
 
             var dataSet4 = new RadarDataSet(entries, "Radar DataSet")
             {
