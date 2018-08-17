@@ -4,6 +4,7 @@ using System.Linq;
 
 using Foundation;
 using UIKit;
+using UltimateXF.iOS;
 
 namespace DemoXF.iOS
 {
@@ -23,7 +24,7 @@ namespace DemoXF.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            UltimateXF.iOS.UltimateXF.Initialize();
+            UltimateXFSettup.Initialize();
 
             LoadApplication(new App());
             return base.FinishedLaunching(app, options);

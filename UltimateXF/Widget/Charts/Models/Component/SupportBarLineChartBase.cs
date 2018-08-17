@@ -123,9 +123,7 @@ namespace UltimateXF.Widget.Charts.Models.Component
 
         void AxisLeft_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
-            
             OnPropertyChanged(AxisRightProperty.PropertyName);
         }
-
     }
 }

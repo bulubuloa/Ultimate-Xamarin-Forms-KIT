@@ -1,27 +1,41 @@
-﻿<Properties StartupConfiguration="{69DDDC64-AE48-4836-980A-2863207BFF23}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF/Widget/Charts/Models/Component/SupportBarLineChartBase.cs">
-    <Files>
-      <File FileName="UltimateXF.Droid/Renderers/Exporters/LineChartExport.cs" Line="11" Column="48" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineDataSet.cs" Line="26" Column="10" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartRenderer.cs" Line="45" Column="14" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportChartExtended.cs" Line="181" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/ConfigBase.cs" Line="30" Column="33" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/AxisConfigBase.cs" Line="25" Column="36" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/XAxisConfig.cs" Line="10" Column="16" />
-      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="67" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF.Droid/Renderers/SupportLineChartExtendedRenderer.cs" Line="43" Column="57" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportLineChartExtended.cs" Line="17" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/SupportBarLineChartBase.cs" Line="6" Column="54" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportBaseChart.cs" Line="8" Column="18" NotebookId="1" />
-      <File FileName="DemoXF/LineChartPage.xaml" Line="18" Column="1" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/YAxisConfig.cs" Line="6" Column="29" NotebookId="1" />
-      <File FileName="UltimateXF.Droid/UltimateXF.cs" Line="14" Column="6" NotebookId="1" />
-      <File FileName="UltimateXF.iOS/UltimateXF.cs" Line="4" Column="5" NotebookId="1" />
-      <File FileName="DemoXF/MainPage.xaml" Line="88" Column="15" NotebookId="1" />
-      <File FileName="DemoXF/MainPage.xaml.cs" Line="13" Column="15" NotebookId="1" />
-      <File FileName="DemoXF/App.xaml.cs" Line="14" Column="59" NotebookId="1" />
-      <File FileName="DemoXF/BarChartPage.xaml" Line="33" Column="1" NotebookId="1" />
-    </Files>
+﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="UltimateXF" expanded="True">
+            <Node name="DemoAPP" expanded="True">
+              <Node name="DemoXF" expanded="True" />
+              <Node name="DemoXF.iOS" expanded="True" />
+            </Node>
+            <Node name="Library" expanded="True">
+              <Node name="UltimateXF" expanded="True">
+                <Node name="Widget" expanded="True">
+                  <Node name="Charts" expanded="True">
+                    <Node name="Models" expanded="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="UltimateXF.Droid" expanded="True">
+                <Node name="Renderers" expanded="True">
+                  <Node name="Exporters" expanded="True" />
+                  <Node name="Extendeds" expanded="True">
+                    <Node name="SupportRadarChartExtendedRenderer.cs" selected="True" />
+                  </Node>
+                </Node>
+              </Node>
+              <Node name="UltimateXF.iOS" expanded="True">
+                <Node name="Renderers" expanded="True">
+                  <Node name="Exporters" expanded="True" />
+                  <Node name="Extendeds" expanded="True" />
+                </Node>
+              </Node>
+              <Node name="UltimateXF.Nuget" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -31,5 +45,5 @@
   <MonoDevelop.Ide.ItemProperties.Library.UltimateXF.Droid PreferredExecutionTarget="Android.E5AZCY489464" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.bacd535954e069cb541d979bfee0213ea979867e" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3E1706BF-323D-427B-A7B0-D4465227F3F9" automaticSigning="False" />
 </Properties>

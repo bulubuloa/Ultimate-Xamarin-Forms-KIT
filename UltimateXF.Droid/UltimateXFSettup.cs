@@ -3,7 +3,7 @@ using Android.App;
 
 namespace UltimateXF.Droid
 {
-    public static class UltimateXF
+    public static class UltimateXFSettup
     {
         public static Activity Context;
 

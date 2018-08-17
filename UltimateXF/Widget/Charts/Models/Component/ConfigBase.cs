@@ -60,8 +60,8 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        private int? _TextColor;
-        public int? TextColor
+        private Color? _TextColor;
+        public Color? TextColor
         {
             get => _TextColor;
             set

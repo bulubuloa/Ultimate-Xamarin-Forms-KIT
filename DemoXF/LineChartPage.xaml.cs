@@ -56,10 +56,15 @@ namespace DemoXF
             var data5 = new LineChartData(new List<ILineDataSet>() { dataSet5 }, labels);
 
             chart.ChartData = data4;
-            chart.DescriptionChart.Text = "Test label";
+            chart.DescriptionChart.Text = "Test label 11";
+            chart.AxisLeft.DrawGridLines = false;
+            chart.AxisLeft.DrawAxisLine = false;
+            chart.AxisLeft.Enabled = false;
             chart.AxisRight.DrawAxisLine = false;
             chart.AxisRight.DrawGridLines = false;
             chart.AxisRight.Enabled = false;
+            chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
+            chart.XAxis.DrawGridLines = false;
 
             chart2.ChartData = data5;
         }
