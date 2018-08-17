@@ -37,7 +37,8 @@ namespace DemoXF
                 DrawValue = false,
                 DataColorScheme = new List<Color>(){
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
+                },
+                DrawF
             };
             var data4 = new RadarChartData(new List<IRadarDataSet>() { dataSet4 }, labels);
 
