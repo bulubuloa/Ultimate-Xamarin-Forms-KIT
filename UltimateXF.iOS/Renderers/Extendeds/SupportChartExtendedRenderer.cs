@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
 using iOSCharts;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms.Platform.iOS;
@@ -39,7 +40,8 @@ namespace UltimateXF.iOS.Renderers.Extendeds
 
         protected virtual void OnInitializeOriginalChart()
         {
-            
+            OriginalChartView = (TOriginalChart)Activator.CreateInstance(typeof(TOriginalChart));
+            OriginalChartView.Frame = this.Frame;
         }
 
         protected virtual void OnInitializeOriginalChartSettings()

@@ -8,19 +8,19 @@ using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(SupportBarChartExtended), typeof(SupportBarChartExtendedRenderer))]
+[assembly: ExportRenderer(typeof(SupportBubbleChartExtended), typeof(SupportBubbleChartExtendedRenderer))]
 namespace UltimateXF.iOS.Renderers.Extendeds
 {
-    public class SupportBarChartExtendedRenderer : SupportBarLineChartBaseExtendedRenderer<SupportBarChartExtended, BarChartView>
+    public class SupportBubbleChartExtendedRenderer : SupportBarLineChartBaseExtendedRenderer<SupportBubbleChartExtended, BubbleChartView>
     {
-        public SupportBarChartExtendedRenderer()
+        public SupportBubbleChartExtendedRenderer()
         {
         }
 
         protected override void OnElementPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             base.OnElementPropertyChanged(sender, e);
-            if (e.PropertyName.Equals(nameof(SupportBarChartExtended.ChartData)))
+            if (e.PropertyName.Equals(nameof(SupportBubbleChartExtended.ChartData)))
             {
                 OnInitializeChartData();
             }
@@ -31,20 +31,19 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = new List<BarChartDataSet>();
-
+                var dataSetItems = new List<BubbleChartDataSet>();
                 foreach (var item in SupportChartView.ChartData.DataSetItems)
                 {
-                    var entryOriginal = item.IF_GetEntry().Select(obj => new BarChartDataEntry(obj.GetXPosition(), obj.GetYPosition()));
-                    var dataSet = new BarChartDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
+                    var entryOriginal = item.IF_GetEntry().Select(obj => new BubbleChartDataEntry(obj.GetXPosition(), obj.GetYPosition(), obj.GetSize()));
+                    var dataSet = new BubbleChartDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
                     if (item.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToUIColor()).ToArray(), 1f);
-                    dataSet.DrawValuesEnabled = (item.IF_GetDrawValue());
+                    {
+                        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToUIColor()).ToArray(),1f);
+                    }
                     dataSetItems.Add(dataSet);
                 }
-                var data = new BarChartData(dataSetItems.ToArray());
+                var data = new BubbleChartData(dataSetItems.ToArray());
                 OriginalChartView.Data = data;
-
                 OriginalChartView.ReloadInputViews();
                 OriginalChartView.SetNeedsDisplay();
             }

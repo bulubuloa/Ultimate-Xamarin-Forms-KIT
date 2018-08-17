@@ -24,15 +24,6 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             }
         }
 
-        protected override void OnInitializeOriginalChart()
-        {
-            base.OnInitializeOriginalChart();
-            OriginalChartView = new PieChartView()
-            {
-                Frame = this.Frame
-            };
-        }
-
         protected override void OnInitializeOriginalChartSettings()
         {
             base.OnInitializeOriginalChartSettings();

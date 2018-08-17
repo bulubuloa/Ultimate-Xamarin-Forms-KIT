@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using Android.Content;
+using Android.Widget;
 using MikePhil.Charting.Charts;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms.Platform.Android;
@@ -41,7 +42,8 @@ namespace UltimateXF.Droid.Renderers.Extendeds
 
         protected virtual void OnInitializeOriginalChart()
         {
-
+            OriginalChartView = (TOriginalChart)Activator.CreateInstance(typeof(TOriginalChart),Context);
+            OriginalChartView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
         }
 
         protected virtual void OnInitializeOriginalChartSettings()

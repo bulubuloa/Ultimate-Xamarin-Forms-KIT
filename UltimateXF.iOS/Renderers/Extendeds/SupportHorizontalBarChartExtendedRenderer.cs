@@ -8,12 +8,12 @@ using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
-[assembly: ExportRenderer(typeof(SupportBarChartExtended), typeof(SupportBarChartExtendedRenderer))]
+[assembly: ExportRenderer(typeof(SupportHorizontalBarChartExtended), typeof(SupportHorizontalBarChartExtendedRenderer))]
 namespace UltimateXF.iOS.Renderers.Extendeds
 {
-    public class SupportBarChartExtendedRenderer : SupportBarLineChartBaseExtendedRenderer<SupportBarChartExtended, BarChartView>
+    public class SupportHorizontalBarChartExtendedRenderer : SupportBarLineChartBaseExtendedRenderer<SupportHorizontalBarChartExtended, HorizontalBarChartView>
     {
-        public SupportBarChartExtendedRenderer()
+        public SupportHorizontalBarChartExtendedRenderer()
         {
         }
 

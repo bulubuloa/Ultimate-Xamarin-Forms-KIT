@@ -141,6 +141,10 @@
     <Compile Include="Renderers\Extendeds\SupportPieRadarChartBaseExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportPieChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportRadarChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Extendeds\SupportBubbleChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Extendeds\SupportCandleStickChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Extendeds\SupportScatterChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Extendeds\SupportHorizontalBarChartExtendedRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -28,13 +28,6 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             }
         }
 
-        protected override void OnInitializeOriginalChart()
-        {
-            base.OnInitializeOriginalChart();
-            OriginalChartView = new PieChart(this.Context);
-            OriginalChartView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
-        }
-
         protected override void OnInitializeOriginalChartSettings()
         {
             base.OnInitializeOriginalChartSettings();

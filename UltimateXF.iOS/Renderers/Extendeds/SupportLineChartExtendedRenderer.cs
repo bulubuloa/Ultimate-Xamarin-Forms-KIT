@@ -27,15 +27,6 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             }
         }
 
-        protected override void OnInitializeOriginalChart()
-        {
-            base.OnInitializeOriginalChart();
-            OriginalChartView = new LineChartView()
-            {
-                Frame = this.Frame
-            };
-        }
-
         protected override void OnInitializeChartData()
         {
             base.OnInitializeChartData();

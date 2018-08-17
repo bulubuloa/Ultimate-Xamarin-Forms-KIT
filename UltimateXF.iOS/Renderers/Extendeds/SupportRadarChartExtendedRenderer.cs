@@ -26,15 +26,6 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             }
         }
 
-        protected override void OnInitializeOriginalChart()
-        {
-            base.OnInitializeOriginalChart();
-            OriginalChartView = new RadarChartView()
-            {
-                Frame = this.Frame
-            };
-        }
-
         protected override void OnInitializeOriginalChartSettings()
         {
             base.OnInitializeOriginalChartSettings();

@@ -1,20 +1,17 @@
-﻿using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using Android.Content;
-using Android.Widget;
 using MikePhil.Charting.Charts;
 using UltimateXF.Droid.Renderers.Extendeds;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(SupportBarChartExtended), typeof(SupportBarChartExtendedRenderer))]
+[assembly: ExportRenderer(typeof(SupportHorizontalBarChartExtended), typeof(SupportHorizontalBarChartExtendedRenderer))]
 namespace UltimateXF.Droid.Renderers.Extendeds
 {
-    public class SupportBarChartExtendedRenderer : SupportBarLineChartBaseExtendedRenderer<SupportBarChartExtended, BarChart>
+    public class SupportHorizontalBarChartExtendedRenderer : SupportBarLineChartBaseExtendedRenderer<SupportHorizontalBarChartExtended, HorizontalBarChart>
     {
-        public SupportBarChartExtendedRenderer(Context context) : base(context)
+        public SupportHorizontalBarChartExtendedRenderer(Context context) : base(context)
         {
         }
 
