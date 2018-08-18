@@ -52,21 +52,21 @@ namespace UltimateXF.Droid.Renderers
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
-                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+                //SupportChart.OnInitializeChart(supportChart, chartOriginal);
 
-                var dataSupport = supportChart.ChartData.IF_GetDataSet();
+                //var dataSupport = supportChart.ChartData.IF_GetDataSet();
 
-                var entryOriginal = dataSupport.IF_GetEntry().Select(item => new PieEntry(item.GetPercent(),item.GetText()));
-                PieDataSet dataSet = new PieDataSet(entryOriginal.ToArray(), dataSupport.IF_GetTitle());
-                dataSet.SetColors(dataSupport.IF_GetDataColorScheme().Select(item=>item.ToAndroid().ToArgb()).ToArray());
+                //var entryOriginal = dataSupport.IF_GetEntry().Select(item => new PieEntry(item.GetPercent(),item.GetText()));
+                //PieDataSet dataSet = new PieDataSet(entryOriginal.ToArray(), dataSupport.IF_GetTitle());
+                //dataSet.SetColors(dataSupport.IF_GetDataColorScheme().Select(item=>item.ToAndroid().ToArgb()).ToArray());
 
-                PieData data = new PieData(dataSet);
-                data.SetValueFormatter(new PercentFormatter());
-                data.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
-                data.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
-                chartOriginal.SetEntryLabelColor(supportChart.ChartData.TextDisplayColor.ToAndroid());
-                chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
-                chartOriginal.Data = data;
+                //PieData data = new PieData(dataSet);
+                //data.SetValueFormatter(new PercentFormatter());
+                //data.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
+                //data.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToAndroid());
+                //chartOriginal.SetEntryLabelColor(supportChart.ChartData.TextDisplayColor.ToAndroid());
+                //chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
+                //chartOriginal.Data = data;
             }
         }
     }

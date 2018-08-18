@@ -1,20 +1,13 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF/Widget/Charts/Models/LineChart/LineChartData.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs">
     <Files>
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineDataSetXF.cs" Line="12" Column="59" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/ILineDataSet.cs" Line="12" Column="34" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/LineRadarDataSetXF.cs" Line="26" Column="10" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/LineScatterCandleRadarDataSetXF.cs" Line="21" Column="10" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/IDataSetXF.cs" Line="9" Column="29" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/IBarLineScatterCandleBubbleDataSetXF.cs" Line="11" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineChartData.cs" Line="13" Column="2" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/LineDataSet.cs" Line="10" Column="35" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/LineChart/ILineDataSetXF.cs" Line="19" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/ILineRadarDataSetXF.cs" Line="6" Column="117" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/ILineScatterCandleRadarDataSetXF.cs" Line="10" Column="2" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/BarLineScatterCandleBubbleDataSetXF.cs" Line="21" Column="10" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/DataSetXF.cs" Line="6" Column="79" NotebookId="1" />
-      <File FileName="UltimateXF/Widget/Charts/Models/Component/BaseDataSetXF.cs" Line="23" Column="46" NotebookId="1" />
+      <File FileName="UltimateXF/Widget/Charts/SupportPieChartExtended.cs" Line="103" Column="38" />
+      <File FileName="UltimateXF/Widget/Charts/Models/Component/SupportPieRadarChartBase.cs" Line="6" Column="18" />
+      <File FileName="UltimateXF.iOS/Renderers/SupportPieChartRenderer.cs" Line="73" Column="2" />
+      <File FileName="UltimateXF.iOS/Renderers/Extendeds/SupportPieChartExtendedRenderer.cs" Line="13" Column="70" />
+      <File FileName="UltimateXF.iOS/Renderers/Extendeds/SupportPieRadarChartBaseExtendedRenderer.cs" Line="7" Column="105" />
+      <File FileName="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" Line="95" Column="10" />
+      <File FileName="UltimateXF.iOS/Renderers/Extendeds/AxisSetupExtensions.cs" Line="11" Column="28" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -22,9 +15,10 @@
           <Node name="UltimateXF" expanded="True">
             <Node name="DemoAPP" expanded="True">
               <Node name="DemoXF" expanded="True">
+                <Node name="PieChartPage.xaml" expanded="True" />
                 <Node name="RadarChartPage.xaml" expanded="True" />
               </Node>
-              <Node name="DemoXF.iOS" expanded="True" />
+              <Node name="DemoXF.Android" expanded="True" />
             </Node>
             <Node name="Library" expanded="True">
               <Node name="UltimateXF" expanded="True">
@@ -32,41 +26,47 @@
                   <Node name="Charts" expanded="True">
                     <Node name="Models" expanded="True">
                       <Node name="Component" expanded="True" />
-                      <Node name="Formatters" expanded="True" />
-                      <Node name="LineChart" expanded="True">
-                        <Node name="LineChartData.cs" selected="True" />
-                      </Node>
-                      <Node name="RadarChart" expanded="True" />
+                      <Node name="ComponentXF" expanded="True" />
+                      <Node name="LineChart" expanded="True" />
+                      <Node name="PieChart" expanded="True" />
                     </Node>
                   </Node>
                 </Node>
               </Node>
               <Node name="UltimateXF.Droid" expanded="True">
                 <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
                   <Node name="Extendeds" expanded="True" />
                 </Node>
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
-                  <Node name="Extendeds" expanded="True" />
+                  <Node name="Extendeds" expanded="True">
+                    <Node name="SupportChartExtendedRenderer.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
-              <Node name="UltimateXF.Nuget" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportPieChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportPieChartExtendedRenderer.cs" line="74" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" line="90" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" line="91" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" line="87" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" line="88" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" line="30" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/AxisSetupExtensions.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/AxisSetupExtensions.cs" line="12" column="1" />
+      <Breakpoint file="/Users/quachhoang/Projects/Ultimate-Xamarin-Forms-KIT/UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" relfile="UltimateXF.iOS/Renderers/Extendeds/SupportChartExtendedRenderer.cs" line="86" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Library.UltimateXF.Droid PreferredExecutionTarget="Android.E5AZCY489464" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3E1706BF-323D-427B-A7B0-D4465227F3F9" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.bacd535954e069cb541d979bfee0213ea979867e" automaticSigning="False" />
 </Properties>

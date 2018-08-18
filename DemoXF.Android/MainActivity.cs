@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using UltimateXF.Droid;
 
 namespace DemoXF.Droid
 {
@@ -20,7 +21,7 @@ namespace DemoXF.Droid
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
-            UltimateXF.Droid.UltimateXF.Initialize(this);
+            UltimateXFSettup.Initialize(this);
 
             LoadApplication(new App());
         }

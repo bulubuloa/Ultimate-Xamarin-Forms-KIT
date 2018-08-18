@@ -30,30 +30,20 @@ namespace DemoXF
 
             var dataSet4 = new PieDataSet(entries, "Pie DataSet")
             {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate
-                }
+                
             };
             var data4 = new PieChartData(dataSet4, labels)
             {
-                ValueDisplaySize = 13,
-                ValueDisplayColor = Color.Blue,
-                TextDisplaySize = 10,
-                TextDisplayColor = Color.Green
+               
             };
 
             var dataSet5 = new PieDataSet(entries, "Pie DataSet")
             {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.GreenYellow,Color.Beige,Color.DarkRed,Color.BlanchedAlmond,Color.Brown,Color.Cyan
-                },
             };
             var data5 = new PieChartData(dataSet5, labels);
 
-            pieChart.ChartData = data4;
-            pieChart2.ChartData = data5;
+            //pieChart.ChartData = data4;
+            //pieChart2.ChartData = data5;
         }
     }
 }

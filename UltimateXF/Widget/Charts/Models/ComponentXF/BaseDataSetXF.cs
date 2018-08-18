@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UltimateXF.Widget.Charts.Models.ComponentXF;
 using UltimateXF.Widget.Charts.Models.Formatters;
 using Xamarin.Forms;
 
@@ -17,13 +18,24 @@ namespace UltimateXF.Widget.Charts.Models.Component
         }
     }
 
-    public abstract class BaseDataSetXF<TEntry> : BindableObject where TEntry : BaseEntry
+    public abstract class BaseDataSetXF<TEntry> : BindableObject,IBaseDataSetXF<TEntry> where TEntry : BaseEntry
     {
         /*
          * protected Typeface mValueTypeface;
          * protected MPPointF mIconsOffset = new MPPointF();
          * 
          */
+        private List<TEntry> _Values;
+        public List<TEntry> Values
+        {
+            get => _Values;
+            set
+            {
+                _Values = value;
+                OnPropertyChanged();
+            }
+        }
+
         private List<Color> _Colors;
         public List<Color> Colors
         {
@@ -145,8 +157,70 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        public BaseDataSetXF()
+        public BaseDataSetXF(List<TEntry> entries, string _label)
         {
+            this.Values = entries;
+            this.Label = _label;
+        }
+
+        public List<TEntry> IF_GetValues()
+        {
+            return Values;
+        }
+
+        public List<Color> IF_GetColors()
+        {
+            return Colors;
+        }
+
+        public List<Color> IF_GetValueColors()
+        {
+            return ValueColors;
+        }
+
+        public GradientColor IF_GetGradientColor()
+        {
+            return GradientColor;
+        }
+
+        public List<GradientColor> IF_GetGradientColors()
+        {
+            return GradientColors;
+        }
+
+        public string IF_GetLabel()
+        {
+            return Label;
+        }
+
+        public bool? IF_GetHighlightEnabled()
+        {
+            return HighlightEnabled;
+        }
+
+        public bool? IF_GetVisible()
+        {
+            return Visible;
+        }
+
+        public float? IF_GetValueTextSize()
+        {
+            return ValueTextSize;
+        }
+
+        public bool? IF_GetDrawIcons()
+        {
+            return DrawIcons;
+        }
+
+        public bool? IF_GetDrawValues()
+        {
+            return DrawValues;
+        }
+
+        public IValueFormatterXF IF_GetValueFormatter()
+        {
+            return ValueFormatter;
         }
     }
 }

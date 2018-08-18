@@ -51,22 +51,22 @@ namespace UltimateXF.iOS.Renderers
         {
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
-                SupportChart.OnInitializeChart(supportChart, chartOriginal);
+                //SupportChart.OnInitializeChart(supportChart, chartOriginal);
 
-                var data = supportChart.ChartData.IF_GetDataSet();
+                //var data = supportChart.ChartData.IF_GetDataSet();
 
-                var entryOriginal = data.IF_GetEntry().Select(item => new ChartDataEntry(item.GetPercent(),item.GetPercent()));
-                PieChartDataSet lineDataSet = new PieChartDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-                lineDataSet.SetColors(data.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(),1f);
-                PieChartData lineData = new PieChartData(new PieChartDataSet[]{lineDataSet} );
+                //var entryOriginal = data.IF_GetEntry().Select(item => new ChartDataEntry(item.GetPercent(),item.GetPercent()));
+                //PieChartDataSet lineDataSet = new PieChartDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
+                //lineDataSet.SetColors(data.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(),1f);
+                //PieChartData lineData = new PieChartData(new PieChartDataSet[]{lineDataSet} );
 
-                //lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
-                lineData.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToUIColor());
-                chartOriginal.EntryLabelColor = (supportChart.ChartData.TextDisplayColor.ToUIColor());
-                //chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
+                ////lineData.SetValueTextSize(supportChart.ChartData.ValueDisplaySize);
+                //lineData.SetValueTextColor(supportChart.ChartData.ValueDisplayColor.ToUIColor());
+                //chartOriginal.EntryLabelColor = (supportChart.ChartData.TextDisplayColor.ToUIColor());
+                ////chartOriginal.SetEntryLabelTextSize(supportChart.ChartData.TextDisplaySize);
 
-                //chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(data.IF_GetEntry().Select(item => item.GetText()).ToArray());
-                chartOriginal.Data = lineData;
+                ////chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(data.IF_GetEntry().Select(item => item.GetText()).ToArray());
+                //chartOriginal.Data = lineData;
             }
         }
     }

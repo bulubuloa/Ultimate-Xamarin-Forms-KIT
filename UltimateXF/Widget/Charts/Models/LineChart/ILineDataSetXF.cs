@@ -5,7 +5,7 @@ using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts.Models.LineChart
 {
-    public interface ILineDataSetXF<TEntry> : ILineRadarDataSetXF<TEntry>  where TEntry : BaseEntry
+    public interface ILineDataSetXF : ILineRadarDataSetXF<EntryChart>
     {
         LineDataSetMode? IF_GetMode();
         List<Color> IF_GetCircleColors();

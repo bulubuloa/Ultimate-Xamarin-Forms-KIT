@@ -75,15 +75,15 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSupport = SupportChartView.ChartData.IF_GetDataSet();
+                //var dataSupport = SupportChartView.ChartData.IF_GetDataSet();
 
-                var entryOriginal = dataSupport.IF_GetEntry().Select(item => new PieEntry(item.GetPercent(), item.GetText()));
-                PieDataSet dataSet = new PieDataSet(entryOriginal.ToArray(), dataSupport.IF_GetTitle());
-                dataSet.SetColors(dataSupport.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
-                var data = new PieData(dataSet);
+                //var entryOriginal = dataSupport.IF_GetEntry().Select(item => new PieEntry(item.GetPercent(), item.GetText()));
+                //PieDataSet dataSet = new PieDataSet(entryOriginal.ToArray(), dataSupport.IF_GetTitle());
+                //dataSet.SetColors(dataSupport.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
+                //var data = new PieData(dataSet);
 
-                OriginalChartView.Data = data;
-                OriginalChartView.Invalidate();
+                //OriginalChartView.Data = data;
+                //OriginalChartView.Invalidate();
             }
         }
     }

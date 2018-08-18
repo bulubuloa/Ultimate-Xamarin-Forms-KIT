@@ -10,6 +10,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Widget\SupportEntry.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Widget\" />
@@ -26,5 +27,6 @@
     <Folder Include="Widget\Charts\Models\CombinedChart\" />
     <Folder Include="Widget\Charts\Models\Component\" />
     <Folder Include="Widget\Charts\Archive\" />
+    <Folder Include="Widget\Charts\Models\ComponentXF\" />
   </ItemGroup>
 </Project>

@@ -1,24 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using UltimateXF.Widget.Charts.Models.Component;
 using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts.Models.PieChart
 {
-    public class PieChartData : BaseDataSingleSet<PieEntry, IPieDataSet>
+    public class PieChartData : ChartDataXF<IPieDataSet, PieEntry>
     {
-        public Color ValueDisplayColor { set; get; }
-        public float ValueDisplaySize { set; get; }
-
-        public Color TextDisplayColor { set; get; }
-        public float TextDisplaySize { set; get; }
-
-
-        public PieChartData(IPieDataSet _DataSetItems, List<string> _TitleItems) : base(_DataSetItems, _TitleItems)
+        public PieChartData(IPieDataSet dataSet, List<string> _Titles) : base(dataSet, _Titles)
         {
-            ValueDisplaySize = 13;
-            TextDisplaySize = 13;
-            ValueDisplayColor = Color.Black;
-            TextDisplayColor = Color.Black;
         }
     }
 }

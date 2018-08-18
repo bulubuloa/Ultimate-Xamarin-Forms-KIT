@@ -5,17 +5,6 @@ namespace UltimateXF.Widget.Charts.Models.Component
 {
     public abstract class DataSetXF<TEntry> : BaseDataSetXF<TEntry>,IDataSetXF<TEntry> where TEntry : BaseEntry
     {
-        private List<TEntry> _Values;
-        public List<TEntry> Values
-        {
-            get => _Values;
-            set
-            {
-                _Values = value;
-                OnPropertyChanged();
-            }
-        }
-
         private float? _YMax;
         public float? YMax
         {
@@ -60,15 +49,9 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        public DataSetXF(List<TEntry> values, String label)
+        public DataSetXF(List<TEntry> values, String label) : base(values,label)
         {
-            Values = values;
-            Label = label;
-        }
-
-        public List<TEntry> IF_GetValues()
-        {
-            return Values;
+            
         }
 
         public float? IF_GetYMax()

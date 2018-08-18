@@ -1,4 +1,5 @@
-﻿using System.ComponentModel;
+﻿using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers.Extendeds;
@@ -71,12 +72,15 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var data = SupportChartView.ChartData.IF_GetDataSet();
+                var data = SupportChartView.ChartData.DataSets;
+                var dataSetItems = new List<PieChartDataSet>();
+                foreach (var item in data)
+                {
+                    var entryOriginal = item.IF_GetValues().Select(obj => new ChartDataEntry(obj.GetPercent(), obj.GetPercent()));
+                    PieChartDataSet dataSet = new PieChartDataSet(entryOriginal.ToArray(), item.IF_GetLabel());
+                }
 
-                var entryOriginal = data.IF_GetEntry().Select(item => new ChartDataEntry(item.GetPercent(), item.GetPercent()));
-                PieChartDataSet dataSet = new PieChartDataSet(entryOriginal.ToArray(), data.IF_GetTitle());
-                dataSet.SetColors(data.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
-                PieChartData chartData = new PieChartData(new PieChartDataSet[] { dataSet });
+                PieChartData chartData = new PieChartData(dataSetItems.ToArray());
 
                 OriginalChartView.Data = chartData;
                 OriginalChartView.ReloadInputViews();

@@ -120,7 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Renderers\SupportEntryRenderer.cs" />
     <Compile Include="UltimateXFSettup.cs" />
     <Compile Include="Renderers\SupportLineChartRenderer.cs" />
     <Compile Include="Renderers\SupportBarChartRenderer.cs" />
