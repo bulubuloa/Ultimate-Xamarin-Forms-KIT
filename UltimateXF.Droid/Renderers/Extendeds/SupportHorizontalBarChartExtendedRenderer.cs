@@ -33,15 +33,15 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
                 var dataSetItems = new List<MikePhil.Charting.Data.BarDataSet>();
-                foreach (var item in SupportChartView.ChartData.DataSetItems)
-                {
-                    var entryOriginal = item.IF_GetEntry().Select(obj => new MikePhil.Charting.Data.BarEntry(obj.GetXPosition(), obj.GetYPosition()));
-                    var dataSet = new MikePhil.Charting.Data.BarDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
-                    if (item.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
-                    dataSet.SetDrawValues(item.IF_GetDrawValue());
-                    dataSetItems.Add(dataSet);
-                }
+                //foreach (var item in SupportChartView.ChartData.DataSetItems)
+                //{
+                //    var entryOriginal = item.IF_GetEntry().Select(obj => new MikePhil.Charting.Data.BarEntry(obj.GetXPosition(), obj.GetYPosition()));
+                //    var dataSet = new MikePhil.Charting.Data.BarDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
+                //    if (item.IF_GetDataColorScheme() != null)
+                //        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
+                //    dataSet.SetDrawValues(item.IF_GetDrawValue());
+                //    dataSetItems.Add(dataSet);
+                //}
 
                 var data = new MikePhil.Charting.Data.BarData(dataSetItems.ToArray());
                 OriginalChartView.Data = data;

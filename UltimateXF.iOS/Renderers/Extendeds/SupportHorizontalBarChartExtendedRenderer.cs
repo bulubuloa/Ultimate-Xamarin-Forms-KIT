@@ -33,15 +33,15 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             {
                 var dataSetItems = new List<BarChartDataSet>();
 
-                foreach (var item in SupportChartView.ChartData.DataSetItems)
-                {
-                    var entryOriginal = item.IF_GetEntry().Select(obj => new BarChartDataEntry(obj.GetXPosition(), obj.GetYPosition()));
-                    var dataSet = new BarChartDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
-                    if (item.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToUIColor()).ToArray(), 1f);
-                    dataSet.DrawValuesEnabled = (item.IF_GetDrawValue());
-                    dataSetItems.Add(dataSet);
-                }
+                //foreach (var item in SupportChartView.ChartData.DataSetItems)
+                //{
+                //    var entryOriginal = item.IF_GetEntry().Select(obj => new BarChartDataEntry(obj.GetXPosition(), obj.GetYPosition()));
+                //    var dataSet = new BarChartDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
+                //    if (item.IF_GetDataColorScheme() != null)
+                //        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToUIColor()).ToArray(), 1f);
+                //    dataSet.DrawValuesEnabled = (item.IF_GetDrawValue());
+                //    dataSetItems.Add(dataSet);
+                //}
                 var data = new BarChartData(dataSetItems.ToArray());
                 OriginalChartView.Data = data;
 

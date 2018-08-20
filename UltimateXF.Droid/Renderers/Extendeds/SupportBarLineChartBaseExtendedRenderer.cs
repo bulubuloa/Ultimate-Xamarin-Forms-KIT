@@ -66,7 +66,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
 
                 if (SupportChartView.AxisRight != null)
                 {
-                    var SupportAxisRight = SupportChartView.AxisLeft;
+                    var SupportAxisRight = SupportChartView.AxisRight;
                     var OriginalRightAxis = OriginalChartView.AxisRight;
 
                     OriginalRightAxis.SetupConfigBase(SupportAxisRight);

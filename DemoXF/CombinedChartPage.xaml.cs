@@ -74,14 +74,14 @@ namespace DemoXF
             var bubbleChartData = new BubbleChartData(new List<IBubbleDataSet>() { bubbleDataSet }, labels);
 
             //barchar
-            var barDataSet = new BarDataSet(entries, "Bar DataSet")
-            {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
-            };
-            var barChartData = new BarChartData(new List<IBarDataSet>() { barDataSet }, labels);
+            //var barDataSet = new BarDataSet(entries, "Bar DataSet")
+            //{
+            //    DrawValue = true,
+            //    DataColorScheme = new List<Color>(){
+            //        Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+            //    }
+            //};
+            //var barChartData = new BarChartData(new List<IBarDataSet>() { barDataSet }, labels);
 
             //candle
             var candleStickEntries = new List<CandleStickEntry>();
@@ -98,7 +98,7 @@ namespace DemoXF
 
             var combined = new CombinedChartData(null, labels)
             {
-                BarChartData = barChartData,
+                //BarChartData = barChartData,
                 BubbleChartData = bubbleChartData,
                 CandleStickChartData = stickChartData,
                 //LineChartData = lineChartData,

@@ -55,7 +55,7 @@ namespace UltimateXF.iOS.Renderers
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
                 SupportChart.OnInitializeChart(supportChart, chartOriginal);
-                chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
+                //chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
                 chartOriginal.Data = ChartExport.Export(supportChart.ChartData);
             }
         }

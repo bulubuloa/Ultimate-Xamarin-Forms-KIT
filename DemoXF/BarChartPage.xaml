@@ -7,26 +7,13 @@
         <StackLayout Orientation="Vertical"
                      Padding="10"
                      Spacing="20">
-            <ultimateChart:SupportBarChart x:Name="barChart"
-                                           HorizontalOptions="FillAndExpand"
-                                           VerticalOptions="FillAndExpand"
-                                           Description="Bar Chart 1"
-                                           IsShowLeftAxis="false"
-                                           IsShowLeftAxisLine="false"
-                                           IsShowLeftAxisValue="false"
-                                           IsShowRightAxis="false"
-                                           IsShowRightAxisLine="false"
-                                           IsShowRightAxisValue="false"
-                                           IsShowXAxis="true"
-                                           IsShowXAxisLine="true"
-                                           IsShowXAxisValue="true"
-                                           XAxisPosition="BOTTOM" />
-
-            <ultimateChart:SupportBarChart x:Name="barChart2"
-                                           HorizontalOptions="FillAndExpand"
-                                           VerticalOptions="FillAndExpand"
-                                           Description="Bar Chart 2"
-                                           XAxisPosition="BOTTOM" />
+            <ultimateChart:SupportBarChartExtended x:Name="chart"
+                                              HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand"/>
+            
+            <ultimateChart:SupportBarChartExtended x:Name="chart2"
+                                              HorizontalOptions="FillAndExpand"
+                                              VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
