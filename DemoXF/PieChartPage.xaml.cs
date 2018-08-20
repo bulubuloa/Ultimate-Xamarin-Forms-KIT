@@ -42,8 +42,8 @@ namespace DemoXF
             };
             var data5 = new PieChartData(dataSet5, labels);
 
-            //pieChart.ChartData = data4;
-            //pieChart2.ChartData = data5;
+            pieChart.ChartData = data4;
+            pieChart2.ChartData = data5;
         }
     }
 }

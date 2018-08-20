@@ -54,7 +54,7 @@ namespace UltimateXF.Droid.Renderers
             {
                 SupportChart.OnInitializeChart(supportLineChart,lineChart);
                 var data = supportLineChart.ChartData;
-                lineChart.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(data.TitleItems);
+                //lineChart.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(data.TitleItems);
                 lineChart.Data = ChartExport.Export(data);
             }
         }

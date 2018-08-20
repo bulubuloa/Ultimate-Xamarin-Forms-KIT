@@ -33,15 +33,11 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             if(OriginalChartView!=null && SupportChartView!=null && SupportChartView.ChartData!=null)
             {
                 var dataSetItems = new List<LineChartDataSet>();
-                foreach (var item in SupportChartView.ChartData.DataSetItems)
+                foreach (var item in SupportChartView.ChartData.DataSets)
                 {
-                    var entryOriginal = item.IF_GetEntry().Select(obj => new ChartDataEntry(obj.GetXPosition(),obj.GetYPosition()));
-                    var dataSet = new LineChartDataSet(entryOriginal.ToArray(),item.IF_GetTitle());
-                    if(item.IF_GetDataColorScheme()!=null)
-                    {
-                        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToUIColor()).ToArray(), 1f);
-                    }
-                    IntializeDataSet(item, dataSet);
+                    var entryOriginal = item.IF_GetValues().Select(obj => new ChartDataEntry(obj.GetXPosition(),obj.GetYPosition()));
+                    var dataSet = new LineChartDataSet(entryOriginal.ToArray(),item.IF_GetLabel());
+                    OnIntializeDataSet(item, dataSet);
                     dataSetItems.Add(dataSet);
                 }
                 var data = new iOSCharts.LineChartData(dataSetItems.ToArray());
@@ -52,28 +48,34 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             }
         }
 
-        private void IntializeDataSet(ILineDataSet source, LineChartDataSet original)
-        {
-            if (source.IF_GetDrawMode().HasValue)
-                original.Mode = (SupportChart.GetDrawLineMode(source.IF_GetDrawMode().Value));
 
+        private void OnIntializeDataSet(ILineDataSetXF source, LineChartDataSet original)
+        {
+            OnSettingsLineRadarDataSet(source,original);
+
+            if (source.IF_GetMode().HasValue)
+                original.Mode = (SupportChart.GetDrawLineMode(source.IF_GetMode().Value));
+            
+            if (source.IF_GetCircleColors() != null && source.IF_GetCircleColors().Count > 0)
+                original.CircleColors = source.IF_GetCircleColors().Select(item => item.ToUIColor()).ToArray();
+
+            if (source.IF_GetCircleHoleColor().HasValue)
+                original.CircleHoleColor = source.IF_GetCircleHoleColor().Value.ToUIColor();
+            
             if (source.IF_GetCircleRadius().HasValue)
                 original.CircleRadius = source.IF_GetCircleRadius().Value;
 
             if (source.IF_GetCircleHoleRadius().HasValue)
                 original.CircleHoleRadius = source.IF_GetCircleHoleRadius().Value;
 
-            if (source.IF_GetDrawCircle().HasValue)
-                original.DrawCirclesEnabled = (source.IF_GetDrawCircle().Value);
+            if (source.IF_GetCubicIntensity().HasValue)
+                original.CubicIntensity = source.IF_GetCubicIntensity().Value;
 
-            if (source.IF_GetCircleColors().Count > 0)
-                original.CircleColors = source.IF_GetCircleColors().Select(item => item.ToUIColor()).ToArray();
-
-            if (source.IF_GetDrawFilled().HasValue)
-                original.DrawFilledEnabled = (source.IF_GetDrawFilled().Value);
-
-            if (source.IF_GetLineWidth().HasValue)
-                original.LineWidth = source.IF_GetLineWidth().Value;
+            if (source.IF_GetDrawCircles().HasValue)
+                original.DrawCirclesEnabled = (source.IF_GetDrawCircles().Value);
+            
+            if (source.IF_GetDrawCircleHole().HasValue)
+                original.DrawCircleHoleEnabled = (source.IF_GetDrawCircleHole().Value);
         }
     }
 }

@@ -2,6 +2,7 @@
 using Android.Content;
 using MikePhil.Charting.Charts;
 using UltimateXF.Widget.Charts.Models.Component;
+using Xamarin.Forms.Platform.Android;
 
 namespace UltimateXF.Droid.Renderers.Extendeds
 {
@@ -72,6 +73,31 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     OriginalRightAxis.SetupAxisConfigBase(SupportAxisRight);
                     OriginalRightAxis.SetupYAxisConfig(SupportAxisRight);
                 }
+            }
+        }
+
+        protected virtual void OnSettingsLineRadarDataSet<TEntry>(ILineRadarDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.LineRadarDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
+        {
+            OnSettingsLineScatterCandleRadarDataSet(baseDataSetXF, originalBaseDataSet);
+
+            if (baseDataSetXF.IF_GetFillColor().HasValue)
+            {
+                originalBaseDataSet.FillColor = baseDataSetXF.IF_GetFillColor().Value.ToAndroid();
+            }
+
+            if (baseDataSetXF.IF_GetFillAlpha().HasValue)
+            {
+                originalBaseDataSet.FillAlpha = baseDataSetXF.IF_GetFillAlpha().Value;
+            }
+
+            if (baseDataSetXF.IF_GetLineWidth().HasValue)
+            {
+                originalBaseDataSet.LineWidth = baseDataSetXF.IF_GetLineWidth().Value;
+            }
+
+            if (baseDataSetXF.IF_GetDrawFilled().HasValue)
+            {
+                originalBaseDataSet.SetDrawFilled(baseDataSetXF.IF_GetDrawFilled().Value);
             }
         }
     }

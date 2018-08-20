@@ -1,9 +1,12 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Linq;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
 using UltimateXF.Widget.Charts;
+using UltimateXF.Widget.Charts.Models.Component;
+using UltimateXF.Widget.Charts.Models.ComponentXF;
 using Xamarin.Forms.Platform.Android;
 
 namespace UltimateXF.Droid.Renderers.Extendeds
@@ -106,6 +109,69 @@ namespace UltimateXF.Droid.Renderers.Extendeds
         protected virtual void OnInitializeChartData()
         {
 
+        }
+
+        protected virtual void OnSettingsBaseDataSet<TEntry>(IBaseDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.BaseDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
+        {
+            /*
+                 * Properties could not set
+                 * IF_GetValueColors
+                 * IF_GetGradientColor
+                 * IF_GetValueTextSize
+                 * IF_GetValueFormatter
+                 */
+            if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
+            {
+                originalBaseDataSet.SetColors(baseDataSetXF.IF_GetColors().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
+            }
+            //if (baseDataSetXF.IF_GetValueColors() != null && baseDataSetXF.IF_GetValueColors().Count > 0)
+            //{
+            //    originalBaseDataSet.ValueColors = (baseDataSetXF.IF_GetValueColors().Select(obj => obj.ToUIColor()).ToArray());
+            //}
+            if (baseDataSetXF.IF_GetHighlightEnabled().HasValue)
+            {
+                originalBaseDataSet.HighlightEnabled = baseDataSetXF.IF_GetHighlightEnabled().Value;
+            }
+            if (baseDataSetXF.IF_GetVisible().HasValue)
+            {
+                originalBaseDataSet.Visible = baseDataSetXF.IF_GetVisible().Value;
+            }
+            if (baseDataSetXF.IF_GetDrawIcons().HasValue)
+            {
+                originalBaseDataSet.SetDrawIcons(baseDataSetXF.IF_GetDrawIcons().Value);
+            }
+            if (baseDataSetXF.IF_GetDrawValues().HasValue)
+            {
+                originalBaseDataSet.SetDrawValues(baseDataSetXF.IF_GetDrawValues().Value);
+            }
+        }
+
+        protected virtual void OnSettingsBarLineScatterCandleBubbleDataSet<TEntry>(IBarLineScatterCandleBubbleDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.BarLineScatterCandleBubbleDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
+        {
+            OnSettingsBaseDataSet(baseDataSetXF, originalBaseDataSet);
+
+            if (baseDataSetXF.IF_GetighLightColor().HasValue)
+            {
+                originalBaseDataSet.HighLightColor = baseDataSetXF.IF_GetighLightColor().Value.ToAndroid();
+            }
+        }
+
+        protected virtual void OnSettingsLineScatterCandleRadarDataSet<TEntry>(ILineScatterCandleRadarDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.LineScatterCandleRadarDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
+        {
+            OnSettingsBarLineScatterCandleBubbleDataSet(baseDataSetXF, originalBaseDataSet);
+
+            if (baseDataSetXF.IF_GetDrawVerticalHighlightIndicator().HasValue)
+            {
+                originalBaseDataSet.SetDrawVerticalHighlightIndicator(baseDataSetXF.IF_GetDrawVerticalHighlightIndicator().Value);
+            }
+            if (baseDataSetXF.IF_GetDrawHorizontalHighlightIndicator().HasValue)
+            {
+                originalBaseDataSet.SetDrawHorizontalHighlightIndicator(baseDataSetXF.IF_GetDrawHorizontalHighlightIndicator().Value);
+            }
+            if (baseDataSetXF.IF_GetHighlightLineWidth().HasValue)
+            {
+                originalBaseDataSet.HighlightLineWidth = baseDataSetXF.IF_GetHighlightLineWidth().Value;
+            }
         }
     }
 }

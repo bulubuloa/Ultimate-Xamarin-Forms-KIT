@@ -45,15 +45,15 @@ namespace DemoXF
             var scatterChartData = new ScatterChartData(new List<IScatterDataSet>() { scatterDataSet }, labels);
 
             //line
-            var lineDataSet = new LineDataSet(entries, "Line DataSet")
-            {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                },
-                DrawMode = LineDataSetMode.CUBIC_BEZIER,
-            };
-            var lineChartData = new LineChartData(new List<ILineDataSet>() { lineDataSet }, labels);
+            //var lineDataSet = new LineDataSet(entries, "Line DataSet")
+            //{
+            //    DrawValue = true,
+            //    DataColorScheme = new List<Color>(){
+            //        Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+            //    },
+            //    DrawMode = LineDataSetMode.CUBIC_BEZIER,
+            //};
+            //var lineChartData = new LineChartData(new List<ILineDataSet>() { lineDataSet }, labels);
 
             //bubbed
             var bubbleEntries = new List<BubbleEntry>();
@@ -101,7 +101,7 @@ namespace DemoXF
                 BarChartData = barChartData,
                 BubbleChartData = bubbleChartData,
                 CandleStickChartData = stickChartData,
-                LineChartData = lineChartData,
+                //LineChartData = lineChartData,
                 ScatterChartData = scatterChartData
             };
             chart.ChartData = combined;
