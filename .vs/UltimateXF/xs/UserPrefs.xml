@@ -1,84 +1,27 @@
-<<<<<<< HEAD
-﻿<Properties StartupConfiguration="{69DDDC64-AE48-4836-980A-2863207BFF23}|Default">
-  <MonoDevelop.Ide.Workbench>
-=======
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/BarChartPage.xaml">
-    <Files>
-      <File FileName="DemoXF/BubbleChartPage.xaml.cs" Line="14" Column="13" />
-      <File FileName="DemoXF/CandleStickChartPage.xaml.cs" Line="21" Column="45" />
-      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="50" Column="101" />
-      <File FileName="DemoXF/BarChartPage.xaml.cs" Line="15" Column="50" />
-      <File FileName="DemoXF/CombinedChartPage.xaml" Line="11" Column="1" />
-      <File FileName="DemoXF/CombinedChartPage.xaml.cs" Line="86" Column="13" NotebookId="1" />
-      <File FileName="DemoXF/BarChartPage.xaml" Line="14" Column="13" NotebookId="1" />
-    </Files>
->>>>>>> dev
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
-<<<<<<< HEAD
+            <Node name="DemoAPP" expanded="True" />
             <Node name="Library" expanded="True">
               <Node name="UltimateXF" expanded="True" />
               <Node name="UltimateXF.Droid" expanded="True" />
-            </Node>
-            <Node name="UltimateXFNG.Nuget" expanded="True" selected="True">
-              <Node name="Packages" expanded="True" />
-=======
-            <Node name="DemoAPP" expanded="True">
-              <Node name="DemoXF" expanded="True">
-                <Node name="BarChartPage.xaml" expanded="True" selected="True" />
-                <Node name="BubbleChartPage.xaml" expanded="True" />
-                <Node name="CandleStickChartPage.xaml" expanded="True" />
-                <Node name="CombinedChartPage.xaml" expanded="True" />
-                <Node name="LineChartPage.xaml" expanded="True" />
-              </Node>
-            </Node>
-            <Node name="Library" expanded="True">
-              <Node name="UltimateXF" expanded="True">
-                <Node name="Widget" expanded="True">
-                  <Node name="Charts" expanded="True">
-                    <Node name="Models" expanded="True">
-                      <Node name="CandleStickChart" expanded="True" />
-                      <Node name="CombinedChart" expanded="True" />
-                      <Node name="Component" expanded="True" />
-                      <Node name="ComponentXF" expanded="True" />
-                    </Node>
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="UltimateXF.Droid" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
-                  <Node name="Extendeds" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="UltimateXF.iOS" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
-                  <Node name="Extendeds" expanded="True" />
-                </Node>
-              </Node>
->>>>>>> dev
+              <Node name="UltimateXF.iOS" expanded="True" />
             </Node>
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.Library.UltimateXF.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MultiItemStartupConfigurations />
-<<<<<<< HEAD
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.bacd535954e069cb541d979bfee0213ea979867e" automaticSigning="False" />
-=======
   <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.E5AZCY489464" />
   <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.bacd535954e069cb541d979bfee0213ea979867e" />
->>>>>>> dev
 </Properties>
