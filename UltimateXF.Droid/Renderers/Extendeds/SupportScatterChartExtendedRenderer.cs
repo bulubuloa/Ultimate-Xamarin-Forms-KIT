@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using Android.Content;
 using MikePhil.Charting.Charts;
 using UltimateXF.Droid.Renderers.Extendeds;
@@ -31,17 +28,8 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = SupportChartView.ChartData.IF_GetDataSet();
-                var listDataSetItems = new List<MikePhil.Charting.Data.ScatterDataSet>();
 
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new MikePhil.Charting.Data.Entry(item.GetXPosition(), item.GetYPosition()));
-                    var dataSet = new MikePhil.Charting.Data.ScatterDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    listDataSetItems.Add(dataSet);
-                }
-                var data = new MikePhil.Charting.Data.ScatterData(listDataSetItems.ToArray());
-                OriginalChartView.Data = data;
+                OriginalChartView.Data = Export.ExportScatterData(SupportChartView.ChartData);
                 OriginalChartView.Invalidate();
             }
         }

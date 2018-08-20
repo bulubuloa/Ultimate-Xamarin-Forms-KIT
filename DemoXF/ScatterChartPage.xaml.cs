@@ -32,19 +32,13 @@ namespace DemoXF
 
             var dataSet4 = new ScatterDataSet(entries, "Scatter DataSet")
             {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
+               
             };
             var data4 = new ScatterChartData(new List<IScatterDataSet>() { dataSet4 }, labels);
 
             var dataSet5 = new ScatterDataSet(entries, "Bar DataSet")
             {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.GreenYellow
-                }
+                
             };
             var data5 = new ScatterChartData(new List<IScatterDataSet>() { dataSet5 }, labels);
 

@@ -1,15 +1,10 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
-using MikePhil.Charting.Components;
-using MikePhil.Charting.Data;
+using UltimateXF.Droid.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
-using UltimateXF.Widget.Charts.Models;
-using UltimateXF.Widget.Charts.Models.Component;
-using UltimateXF.Widget.Charts.Models.ComponentXF;
 using Xamarin.Forms.Platform.Android;
 
 namespace UltimateXF.Droid.Renderers.Extendeds
@@ -20,9 +15,11 @@ namespace UltimateXF.Droid.Renderers.Extendeds
 
         protected TSupportView SupportChartView;
         protected TOriginalChart OriginalChartView;
+        protected ExtendedChartExport Export;
 
         public SupportChartExtendedRenderer(Context context) : base(context)
         {
+            Export = new ExtendedChartExport();
         }
 
         protected override void OnElementChanged(ElementChangedEventArgs<TSupportView> e)
@@ -112,130 +109,6 @@ namespace UltimateXF.Droid.Renderers.Extendeds
         protected virtual void OnInitializeChartData()
         {
 
-        }
-
-        protected virtual void OnSettingsBaseDataSet<TEntry>(IBaseDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.BaseDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
-        {
-            /*
-                 * Properties could not set
-                 * IF_GetValueColors
-                 * IF_GetGradientColor
-                 * IF_GetValueTextSize
-                 * IF_GetValueFormatter
-                 */
-            if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
-            {
-                originalBaseDataSet.SetColors(baseDataSetXF.IF_GetColors().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
-            }
-            //if (baseDataSetXF.IF_GetValueColors() != null && baseDataSetXF.IF_GetValueColors().Count > 0)
-            //{
-            //    originalBaseDataSet.ValueColors = (baseDataSetXF.IF_GetValueColors().Select(obj => obj.ToUIColor()).ToArray());
-            //}
-            if (baseDataSetXF.IF_GetHighlightEnabled().HasValue)
-            {
-                originalBaseDataSet.HighlightEnabled = baseDataSetXF.IF_GetHighlightEnabled().Value;
-            }
-            if (baseDataSetXF.IF_GetVisible().HasValue)
-            {
-                originalBaseDataSet.Visible = baseDataSetXF.IF_GetVisible().Value;
-            }
-            if (baseDataSetXF.IF_GetDrawIcons().HasValue)
-            {
-                originalBaseDataSet.SetDrawIcons(baseDataSetXF.IF_GetDrawIcons().Value);
-            }
-            if (baseDataSetXF.IF_GetDrawValues().HasValue)
-            {
-                originalBaseDataSet.SetDrawValues(baseDataSetXF.IF_GetDrawValues().Value);
-            }
-        }
-
-        protected virtual void OnSettingsBarLineScatterCandleBubbleDataSet<TEntry>(IBarLineScatterCandleBubbleDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.BarLineScatterCandleBubbleDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
-        {
-            OnSettingsBaseDataSet(baseDataSetXF, originalBaseDataSet);
-
-            if (baseDataSetXF.IF_GetighLightColor().HasValue)
-            {
-                originalBaseDataSet.HighLightColor = baseDataSetXF.IF_GetighLightColor().Value.ToAndroid();
-            }
-        }
-
-        protected virtual void OnSettingsLineScatterCandleRadarDataSet<TEntry>(ILineScatterCandleRadarDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.LineScatterCandleRadarDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
-        {
-            OnSettingsBarLineScatterCandleBubbleDataSet(baseDataSetXF, originalBaseDataSet);
-
-            if (baseDataSetXF.IF_GetDrawVerticalHighlightIndicator().HasValue)
-            {
-                originalBaseDataSet.SetDrawVerticalHighlightIndicator(baseDataSetXF.IF_GetDrawVerticalHighlightIndicator().Value);
-            }
-            if (baseDataSetXF.IF_GetDrawHorizontalHighlightIndicator().HasValue)
-            {
-                originalBaseDataSet.SetDrawHorizontalHighlightIndicator(baseDataSetXF.IF_GetDrawHorizontalHighlightIndicator().Value);
-            }
-            if (baseDataSetXF.IF_GetHighlightLineWidth().HasValue)
-            {
-                originalBaseDataSet.HighlightLineWidth = baseDataSetXF.IF_GetHighlightLineWidth().Value;
-            }
-        }
-
-        protected virtual void OnSettingsLineRadarDataSet<TEntry>(ILineRadarDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.LineRadarDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
-        {
-            OnSettingsLineScatterCandleRadarDataSet(baseDataSetXF, originalBaseDataSet);
-
-            if (baseDataSetXF.IF_GetFillColor().HasValue)
-            {
-                originalBaseDataSet.FillColor = baseDataSetXF.IF_GetFillColor().Value.ToAndroid();
-            }
-
-            if (baseDataSetXF.IF_GetFillAlpha().HasValue)
-            {
-                originalBaseDataSet.FillAlpha = baseDataSetXF.IF_GetFillAlpha().Value;
-            }
-
-            if (baseDataSetXF.IF_GetLineWidth().HasValue)
-            {
-                originalBaseDataSet.LineWidth = baseDataSetXF.IF_GetLineWidth().Value;
-            }
-
-            if (baseDataSetXF.IF_GetDrawFilled().HasValue)
-            {
-                originalBaseDataSet.SetDrawFilled(baseDataSetXF.IF_GetDrawFilled().Value);
-            }
-        }
-
-        protected LineDataSet.Mode GetDrawLineMode(LineDataSetMode mode)
-        {
-            switch (mode)
-            {
-                case LineDataSetMode.CUBIC_BEZIER:
-                    return LineDataSet.Mode.CubicBezier;
-                case LineDataSetMode.CUBIC_HORIZONTAL:
-                    return LineDataSet.Mode.HorizontalBezier;
-                case LineDataSetMode.STEPPED:
-                    return LineDataSet.Mode.Stepped;
-                case LineDataSetMode.LINEAR:
-                    return LineDataSet.Mode.Linear;
-                default:
-                    return LineDataSet.Mode.Linear;
-            }
-        }
-
-        protected XAxis.XAxisPosition GetXAxisPosition(XAXISPosition mode)
-        {
-            switch (mode)
-            {
-                case XAXISPosition.BOTTOM:
-                    return XAxis.XAxisPosition.Bottom;
-                case XAXISPosition.TOP:
-                    return XAxis.XAxisPosition.Top;
-                case XAXISPosition.BOTTOM_INSIDE:
-                    return XAxis.XAxisPosition.BottomInside;
-                case XAXISPosition.TOP_INSIDE:
-                    return XAxis.XAxisPosition.TopInside;
-                case XAXISPosition.BOTH:
-                    return XAxis.XAxisPosition.BothSided;
-                default:
-                    return XAxis.XAxisPosition.Top;
-            }
         }
     }
 }

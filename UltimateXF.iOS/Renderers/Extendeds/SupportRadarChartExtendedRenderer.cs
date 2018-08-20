@@ -83,7 +83,7 @@ namespace UltimateXF.iOS.Renderers.Extendeds
 
         private void OnIntializeDataSet(Widget.Charts.Models.RadarChart.IRadarDataSet source, RadarChartDataSet original)
         {
-            OnSettingsLineRadarDataSet(source, original);
+            Export.OnSettingsLineRadarDataSet(source, original);
 
             if (source.IF_GetDrawHighlightCircleEnabled().HasValue)
                 original.DrawHighlightCircleEnabled = (source.IF_GetDrawHighlightCircleEnabled().Value);

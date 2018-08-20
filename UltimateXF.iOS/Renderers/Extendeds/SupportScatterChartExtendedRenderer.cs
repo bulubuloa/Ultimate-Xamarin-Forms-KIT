@@ -6,6 +6,7 @@ using iOSCharts;
 using UltimateXF.iOS.Renderers.Extendeds;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
+using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(SupportScatterChartExtended), typeof(SupportScatterChartExtendedRenderer))]
 namespace UltimateXF.iOS.Renderers.Extendeds
@@ -30,18 +31,7 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = SupportChartView.ChartData.IF_GetDataSet();
-                var listDataSetItems = new List<ScatterChartDataSet>();
-
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new ChartDataEntry(item.GetXPosition(), item.GetYPosition()));
-                    var dataSet = new ScatterChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    listDataSetItems.Add(dataSet);
-                }
-                var data = new ScatterChartData(listDataSetItems.ToArray());
-                OriginalChartView.Data = data;
-
+                OriginalChartView.Data = Export.ExportScatterData(SupportChartView.ChartData);
                 OriginalChartView.ReloadInputViews();
                 OriginalChartView.SetNeedsDisplay();
             }

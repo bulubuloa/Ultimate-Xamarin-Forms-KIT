@@ -133,6 +133,8 @@
     <Compile Include="Renderers\Extendeds\SupportCandleStickChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportScatterChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportHorizontalBarChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Extendeds\SupportCombinedChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Exporters\ExtendedChartExport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

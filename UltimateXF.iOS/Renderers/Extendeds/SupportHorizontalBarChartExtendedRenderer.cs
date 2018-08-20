@@ -56,7 +56,7 @@ namespace UltimateXF.iOS.Renderers.Extendeds
              * IF_GetEntryCountStacks
              */
 
-            OnSettingsBarLineScatterCandleBubbleDataSet(source, original);
+            Export.OnSettingsBarLineScatterCandleBubbleDataSet(source, original);
 
             if (source.IF_GetBarShadowColor().HasValue)
                 original.BarShadowColor = source.IF_GetBarShadowColor().Value.ToUIColor();
