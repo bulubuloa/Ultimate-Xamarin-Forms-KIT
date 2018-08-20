@@ -10,6 +10,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Remove="Class1.cs" />
+    <Compile Remove="Widget\SupportEntry.cs" />
+    <Compile Remove="Widget\Charts\Archive\SupportBarChart.cs" />
+    <Compile Remove="Widget\Charts\Archive\SupportBubbleChart.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Widget\" />
@@ -24,5 +27,7 @@
     <Folder Include="Widget\Charts\Models\RadarChart\" />
     <Folder Include="Widget\Charts\Models\ScatterChart\" />
     <Folder Include="Widget\Charts\Models\CombinedChart\" />
+    <Folder Include="Widget\Charts\Models\Component\" />
+    <Folder Include="Widget\Charts\Models\ComponentXF\" />
   </ItemGroup>
 </Project>

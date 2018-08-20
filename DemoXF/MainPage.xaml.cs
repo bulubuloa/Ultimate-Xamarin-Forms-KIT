@@ -35,6 +35,10 @@ namespace DemoXF
             {
                 await Navigation.PushAsync(new BubbleChartPage());
             };
+            bttHorizontal.Clicked += async (sender, e) =>
+            {
+                await Navigation.PushAsync(new HorizontalBarCharPage());
+            };
         }
     }
 }

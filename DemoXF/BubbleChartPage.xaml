@@ -5,24 +5,11 @@
              xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="10" Spacing="20">
-            <ultimateChart:SupportBubbleChart x:Name="bubbleChart"
-                                              Description="Bubble Chart 1"
+            <ultimateChart:SupportBubbleChartExtended x:Name="chart"
                                               HorizontalOptions="FillAndExpand"
-                                              VerticalOptions="FillAndExpand"
-                                              IsShowLeftAxis="false"
-                                              IsShowLeftAxisLine="false"
-                                              IsShowLeftAxisValue="false"
-                                              IsShowRightAxis="false"
-                                              IsShowRightAxisLine="false"
-                                              IsShowRightAxisValue="false"
-                                              IsShowXAxis="false"
-                                              IsShowXAxisLine="false"
-                                              XAxisPosition="BOTTOM"
-                                              IsShowXAxisValue="true" />
+                                              VerticalOptions="FillAndExpand"/>
             
-            <ultimateChart:SupportBubbleChart x:Name="bubbleChart2"
-                                              Description="Bubble Chart 2"
-                                              XAxisPosition="BOTTOM"
+            <ultimateChart:SupportBubbleChartExtended x:Name="chart2"
                                               HorizontalOptions="FillAndExpand"
                                               VerticalOptions="FillAndExpand" />
         </StackLayout>

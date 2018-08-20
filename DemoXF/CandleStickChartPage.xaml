@@ -5,24 +5,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" Padding="10" Spacing="20">
-            <ultimateChart:SupportCandleStickChart x:Name="chart"
-                                              Description="Candle Stick Chart 1"
+            <ultimateChart:SupportCandleStickChartExtended x:Name="chart"
                                               HorizontalOptions="FillAndExpand"
-                                              VerticalOptions="FillAndExpand"
-                                              IsShowLeftAxis="false"
-                                              IsShowLeftAxisLine="false"
-                                              IsShowLeftAxisValue="false"
-                                              IsShowRightAxis="false"
-                                              IsShowRightAxisLine="false"
-                                              IsShowRightAxisValue="false"
-                                              IsShowXAxis="false"
-                                              IsShowXAxisLine="false"
-                                              XAxisPosition="BOTTOM"
-                                              IsShowXAxisValue="true" />
+                                              VerticalOptions="FillAndExpand"/>
             
-            <ultimateChart:SupportCandleStickChart x:Name="chart2"
-                                              Description="Candle Stick 2"
-                                              XAxisPosition="BOTTOM"
+            <ultimateChart:SupportCandleStickChartExtended x:Name="chart2"
                                               HorizontalOptions="FillAndExpand"
                                               VerticalOptions="FillAndExpand" />
         </StackLayout>

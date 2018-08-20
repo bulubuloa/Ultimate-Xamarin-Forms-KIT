@@ -17,95 +17,73 @@ namespace DemoXF
         {
             InitializeComponent();
 
-            var entries = new List<EntryChart>();
-            entries.Add(new EntryChart(0, 5));
-            entries.Add(new EntryChart(1, 7));
-            entries.Add(new EntryChart(2, 10));
-            entries.Add(new EntryChart(3, 3));
-            entries.Add(new EntryChart(4, 1));
-            entries.Add(new EntryChart(5, 7));
-            entries.Add(new EntryChart(6, 2));
-
+            var entrieLine = new List<EntryChart>();
+            var entries = new List<BubbleEntry>();
+            var entries2 = new List<BubbleEntry>();
             var labels = new List<string>();
-            labels.Add("col1");
-            labels.Add("col2");
-            labels.Add("col3");
-            labels.Add("col4");
-            labels.Add("col5");
-            labels.Add("col6");
-            labels.Add("col7");
 
-            var scatterDataSet = new ScatterDataSet(entries, "Scatter DataSet")
-            {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
-            };
-            var scatterChartData = new ScatterChartData(new List<IScatterDataSet>() { scatterDataSet }, labels);
+            Random random = new Random();
 
-            //line
-            var lineDataSet = new LineDataSet(entries, "Line DataSet")
+
+            for (int i = 0; i < 8; i++)
             {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
+                entrieLine.Add(new EntryChart(i, random.Next(20)));
+                entries.Add(new BubbleEntry(i, random.Next(8), random.Next(20)));
+                entries2.Add(new BubbleEntry(i, random.Next(8), random.Next(20)));
+                labels.Add("Entry" + i);
+            }
+
+            var entriesCandle = new List<CandleStickEntry>();
+            entriesCandle.Add(new CandleStickEntry(0, 4.62f, 2.02f, 2.70f, 4.13f));
+            entriesCandle.Add(new CandleStickEntry(1, 5.50f, 2.70f, 3.35f, 4.96f));
+            entriesCandle.Add(new CandleStickEntry(2, 5.25f, 3.02f, 3.50f, 4.50f));
+            entriesCandle.Add(new CandleStickEntry(3, 6f, 3.25f, 4.40f, 5.0f));
+            entriesCandle.Add(new CandleStickEntry(4, 5.57f, 2f, 2.80f, 4.5f));
+
+            var dataSetBubble = new BubbleDataSet(entries, "Bubble DataSet 1")
+            {
+                Colors = new List<Color>(){
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
-                DrawMode = LineDataSetMode.CUBIC_BEZIER,
             };
-            var lineChartData = new LineChartData(new List<ILineDataSet>() { lineDataSet }, labels);
+            var dataBubble = new BubbleChartData(new List<IBubbleDataSet>() { dataSetBubble }, labels);
 
-            //bubbed
-            var bubbleEntries = new List<BubbleEntry>();
-            bubbleEntries.Add(new BubbleEntry(0, 0, 0f));
-            bubbleEntries.Add(new BubbleEntry(1, 50f, 3f));
-            bubbleEntries.Add(new BubbleEntry(2, 10f, 5f));
-            bubbleEntries.Add(new BubbleEntry(3, 30f, 1f));
-            bubbleEntries.Add(new BubbleEntry(4, 20f, 2f));
-            bubbleEntries.Add(new BubbleEntry(5, 15f, 4f));
-            bubbleEntries.Add(new BubbleEntry(6, 0, 0f));
-            var bubbleDataSet = new BubbleDataSet(bubbleEntries, "Bubble DataSet")
+
+            var dataSetCandle = new CandleStickDataSet(entriesCandle, "Candle Stick DataSet 1")
             {
-                DrawValue = false,
-                DataColorScheme = new List<Color>(){
+                DecreasingColor = Color.Red,
+                IncreasingColor = Color.Green
+            };
+            var dataCandle = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSetCandle }, labels);
+
+
+            var dataSetLine = new LineDataSetXF(entrieLine, "Line DataSet 1")
+            {
+                CircleRadius = 10,
+                CircleHoleRadius = 4f,
+                CircleColors = new List<Color>(){
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
+                },
+                CircleHoleColor = Color.Green,
+                Mode = LineDataSetMode.CUBIC_BEZIER
             };
-            var bubbleChartData = new BubbleChartData(new List<IBubbleDataSet>() { bubbleDataSet }, labels);
+            var dataLine = new LineChartData(new List<ILineDataSetXF>() { dataSetLine }, labels);
 
-            //barchar
-            var barDataSet = new BarDataSet(entries, "Bar DataSet")
+
+            var dataSetbar = new BarDataSet(entrieLine, "Bar DataSet 1")
             {
-                DrawValue = true,
-                DataColorScheme = new List<Color>(){
+                Colors = new List<Color>(){
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
+                },
             };
-            var barChartData = new BarChartData(new List<IBarDataSet>() { barDataSet }, labels);
+            var dataBar = new BarChartData(new List<IBarDataSet>() { dataSetbar }, labels);
 
-            //candle
-            var candleStickEntries = new List<CandleStickEntry>();
-            candleStickEntries.Add(new CandleStickEntry(0, 4.62f, 2.02f, 2.70f, 4.13f));
-            candleStickEntries.Add(new CandleStickEntry(1, 5.50f, 2.70f, 3.35f, 4.96f));
-            candleStickEntries.Add(new CandleStickEntry(2, 5.25f, 3.02f, 3.50f, 4.50f));
-            candleStickEntries.Add(new CandleStickEntry(3, 6f, 3.25f, 4.40f, 5.0f));
-            candleStickEntries.Add(new CandleStickEntry(4, 5.57f, 2f, 2.80f, 4.5f));
-            var stickDataSet = new CandleStickDataSet(candleStickEntries, "Candle DataSet")
-            {
-                DrawValue = true,
-            };
-            var stickChartData = new CandleStickChartData(new List<ICandleStickDataSet>() { stickDataSet }, labels);
-
-            var combined = new CombinedChartData(null, labels)
-            {
-                BarChartData = barChartData,
-                BubbleChartData = bubbleChartData,
-                CandleStickChartData = stickChartData,
-                LineChartData = lineChartData,
-                ScatterChartData = scatterChartData
-            };
-            chart.ChartData = combined;
-            chart2.ChartData = combined;
+            var combinData = new CombinedChartData(null,labels);
+            combinData.BubbleChartData = dataBubble;
+            combinData.CandleStickChartData = dataCandle;
+            combinData.LineChartData = dataLine;
+            combinData.BarChartData = dataBar;
+            chart.ChartData = combinData;
         }
     }
 }

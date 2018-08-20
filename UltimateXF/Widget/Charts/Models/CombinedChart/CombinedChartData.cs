@@ -1,49 +1,72 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.BarChart;
 using UltimateXF.Widget.Charts.Models.BubbleChart;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
+using UltimateXF.Widget.Charts.Models.Component;
 using UltimateXF.Widget.Charts.Models.LineChart;
 using UltimateXF.Widget.Charts.Models.ScatterChart;
 
 namespace UltimateXF.Widget.Charts.Models.CombinedChart
 {
-    public class CombinedChartData : BaseData<BaseEntry, IBaseDataSet<BaseEntry>>
+    public class CombinedChartData : ChartDataXF<IDataSetXF<BaseEntry>, BaseEntry>
     {
-        public LineChartData LineChartData { set; private get; }
-        public BarChartData BarChartData { set; private get; }
-        public ScatterChartData ScatterChartData { set; private get; }
-        public CandleStickChartData CandleStickChartData { set; private get; }
-        public BubbleChartData BubbleChartData { set; private get; }
-
-        public CombinedChartData(List<IBaseDataSet<BaseEntry>> _DataSetItems, List<string> _TitleItems) : base(_DataSetItems, _TitleItems)
+        private LineChartData _LineChartData;
+        public LineChartData LineChartData 
         {
-            
+            get => _LineChartData;
+            set
+            {
+                _LineChartData = value;
+                OnPropertyChanged();
+            }
         }
 
-        public BubbleChartData GetBubbleData()
+        private BarChartData _BarChartData;
+        public BarChartData BarChartData
         {
-            return BubbleChartData;
+            get => _BarChartData;
+            set
+            {
+                _BarChartData = value;
+                OnPropertyChanged();
+            }
         }
 
-        public LineChartData GetLineData()
+        private ScatterChartData _ScatterChartData;
+        public ScatterChartData ScatterChartData
         {
-            return LineChartData;
+            get => _ScatterChartData;
+            set
+            {
+                _ScatterChartData = value;
+                OnPropertyChanged();
+            }
         }
 
-        public BarChartData GetBarData()
+        private CandleStickChartData _CandleStickChartData;
+        public CandleStickChartData CandleStickChartData
         {
-            return BarChartData;
+            get => _CandleStickChartData;
+            set
+            {
+                _CandleStickChartData = value;
+                OnPropertyChanged();
+            }
         }
 
-        public ScatterChartData GetScatterData()
+        private BubbleChartData _BubbleChartData;
+        public BubbleChartData BubbleChartData
         {
-            return ScatterChartData;
+            get => _BubbleChartData;
+            set
+            {
+                _BubbleChartData = value;
+                OnPropertyChanged();
+            }
         }
 
-        public CandleStickChartData GetCandleData()
+        public CombinedChartData(IDataSetXF<BaseEntry> dataSet, List<string> _Titles) : base(dataSet, _Titles)
         {
-            return CandleStickChartData;
         }
     }
 }
