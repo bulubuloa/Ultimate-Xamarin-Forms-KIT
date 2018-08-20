@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.RadarChart;
 using Xamarin.Forms;
 
@@ -11,47 +12,39 @@ namespace DemoXF
             InitializeComponent();
 
             var entries = new List<RadarEntry>();
-            entries.Add(new RadarEntry(40));
-            entries.Add(new RadarEntry(50));
-            entries.Add(new RadarEntry(20));
-            entries.Add(new RadarEntry(70));
-            entries.Add(new RadarEntry(60));
-            entries.Add(new RadarEntry(50));
-            entries.Add(new RadarEntry(100));
-            entries.Add(new RadarEntry(70));
-            entries.Add(new RadarEntry(75));
-
+            var entries2 = new List<RadarEntry>();
             var labels = new List<string>();
-            labels.Add("Party A");
-            labels.Add("Party B");
-            labels.Add("Party C");
-            labels.Add("Party D");
-            labels.Add("Party E");
-            labels.Add("Party F");
-            labels.Add("Party G");
-            labels.Add("Party H");
-            labels.Add("Party I");
 
-            var dataSet4 = new RadarDataSet(entries, "Radar DataSet")
+            Random random = new Random();
+            for (int i = 0; i < 8; i++)
             {
-                DrawValue = false,
-                DataColorScheme = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                entries.Add(new RadarEntry(random.Next(100)));
+                entries2.Add(new RadarEntry(random.Next(100)));
+                labels.Add("Entry" + i);
+            }
+
+            var dataSet5 = new RadarDataSet(entries2, "Radar DataSet 1")
+            {
+                Colors = new List<Color>{
+                    Color.Red
                 },
+                FillColor = Color.Red,
+                DrawFilled = true,
+                DrawValues = false,
             };
-            var data4 = new RadarChartData(new List<IRadarDataSet>() { dataSet4 }, labels);
 
-            var dataSet5 = new RadarDataSet(entries, "Radar DataSet")
+            var dataSet4 = new RadarDataSet(entries, "Radar DataSet 2")
             {
-                DrawValue = false,
-                DataColorScheme = new List<Color>(){
-                    Color.GreenYellow
-                }
+                Colors = new List<Color>{
+                    Color.Green
+                },
+                FillColor = Color.Green,
+                DrawFilled = true,
+                DrawValues = false,
             };
-            var data5 = new RadarChartData(new List<IRadarDataSet>() { dataSet5 }, labels);
+            var data4 = new RadarChartData(new List<IRadarDataSet>() { dataSet4,dataSet5 }, labels);
 
             radarChart.ChartData = data4;
-            radarChart2.ChartData = data5;
         }
     }
 }

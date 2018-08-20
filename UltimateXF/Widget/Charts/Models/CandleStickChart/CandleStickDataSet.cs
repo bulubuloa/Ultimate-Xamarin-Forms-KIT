@@ -1,45 +1,133 @@
 ﻿using System;
 using System.Collections.Generic;
+using UltimateXF.Widget.Charts.Models.Component;
 using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts.Models.CandleStickChart
 {
-    public class CandleStickDataSet : BaseDataSet<CandleStickEntry>, ICandleStickDataSet
+    public enum PaintStyle
     {
-        public Color? DecreasingColor { set; private get; }
-        public Color? IncreasingColor { set; private get; }
-        public Color? HighLightColor { set; private get; }
-        public float? ShadowWidth { set; private get; }
-        public bool? ShowCandleBar { set; private get; }
-        public float? BarSpace { set; private get; }
-        public bool? ShadowColorSameAsCandle { set; private get; }
-        public PaintStyleEnum? IncreasingPaintStyle { set; private get; }
-        public PaintStyleEnum? DecreasingPaintStyle { set; private get; }
-        public Color? NeutralColor { set; private get; }
-        public Color? ShadowColor { set; private get; }
+        FILL,
+        FILL_AND_STROKE,
+        STROKE
+    }
+
+        
+    public class CandleStickDataSet : LineScatterCandleRadarDataSetXF<CandleStickEntry>, ICandleStickDataSet
+    {
+        private float? _ShadowWidth;
+        public float? ShadowWidth
+        {
+            get => _ShadowWidth;
+            set
+            {
+                _ShadowWidth = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool? _ShowCandleBar;
+        public bool? ShowCandleBar
+        {
+            get => _ShowCandleBar;
+            set
+            {
+                _ShowCandleBar = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private float? _BarSpace;
+        public float? BarSpace
+        {
+            get => _BarSpace;
+            set
+            {
+                _BarSpace = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private bool? _ShadowColorSameAsCandle;
+        public bool? ShadowColorSameAsCandle
+        {
+            get => _ShadowColorSameAsCandle;
+            set
+            {
+                _ShadowColorSameAsCandle = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private PaintStyle? _IncreasingPaintStyle;
+        public PaintStyle? IncreasingPaintStyle
+        {
+            get => _IncreasingPaintStyle;
+            set
+            {
+                _IncreasingPaintStyle = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private PaintStyle? _DecreasingPaintStyle;
+        public PaintStyle? DecreasingPaintStyle
+        {
+            get => _DecreasingPaintStyle;
+            set
+            {
+                _DecreasingPaintStyle = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Color? _NeutralColor;
+        public Color? NeutralColor
+        {
+            get => _NeutralColor;
+            set
+            {
+                _NeutralColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Color? _IncreasingColor;
+        public Color? IncreasingColor
+        {
+            get => _IncreasingColor;
+            set
+            {
+                _IncreasingColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Color? _DecreasingColor;
+        public Color? DecreasingColor
+        {
+            get => _DecreasingColor;
+            set
+            {
+                _DecreasingColor = value;
+                OnPropertyChanged();
+            }
+        }
+
+        private Color? _ShadowColor;
+        public Color? ShadowColor
+        {
+            get => _ShadowColor;
+            set
+            {
+                _ShadowColor = value;
+                OnPropertyChanged();
+            }
+        }
 
         public CandleStickDataSet(List<CandleStickEntry> _EntryItems, string _Title) : base(_EntryItems, _Title)
         {
-            DecreasingColor = Color.Red;
-            IncreasingColor = Color.Green;
-            HighLightColor = Color.FromRgb(142, 201, 25);
-            IncreasingPaintStyle = PaintStyleEnum.STROKE;
-            DecreasingPaintStyle = PaintStyleEnum.STROKE;
-        }
-
-        public Color? IF_GetDecreasingColor()
-        {
-            return DecreasingColor;
-        }
-
-        public Color? IF_GetHighLightColor()
-        {
-            return IncreasingColor;
-        }
-
-        public Color? IF_GetIncreasingColor()
-        {
-            return HighLightColor;
+            
         }
 
         public float? IF_GetShadowWidth()
@@ -62,12 +150,12 @@ namespace UltimateXF.Widget.Charts.Models.CandleStickChart
             return ShadowColorSameAsCandle;
         }
 
-        public PaintStyleEnum? IF_GetIncreasingPaintStyle()
+        public PaintStyle? IF_GetIncreasingPaintStyle()
         {
             return IncreasingPaintStyle;
         }
 
-        public PaintStyleEnum? IF_GetDecreasingPaintStyle()
+        public PaintStyle? IF_GetDecreasingPaintStyle()
         {
             return DecreasingPaintStyle;
         }
@@ -75,6 +163,16 @@ namespace UltimateXF.Widget.Charts.Models.CandleStickChart
         public Color? IF_GetNeutralColor()
         {
             return NeutralColor;
+        }
+
+        public Color? IF_GetIncreasingColor()
+        {
+            return IncreasingColor;
+        }
+
+        public Color? IF_GetDecreasingColor()
+        {
+            return DecreasingColor;
         }
 
         public Color? IF_GetShadowColor()

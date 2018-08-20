@@ -54,20 +54,20 @@ namespace UltimateXF.iOS.Renderers
             {
                 SupportChart.OnInitializeChart(supportChart, chartOriginal);
 
-                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
+                var dataSetItems = supportChart.ChartData.DataSets;
                 var listDataSetItems = new List<RadarChartDataSet>();
 
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new RadarChartDataEntry(item.GetValue()));
-                    RadarChartDataSet dataSet = new RadarChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    if (itemChild.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
-                    listDataSetItems.Add(dataSet);
-                }
+                //foreach (var itemChild in dataSetItems)
+                //{
+                //    var entryOriginal = itemChild.IF_GetEntry().Select(item => new RadarChartDataEntry(item.GetValue()));
+                //    RadarChartDataSet dataSet = new RadarChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                //    if (itemChild.IF_GetDataColorScheme() != null)
+                //        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
+                //    listDataSetItems.Add(dataSet);
+                //}
 
                 BubbleChartData data = new BubbleChartData(listDataSetItems.ToArray());
-                chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
+                //chartOriginal.XAxis.ValueFormatter = new ChartIndexAxisValueFormatter(supportChart.ChartData.TitleItems.ToArray());
                 chartOriginal.Data = data;
             }
         }

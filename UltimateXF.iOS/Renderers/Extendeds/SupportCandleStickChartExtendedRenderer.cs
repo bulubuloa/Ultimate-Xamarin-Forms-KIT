@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers.Extendeds;
-using UltimateXF.Widget;
 using UltimateXF.Widget.Charts;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
 using Xamarin.Forms;
@@ -33,14 +31,14 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = SupportChartView.ChartData.IF_GetDataSet();
+                var dataSetItems = SupportChartView.ChartData.DataSets;
                 var listDataSetItems = new List<CandleChartDataSet>();
 
                 foreach (var itemChild in dataSetItems)
                 {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new CandleChartDataEntry(item.GetXPosition(), item.GetHigh(), item.GetLow(), item.GetOpen(), item.GetClose()));
-                    CandleChartDataSet dataSet = new CandleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    IntializeDataSet(itemChild, dataSet);
+                    var entryOriginal = itemChild.IF_GetValues().Select(item => new CandleChartDataEntry(item.GetXPosition(), item.GetHigh(), item.GetLow(), item.GetOpen(), item.GetClose()));
+                    CandleChartDataSet dataSet = new CandleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetLabel());
+                    OnIntializeDataSet(itemChild, dataSet);
                     listDataSetItems.Add(dataSet);
                 }
 
@@ -52,27 +50,20 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             }
         }
 
-        private bool ConvertPaintStyle(PaintStyleEnum source)
+        private bool ConvertPaintStyle(PaintStyle source)
         {
             switch (source)
             {
-                case PaintStyleEnum.STROKE:
+                case PaintStyle.STROKE:
                     return false;
                 default:
                     return true;
             }
         }
 
-        private void IntializeDataSet(ICandleStickDataSet source, CandleChartDataSet original)
+        private void OnIntializeDataSet(ICandleStickDataSet source, CandleChartDataSet original)
         {
-            if (source.IF_GetDecreasingColor().HasValue)
-                original.DecreasingColor = source.IF_GetDecreasingColor().Value.ToUIColor();
-
-            if (source.IF_GetIncreasingColor().HasValue)
-                original.IncreasingColor = source.IF_GetIncreasingColor().Value.ToUIColor();
-
-            if (source.IF_GetHighLightColor().HasValue)
-                original.HighlightColor = source.IF_GetHighLightColor().Value.ToUIColor();
+            OnSettingsBarLineScatterCandleBubbleDataSet(source, original);
 
             if (source.IF_GetShadowWidth().HasValue)
                 original.ShadowWidth = source.IF_GetShadowWidth().Value;
@@ -94,6 +85,12 @@ namespace UltimateXF.iOS.Renderers.Extendeds
 
             if (source.IF_GetNeutralColor().HasValue)
                 original.NeutralColor = source.IF_GetNeutralColor().Value.ToUIColor();
+
+            if (source.IF_GetDecreasingColor().HasValue)
+                original.DecreasingColor = source.IF_GetDecreasingColor().Value.ToUIColor();
+
+            if (source.IF_GetIncreasingColor().HasValue)
+                original.IncreasingColor = source.IF_GetIncreasingColor().Value.ToUIColor();
 
             if (source.IF_GetShadowColor().HasValue)
                 original.ShadowColor = source.IF_GetShadowColor().Value.ToUIColor();

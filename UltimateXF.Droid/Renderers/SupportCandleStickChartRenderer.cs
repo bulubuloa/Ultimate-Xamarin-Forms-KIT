@@ -53,7 +53,7 @@ namespace UltimateXF.Droid.Renderers
             if (supportChart != null && supportChart.ChartData != null && chartOriginal != null)
             {
                 SupportChart.OnInitializeChart(supportChart, chartOriginal);
-                chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
+                //chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
                 chartOriginal.Data = ChartExport.Export(supportChart.ChartData);
             }
         }

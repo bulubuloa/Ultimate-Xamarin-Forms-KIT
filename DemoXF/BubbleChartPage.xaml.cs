@@ -12,43 +12,44 @@ namespace DemoXF
             InitializeComponent();
 
             var entries = new List<BubbleEntry>();
-            entries.Add(new BubbleEntry(0, 0, 0f));
-            entries.Add(new BubbleEntry(1, 50f, 3f));
-            entries.Add(new BubbleEntry(2, 10f, 5f));
-            entries.Add(new BubbleEntry(3, 30f, 1f));
-            entries.Add(new BubbleEntry(4, 20f, 2f));
-            entries.Add(new BubbleEntry(5, 15f, 4f));
-            entries.Add(new BubbleEntry(6, 0, 0f));
-
+            var entries2 = new List<BubbleEntry>();
             var labels = new List<string>();
-            labels.Add("");
-            labels.Add("col1");
-            labels.Add("col2");
-            labels.Add("col3");
-            labels.Add("col4");
-            labels.Add("col5");
-            labels.Add("");
 
-            var dataSet4 = new BubbleDataSet(entries, "Bubble DataSet")
+            Random random = new Random();
+            for (int i = 0; i < 8; i++)
             {
-                DrawValue = false,
-                DataColorScheme = new List<Color>(){
+                entries.Add(new BubbleEntry(i, random.Next(8),random.Next(20)));
+                entries2.Add(new BubbleEntry(i,random.Next(8), random.Next(20)));
+                labels.Add("Entry" + i);
+            }
+
+            var dataSet4 = new BubbleDataSet(entries, "Bubble DataSet 1")
+            {
+                Colors = new List<Color>(){
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                }
+                },
             };
+            var dataSet5 = new BubbleDataSet(entries2, "Bubble DataSet 2")
+            {
+                Colors = new List<Color>{
+                    Color.Green
+                },
+            };
+
             var data4 = new BubbleChartData(new List<IBubbleDataSet>() { dataSet4 }, labels);
 
-            var dataSet5 = new BubbleDataSet(entries, "Bubble DataSet")
-            {
-                DrawValue = false,
-                DataColorScheme = new List<Color>(){
-                    Color.GreenYellow
-                }
-            };
-            var data5 = new BubbleChartData(new List<IBubbleDataSet>() { dataSet5 }, labels);
+            chart.ChartData = data4;
+            chart.DescriptionChart.Text = "Test label chart description";
 
-            bubbleChart.ChartData = data4;
-            bubbleChart2.ChartData = data5;
+            chart.AxisLeft.DrawGridLines = false;
+            chart.AxisLeft.DrawAxisLine = true;
+            chart.AxisLeft.Enabled = true;
+
+            chart.AxisRight.DrawAxisLine = false;
+            chart.AxisRight.DrawGridLines = false;
+            chart.AxisRight.Enabled = false;
+
+           chart.XAxis.DrawGridLines = false;
         }
     }
 }

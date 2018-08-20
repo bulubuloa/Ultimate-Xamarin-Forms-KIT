@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using Android.Content;
 using MikePhil.Charting.Charts;
 using UltimateXF.Droid.Renderers.Extendeds;
-using UltimateXF.Widget;
 using UltimateXF.Widget.Charts;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
 using Xamarin.Forms;
@@ -34,46 +32,39 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = SupportChartView.ChartData.IF_GetDataSet();
+                var dataSetItems = SupportChartView.ChartData.DataSets;
                 var listDataSetItems = new List<MikePhil.Charting.Data.CandleDataSet>();
 
                 foreach (var itemChild in dataSetItems)
                 {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new MikePhil.Charting.Data.CandleEntry(item.GetXPosition(), (float)item.GetHigh(), (float)item.GetLow(), (float)item.GetOpen(), (float)item.GetClose()));
-                    var dataSet = new MikePhil.Charting.Data.CandleDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    dataSet.SetDrawValues(false);
-                    IntializeDataSet(itemChild, dataSet);
+                    var entryOriginal = itemChild.IF_GetValues().Select(item => new MikePhil.Charting.Data.CandleEntry(item.GetXPosition(), (float)item.GetHigh(), (float)item.GetLow(), (float)item.GetOpen(), (float)item.GetClose()));
+                    var dataSet = new MikePhil.Charting.Data.CandleDataSet(entryOriginal.ToArray(), itemChild.IF_GetLabel());
+                    OnIntializeDataSet(itemChild, dataSet);
                     listDataSetItems.Add(dataSet);
                 }
 
                 var data = new MikePhil.Charting.Data.CandleData(listDataSetItems.ToArray());
-
                 OriginalChartView.Data = data;
                 OriginalChartView.Invalidate();
             }
         }
 
-        private Android.Graphics.Paint.Style ConvertPaintStyle(PaintStyleEnum source)
+        private Android.Graphics.Paint.Style ConvertPaintStyle(PaintStyle source)
         {
             switch (source)
             {
-                case PaintStyleEnum.STROKE:
+                case PaintStyle.STROKE:
                     return Android.Graphics.Paint.Style.Stroke;
+                case PaintStyle.FILL_AND_STROKE:
+                    return Android.Graphics.Paint.Style.FillAndStroke;
                 default:
                     return Android.Graphics.Paint.Style.Fill;
             }
         }
 
-        private void IntializeDataSet(ICandleStickDataSet source, MikePhil.Charting.Data.CandleDataSet original)
+        private void OnIntializeDataSet(ICandleStickDataSet source, MikePhil.Charting.Data.CandleDataSet original)
         {
-            if (source.IF_GetDecreasingColor().HasValue)
-                original.DecreasingColor = source.IF_GetDecreasingColor().Value.ToAndroid();
-
-            if (source.IF_GetIncreasingColor().HasValue)
-                original.IncreasingColor = source.IF_GetIncreasingColor().Value.ToAndroid();
-
-            if (source.IF_GetHighLightColor().HasValue)
-                original.HighLightColor = source.IF_GetHighLightColor().Value.ToAndroid();
+            OnSettingsBarLineScatterCandleBubbleDataSet(source, original);
 
             if (source.IF_GetShadowWidth().HasValue)
                 original.ShadowWidth = source.IF_GetShadowWidth().Value;
@@ -95,6 +86,12 @@ namespace UltimateXF.Droid.Renderers.Extendeds
 
             if (source.IF_GetNeutralColor().HasValue)
                 original.NeutralColor = source.IF_GetNeutralColor().Value.ToAndroid();
+
+            if (source.IF_GetDecreasingColor().HasValue)
+                original.DecreasingColor = source.IF_GetDecreasingColor().Value.ToAndroid();
+
+            if (source.IF_GetIncreasingColor().HasValue)
+                original.IncreasingColor = source.IF_GetIncreasingColor().Value.ToAndroid();
 
             if (source.IF_GetShadowColor().HasValue)
                 original.ShadowColor = source.IF_GetShadowColor().Value.ToAndroid();

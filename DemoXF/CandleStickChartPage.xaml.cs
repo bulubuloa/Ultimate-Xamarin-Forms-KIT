@@ -25,20 +25,26 @@ namespace DemoXF
             labels.Add("col4");
             labels.Add("col5");
 
-            var dataSet4 = new CandleStickDataSet(entries, "Candle DataSet")
+            var dataSet4 = new CandleStickDataSet(entries, "Candle Stick DataSet 1")
             {
-                DrawValue = true,
+                DecreasingColor = Color.Red,
+                IncreasingColor = Color.Green
             };
+
             var data4 = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSet4 }, labels);
 
-            var dataSet5 = new CandleStickDataSet(entries, "Candle DataSet")
-            {
-                DrawValue = true,
-            };
-            var data5 = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSet5 }, labels);
-
             chart.ChartData = data4;
-            chart2.ChartData = data5;
+            chart.DescriptionChart.Text = "Test label chart description";
+
+            chart.AxisLeft.DrawGridLines = false;
+            chart.AxisLeft.DrawAxisLine = true;
+            chart.AxisLeft.Enabled = true;
+
+            chart.AxisRight.DrawAxisLine = false;
+            chart.AxisRight.DrawGridLines = false;
+            chart.AxisRight.Enabled = false;
+
+            chart.XAxis.DrawGridLines = false;
         }
     }
 }

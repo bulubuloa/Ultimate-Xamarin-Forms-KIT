@@ -6,7 +6,8 @@ using UltimateXF.Widget.Charts.Models.Component;
 namespace UltimateXF.Droid.Renderers.Extendeds
 {
     public class SupportPieRadarChartBaseExtendedRenderer<TSupportView, TOriginalChart> : SupportChartExtendedRenderer<TSupportView, TOriginalChart>
-        where TSupportView : SupportPieRadarChartBase where TOriginalChart : PieRadarChartBase
+        where TSupportView : SupportPieRadarChartBase 
+        where TOriginalChart : PieRadarChartBase
     {
         
         public SupportPieRadarChartBaseExtendedRenderer(Context context) : base(context)

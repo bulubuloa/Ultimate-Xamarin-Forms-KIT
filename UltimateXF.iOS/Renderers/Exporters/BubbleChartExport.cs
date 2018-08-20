@@ -10,17 +10,17 @@ namespace UltimateXF.iOS.Renderers.Exporters
     {
         public iOSCharts.BubbleChartData Export(BubbleChartData supportChart)
         {
-            var dataSetItems = supportChart.IF_GetDataSet();
+            var dataSetItems = supportChart.DataSets;
             var listDataSetItems = new List<iOSCharts.BubbleChartDataSet>();
 
-            foreach (var itemChild in dataSetItems)
-            {
-                var entryOriginal = itemChild.IF_GetEntry().Select(item => new iOSCharts.BubbleChartDataEntry(item.GetXPosition(), item.GetYPosition(), item.GetSize()));
-                var dataSet = new iOSCharts.BubbleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                if (itemChild.IF_GetDataColorScheme() != null)
-                    dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
-                listDataSetItems.Add(dataSet);
-            }
+            //foreach (var itemChild in dataSetItems)
+            //{
+            //    var entryOriginal = itemChild.IF_GetEntry().Select(item => new iOSCharts.BubbleChartDataEntry(item.GetXPosition(), item.GetYPosition(), item.GetSize()));
+            //    var dataSet = new iOSCharts.BubbleChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+            //    if (itemChild.IF_GetDataColorScheme() != null)
+            //        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
+            //    listDataSetItems.Add(dataSet);
+            //}
             var data = new iOSCharts.BubbleChartData(listDataSetItems.ToArray());
             return data;
         }

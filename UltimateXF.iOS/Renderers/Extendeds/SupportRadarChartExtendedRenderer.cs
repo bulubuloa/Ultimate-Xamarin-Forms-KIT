@@ -62,15 +62,14 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = SupportChartView.ChartData.IF_GetDataSet();
+                var dataSetItems = SupportChartView.ChartData.DataSets;
                 var listDataSetItems = new List<RadarChartDataSet>();
 
                 foreach (var itemChild in dataSetItems)
                 {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new RadarChartDataEntry(item.GetValue()));
-                    RadarChartDataSet dataSet = new RadarChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    if (itemChild.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToUIColor()).ToArray(), 1f);
+                    var entryOriginal = itemChild.IF_GetValues().Select(item => new RadarChartDataEntry(item.GetValue()));
+                    RadarChartDataSet dataSet = new RadarChartDataSet(entryOriginal.ToArray(), itemChild.IF_GetLabel());
+                    OnIntializeDataSet(itemChild,dataSet);
                     listDataSetItems.Add(dataSet);
                 }
 
@@ -80,6 +79,32 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                 OriginalChartView.ReloadInputViews();
                 OriginalChartView.SetNeedsDisplay();
             }
+        }
+
+        private void OnIntializeDataSet(Widget.Charts.Models.RadarChart.IRadarDataSet source, RadarChartDataSet original)
+        {
+            OnSettingsLineRadarDataSet(source, original);
+
+            if (source.IF_GetDrawHighlightCircleEnabled().HasValue)
+                original.DrawHighlightCircleEnabled = (source.IF_GetDrawHighlightCircleEnabled().Value);
+
+            if (source.IF_GetHighlightCircleFillColor().HasValue)
+                original.HighlightCircleFillColor = (source.IF_GetHighlightCircleFillColor().Value.ToUIColor());
+
+            if (source.IF_GetHighlightCircleStrokeColor().HasValue)
+                original.HighlightCircleStrokeColor = (source.IF_GetHighlightCircleStrokeColor().Value.ToUIColor());
+
+            if (source.IF_GetHighlightCircleStrokeAlpha().HasValue)
+                original.HighlightCircleStrokeAlpha = (source.IF_GetHighlightCircleStrokeAlpha().Value);
+
+            if (source.IF_GetHighlightCircleInnerRadius().HasValue)
+                original.HighlightCircleInnerRadius = (source.IF_GetHighlightCircleInnerRadius().Value);
+
+            if (source.IF_GetHighlightCircleOuterRadius().HasValue)
+                original.HighlightCircleOuterRadius = (source.IF_GetHighlightCircleOuterRadius().Value);
+
+            if (source.IF_GetHighlightCircleStrokeWidth().HasValue)
+                original.HighlightCircleStrokeWidth = (source.IF_GetHighlightCircleStrokeWidth().Value);
         }
     }
 }

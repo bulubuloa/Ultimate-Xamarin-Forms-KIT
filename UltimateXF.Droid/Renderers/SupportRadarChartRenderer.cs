@@ -55,20 +55,20 @@ namespace UltimateXF.Droid.Renderers
             {
                 SupportChart.OnInitializeChart(supportChart, chartOriginal);
 
-                var dataSetItems = supportChart.ChartData.IF_GetDataSet();
+                var dataSetItems = supportChart.ChartData.DataSets;
                 var listDataSetItems = new List<RadarDataSet>();
 
-                foreach (var itemChild in dataSetItems)
-                {
-                    var entryOriginal = itemChild.IF_GetEntry().Select(item => new RadarEntry(item.GetValue()));
-                    RadarDataSet dataSet = new RadarDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
-                    if (itemChild.IF_GetDataColorScheme() != null)
-                        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
-                    listDataSetItems.Add(dataSet);
-                }
+                //foreach (var itemChild in dataSetItems)
+                //{
+                //    var entryOriginal = itemChild.IF_GetEntry().Select(item => new RadarEntry(item.GetValue()));
+                //    RadarDataSet dataSet = new RadarDataSet(entryOriginal.ToArray(), itemChild.IF_GetTitle());
+                //    if (itemChild.IF_GetDataColorScheme() != null)
+                //        dataSet.SetColors(itemChild.IF_GetDataColorScheme().Select(item => item.ToAndroid().ToArgb()).ToArray());
+                //    listDataSetItems.Add(dataSet);
+                //}
 
                 RadarData data = new RadarData(listDataSetItems.ToArray());
-                chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
+                //chartOriginal.XAxis.ValueFormatter = new StringXAxisFormaterRenderer(supportChart.ChartData.TitleItems);
                 chartOriginal.Data = data;
             }
         }
