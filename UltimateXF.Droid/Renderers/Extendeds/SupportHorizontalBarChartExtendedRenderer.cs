@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using Android.Content;
 using MikePhil.Charting.Charts;
+using MikePhil.Charting.Data;
 using UltimateXF.Droid.Renderers.Extendeds;
 using UltimateXF.Widget.Charts;
 using Xamarin.Forms;
@@ -32,21 +33,44 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = new List<MikePhil.Charting.Data.BarDataSet>();
-                //foreach (var item in SupportChartView.ChartData.DataSetItems)
-                //{
-                //    var entryOriginal = item.IF_GetEntry().Select(obj => new MikePhil.Charting.Data.BarEntry(obj.GetXPosition(), obj.GetYPosition()));
-                //    var dataSet = new MikePhil.Charting.Data.BarDataSet(entryOriginal.ToArray(), item.IF_GetTitle());
-                //    if (item.IF_GetDataColorScheme() != null)
-                //        dataSet.SetColors(item.IF_GetDataColorScheme().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
-                //    dataSet.SetDrawValues(item.IF_GetDrawValue());
-                //    dataSetItems.Add(dataSet);
-                //}
+                var dataSetItems = new List<BarDataSet>();
+                foreach (var item in SupportChartView.ChartData.DataSets)
+                {
+                    var entryOriginal = item.IF_GetValues().Select(obj => new BarEntry(obj.GetXPosition(), obj.GetYPosition()));
+                    var dataSet = new BarDataSet(entryOriginal.ToArray(), item.IF_GetLabel());
+                    OnIntializeDataSet(item, dataSet);
+                    dataSetItems.Add(dataSet);
+                }
 
-                var data = new MikePhil.Charting.Data.BarData(dataSetItems.ToArray());
+                var data = new BarData(dataSetItems.ToArray());
                 OriginalChartView.Data = data;
                 OriginalChartView.Invalidate();
             }
+        }
+
+        private void OnIntializeDataSet(UltimateXF.Widget.Charts.Models.BarChart.IBarDataSet source, BarDataSet original)
+        {
+            /*
+             * Properties could not set
+             * IF_GetStackSize
+             * IF_GetEntryCountStacks
+             */
+            OnSettingsBarLineScatterCandleBubbleDataSet(source, original);
+
+            if (source.IF_GetBarShadowColor().HasValue)
+                original.BarShadowColor = source.IF_GetBarShadowColor().Value.ToAndroid();
+
+            if (source.IF_GetBarBorderWidth().HasValue)
+                original.BarBorderWidth = source.IF_GetBarBorderWidth().Value;
+
+            if (source.IF_GetBarBorderColor().HasValue)
+                original.BarBorderColor = source.IF_GetBarBorderColor().Value.ToAndroid();
+
+            if (source.IF_GetHighLightAlpha().HasValue)
+                original.HighLightAlpha = source.IF_GetHighLightAlpha().Value;
+
+            if (source.IF_GetStackLabels() != null && source.IF_GetStackLabels().Count > 0)
+                original.SetStackLabels(source.IF_GetStackLabels().ToArray());
         }
     }
 }

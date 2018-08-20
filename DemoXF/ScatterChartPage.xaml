@@ -7,26 +7,13 @@
         <StackLayout Orientation="Vertical"
                      Padding="10"
                      Spacing="20">
-            <ultimateChart:SupportScatterChart x:Name="scatterChart"
-                                               HorizontalOptions="FillAndExpand"
-                                               VerticalOptions="FillAndExpand"
-                                               Description="Scatter Chart 1"
-                                               IsShowLeftAxis="false"
-                                               IsShowLeftAxisLine="false"
-                                               IsShowLeftAxisValue="false"
-                                               IsShowRightAxis="false"
-                                               IsShowRightAxisLine="false"
-                                               IsShowRightAxisValue="false"
-                                               IsShowXAxis="false"
-                                               IsShowXAxisLine="false"
-                                               IsShowXAxisValue="true"
-                                               XAxisPosition="BOTTOM" />
+            <ultimateChart:SupportScatterChartExtended x:Name="scatterChart"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       VerticalOptions="FillAndExpand" />
 
-            <ultimateChart:SupportScatterChart x:Name="scatterChart2"
-                                               HorizontalOptions="FillAndExpand"
-                                               VerticalOptions="FillAndExpand"
-                                               Description="Scatter Chart 2"
-                                               XAxisPosition="BOTTOM" />
+            <ultimateChart:SupportScatterChartExtended x:Name="scatterChart2"
+                                                       HorizontalOptions="FillAndExpand"
+                                                       VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

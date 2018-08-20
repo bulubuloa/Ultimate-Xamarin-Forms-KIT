@@ -196,5 +196,41 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                 originalBaseDataSet.DrawFilledEnabled = baseDataSetXF.IF_GetDrawFilled().Value;
             }
         }
+
+        protected XAxisLabelPosition GetXAxisPosition(XAXISPosition mode)
+        {
+            switch (mode)
+            {
+                case XAXISPosition.BOTTOM:
+                    return XAxisLabelPosition.Bottom;
+                case XAXISPosition.TOP:
+                    return XAxisLabelPosition.Top;
+                case XAXISPosition.BOTTOM_INSIDE:
+                    return XAxisLabelPosition.BottomInside;
+                case XAXISPosition.TOP_INSIDE:
+                    return XAxisLabelPosition.TopInside;
+                case XAXISPosition.BOTH:
+                    return XAxisLabelPosition.BothSided;
+                default:
+                    return XAxisLabelPosition.Top;
+            }
+        }
+
+        protected LineChartMode GetDrawLineMode(LineDataSetMode mode)
+        {
+            switch (mode)
+            {
+                case LineDataSetMode.CUBIC_BEZIER:
+                    return LineChartMode.CubicBezier;
+                case LineDataSetMode.CUBIC_HORIZONTAL:
+                    return LineChartMode.HorizontalBezier;
+                case LineDataSetMode.STEPPED:
+                    return LineChartMode.Stepped;
+                case LineDataSetMode.LINEAR:
+                    return LineChartMode.Linear;
+                default:
+                    return LineChartMode.Linear;
+            }
+        }
     }
 }

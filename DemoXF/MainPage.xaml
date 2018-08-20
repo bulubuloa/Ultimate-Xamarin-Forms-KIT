@@ -39,50 +39,12 @@
                     HeightRequest="40"
                     HorizontalOptions="FillAndExpand"
                     Text="Bubble Chart" />
-            
-            <!--<ultimateChart:SupportBarChart x:Name="lineChart"
-                                            VerticalOptions="FillAndExpand"
-                                            HorizontalOptions="FillAndExpand"
-                                            Description="Renderer"
-                                            IsShowLeftAxis="false"
-                                            IsShowLeftAxisLine="true"
-                                            IsShowLeftAxisValue="true"
-                                            IsShowRightAxis="false"
-                                            IsShowRightAxisLine="false"
-                                            IsShowRightAxisValue="false"
-                                            IsShowXAxis="false"
-                                            IsShowXAxisLine="true"
-                                            IsShowXAxisValue="true"
-                                            XAxisPosition="BOTTOM" />
 
-            <ultimateChart:SupportBarChart x:Name="lineChart2"
-                                            VerticalOptions="FillAndExpand"
-                                            HorizontalOptions="FillAndExpand"
-                                            IsShowLeftAxis="true"
-                                            IsShowRightAxis="true"
-                                            IsShowXAxis="true" />-->
-
-            <!--<ultimateChart:SupportPieChart
-                x:Name="pieChart"
-                HeightRequest="400"
-                VerticalOptions="FillAndExpand"
-                HorizontalOptions="FillAndExpand"/>-->
-
-            <!-- <ultimateChart:SupportBubbleChart x:Name="bubbleChart"
-                                              HeightRequest="400"
-                                              HorizontalOptions="FillAndExpand"
-                                              VerticalOptions="FillAndExpand"
-                                              Description="Renderer"
-                                              IsShowLeftAxis="false"
-                                              IsShowLeftAxisLine="true"
-                                              IsShowLeftAxisValue="true"
-                                              IsShowRightAxis="false"
-                                              IsShowRightAxisLine="false"
-                                              IsShowRightAxisValue="false"
-                                              IsShowXAxis="false"
-                                              IsShowXAxisLine="true"
-                                              IsShowXAxisValue="true" />-->
-
+            <Button x:Name="bttHorizontal"
+                    HeightRequest="40"
+                    HorizontalOptions="FillAndExpand"
+                    Text="Horizontal bar Chart" />
+         
         </StackLayout>
     </ScrollView>
 </ContentPage>

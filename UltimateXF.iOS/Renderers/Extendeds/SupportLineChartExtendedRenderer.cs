@@ -54,7 +54,7 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             OnSettingsLineRadarDataSet(source,original);
 
             if (source.IF_GetMode().HasValue)
-                original.Mode = (SupportChart.GetDrawLineMode(source.IF_GetMode().Value));
+                original.Mode = (GetDrawLineMode(source.IF_GetMode().Value));
             
             if (source.IF_GetCircleColors() != null && source.IF_GetCircleColors().Count > 0)
                 original.CircleColors = source.IF_GetCircleColors().Select(item => item.ToUIColor()).ToArray();

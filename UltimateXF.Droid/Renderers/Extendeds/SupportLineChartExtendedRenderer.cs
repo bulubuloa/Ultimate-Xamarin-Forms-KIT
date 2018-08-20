@@ -52,7 +52,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             OnSettingsLineRadarDataSet(source, original);
 
             if (source.IF_GetMode().HasValue)
-                original.SetMode(SupportChart.GetDrawLineMode(source.IF_GetMode().Value));
+                original.SetMode(GetDrawLineMode(source.IF_GetMode().Value));
 
             if (source.IF_GetCircleColors() != null && source.IF_GetCircleColors().Count > 0)
                 original.SetCircleColors(source.IF_GetCircleColors().Select(item => item.ToAndroid().ToArgb()).ToArray());

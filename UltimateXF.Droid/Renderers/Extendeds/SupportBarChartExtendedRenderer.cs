@@ -32,7 +32,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var dataSetItems = new List<MikePhil.Charting.Data.BarDataSet>();
+                var dataSetItems = new List<BarDataSet>();
                 foreach (var item in SupportChartView.ChartData.DataSets)
                 {
                     var entryOriginal = item.IF_GetValues().Select(obj => new BarEntry(obj.GetXPosition(), obj.GetYPosition()));

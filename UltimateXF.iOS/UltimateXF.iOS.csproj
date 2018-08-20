@@ -121,20 +121,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UltimateXFSettup.cs" />
-    <Compile Include="Renderers\SupportLineChartRenderer.cs" />
-    <Compile Include="Renderers\SupportBarChartRenderer.cs" />
-    <Compile Include="Renderers\SupportChart.cs" />
-    <Compile Include="Renderers\SupportPieChartRenderer.cs" />
-    <Compile Include="Renderers\SupportCandleStickChartRenderer.cs" />
-    <Compile Include="Renderers\SupportBubbleChartRenderer.cs" />
-    <Compile Include="Renderers\SupportCombinedChartRenderer.cs" />
-    <Compile Include="Renderers\SupportRadarChartRenderer.cs" />
-    <Compile Include="Renderers\SupportScatterChartRenderer.cs" />
-    <Compile Include="Renderers\Exporters\LineChartExport.cs" />
-    <Compile Include="Renderers\Exporters\BarChartExport.cs" />
-    <Compile Include="Renderers\Exporters\BubbleChartExport.cs" />
-    <Compile Include="Renderers\Exporters\ScatterChartExport.cs" />
-    <Compile Include="Renderers\Exporters\CandleStickChartExport.cs" />
     <Compile Include="Renderers\Extendeds\SupportChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportBarLineChartBaseExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportLineChartExtendedRenderer.cs" />

@@ -4,7 +4,10 @@ using System.Linq;
 using Android.Content;
 using Android.Widget;
 using MikePhil.Charting.Charts;
+using MikePhil.Charting.Components;
+using MikePhil.Charting.Data;
 using UltimateXF.Widget.Charts;
+using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.Component;
 using UltimateXF.Widget.Charts.Models.ComponentXF;
 using Xamarin.Forms.Platform.Android;
@@ -196,6 +199,42 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             if (baseDataSetXF.IF_GetDrawFilled().HasValue)
             {
                 originalBaseDataSet.SetDrawFilled(baseDataSetXF.IF_GetDrawFilled().Value);
+            }
+        }
+
+        protected LineDataSet.Mode GetDrawLineMode(LineDataSetMode mode)
+        {
+            switch (mode)
+            {
+                case LineDataSetMode.CUBIC_BEZIER:
+                    return LineDataSet.Mode.CubicBezier;
+                case LineDataSetMode.CUBIC_HORIZONTAL:
+                    return LineDataSet.Mode.HorizontalBezier;
+                case LineDataSetMode.STEPPED:
+                    return LineDataSet.Mode.Stepped;
+                case LineDataSetMode.LINEAR:
+                    return LineDataSet.Mode.Linear;
+                default:
+                    return LineDataSet.Mode.Linear;
+            }
+        }
+
+        protected XAxis.XAxisPosition GetXAxisPosition(XAXISPosition mode)
+        {
+            switch (mode)
+            {
+                case XAXISPosition.BOTTOM:
+                    return XAxis.XAxisPosition.Bottom;
+                case XAXISPosition.TOP:
+                    return XAxis.XAxisPosition.Top;
+                case XAXISPosition.BOTTOM_INSIDE:
+                    return XAxis.XAxisPosition.BottomInside;
+                case XAXISPosition.TOP_INSIDE:
+                    return XAxis.XAxisPosition.TopInside;
+                case XAXISPosition.BOTH:
+                    return XAxis.XAxisPosition.BothSided;
+                default:
+                    return XAxis.XAxisPosition.Top;
             }
         }
     }
