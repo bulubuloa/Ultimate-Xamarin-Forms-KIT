@@ -250,7 +250,6 @@ namespace UltimateXF.iOS.Renderers.Exporters
                  * Properties could not set
                  * IF_GetGradientColor
                  * IF_GetValueTextSize
-                 * IF_GetValueFormatter
                  */
             if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
             {

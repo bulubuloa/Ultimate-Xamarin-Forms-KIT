@@ -65,9 +65,13 @@ namespace DemoXF
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
                 CircleHoleColor = Color.Green,
+                ValueColors = new List<Color>(){
+                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                },
                 Mode = LineDataSetMode.CUBIC_BEZIER,
                 ValueFormatter = new CustomDataSetValueFormatter()
             };
+
             var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
             {
                 Colors = new List<Color>{

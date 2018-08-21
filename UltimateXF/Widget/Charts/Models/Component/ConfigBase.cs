@@ -38,13 +38,13 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        private Font? _Typeface;
-        public Font? Typeface
+        private string _FontFamily;
+        public string FontFamily
         {
-            get => _Typeface;
+            get => _FontFamily;
             set
             {
-                _Typeface = value;
+                _FontFamily = value;
                 OnPropertyChanged();
             }
         }

@@ -6,6 +6,15 @@ using Xamarin.Forms;
 
 namespace DemoXF
 {
+    //test custom $
+    public class CustomPercentDataSetValueFormatter : IDataSetValueFormatter
+    {
+        public string GetFormattedValue(float value, int dataSetIndex)
+        {
+            return value + "%";
+        }
+    }
+
     public partial class PieChartPage : ContentPage
     {
         public PieChartPage()
@@ -30,6 +39,7 @@ namespace DemoXF
                 },
                 ValueLineColor = Color.Blue,
                 SliceSpace = 5f,
+                ValueFormatter = new CustomPercentDataSetValueFormatter()
             };
             var data4 = new PieChartData(dataSet4)
             {

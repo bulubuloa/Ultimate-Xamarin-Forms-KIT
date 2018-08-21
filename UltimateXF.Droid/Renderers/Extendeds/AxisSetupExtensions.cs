@@ -28,6 +28,11 @@ namespace UltimateXF.Droid.Renderers.Extendeds
 
             if (SupportXAxis.TextColor.HasValue)
                 OriginalAxis.TextColor = SupportXAxis.TextColor.Value.ToAndroid();
+
+            if (string.IsNullOrEmpty(SupportXAxis.FontFamily))
+            {
+                OriginalAxis.Typeface = SpecAndroid.CreateTypeface(UltimateXFSettup.Context, SupportXAxis.FontFamily);
+            }
         }
 
         public static void SetupAxisConfigBase(this AxisBase OriginalAxis, AxisConfigBase SupportXAxis)
@@ -75,14 +80,8 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             if (SupportXAxis.AxisMinimum.HasValue)
                 OriginalAxis.AxisMinimum = SupportXAxis.AxisMinimum.Value;
 
-            //if (SupportXAxis.DrawGridLinesBehindData.HasValue)
-                //OriginalAxis.SetD = SupportXAxis.DrawGridLinesBehindData.Value;
-
             if (SupportXAxis.DrawLimitLineBehindData.HasValue)
                 OriginalAxis.SetDrawLimitLinesBehindData(SupportXAxis.DrawLimitLineBehindData.Value);
-
-            //if (SupportXAxis.ForceLabels.HasValue)
-                //OriginalAxis.S = SupportXAxis.ForceLabels.Value;
 
             if (SupportXAxis.GranularityEnabled.HasValue)
                 OriginalAxis.GranularityEnabled = SupportXAxis.GranularityEnabled.Value;
@@ -131,13 +130,26 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             }
         }
 
+        public static YAxis.YAxisLabelPosition GetYAxisLabelPosition(YAXISLabelPosition mode)
+        {
+            switch (mode)
+            {
+                case YAXISLabelPosition.INSIDE_CHART:
+                    return YAxis.YAxisLabelPosition.InsideChart;
+                case YAXISLabelPosition.OUTSIDE_CHART:
+                    return YAxis.YAxisLabelPosition.OutsideChart;
+                default:
+                    return YAxis.YAxisLabelPosition.InsideChart;
+            }
+        }
+
+
         public static void SetupYAxisConfig(this YAxis OriginalAxis, YAxisConfig SupportAxis)
         {
             /*
                  * Properties could not set
                  * UseAutoScaleRestrictionMin
                  * UseAutoScaleRestrictionMax
-                 * YAXISLabelPosition
                  * AxisDependency
             */
             if (SupportAxis.Inverted.HasValue)
@@ -167,11 +179,8 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             if (SupportAxis.ZeroLineColor.HasValue)
                 OriginalAxis.ZeroLineColor = SupportAxis.ZeroLineColor.Value.ToAndroid();
 
-            //if (SupportAxis.YAXISLabelPosition.HasValue)
-                //OriginalAxis.SetU = SupportAxis.YAXISLabelPosition.Value);
-
-            //if (SupportAxis.AxisDependency.HasValue)
-            //OriginalAxis.ZeroLineColor = SupportAxis.AxisDependency.Value;
+            if (SupportAxis.YAXISLabelPosition.HasValue)
+                OriginalAxis.SetPosition(GetYAxisLabelPosition(SupportAxis.YAXISLabelPosition.Value));
         }
     }
 }

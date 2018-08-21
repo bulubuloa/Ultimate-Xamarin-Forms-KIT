@@ -132,6 +132,8 @@
     <Compile Include="Renderers\Extendeds\SupportCombinedChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Exporters\AxisValueFormatterExport.cs" />
     <Compile Include="Renderers\Exporters\DataSetValueFormatterExport.cs" />
+    <Compile Include="iFontExtend.cs" />
+    <Compile Include="SpecAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
