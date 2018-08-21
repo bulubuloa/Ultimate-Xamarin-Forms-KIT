@@ -30,6 +30,15 @@ namespace DemoXF
         }
     }
 
+    //test custom $
+    public class CustomDataSetValueFormatter : IDataSetValueFormatter
+    {
+        public string GetFormattedValue(float value, int dataSetIndex)
+        {
+            return value.ToString("N2") + "$";
+        }
+    }
+
     public partial class LineChartPage : ContentPage
     {
         public LineChartPage()
@@ -41,10 +50,10 @@ namespace DemoXF
             var labels = new List<string>();
 
             var random = new Random();
-            for (int i = 0; i < 8; i++)
+            for (int i = 0; i < 7; i++)
             {
-                entries.Add(new EntryChart(i, random.Next(20)));
-                entries2.Add(new EntryChart(i, random.Next(20)));
+                entries.Add(new EntryChart(i, random.Next(1000,50000)));
+                entries2.Add(new EntryChart(i, random.Next(1000,50000)));
                 labels.Add("Entry" + i);
             }
 
@@ -57,7 +66,7 @@ namespace DemoXF
                 },
                 CircleHoleColor = Color.Green,
                 Mode = LineDataSetMode.CUBIC_BEZIER,
-                ValueFormatter = new IntegerDataSetFormatter()
+                ValueFormatter = new CustomDataSetValueFormatter()
             };
             var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
             {
