@@ -12,6 +12,8 @@ namespace DemoXF
             InitializeComponent();
 
             var entries = new List<PieEntry>();
+
+
             entries.Add(new PieEntry(10,"Col1"));
             entries.Add(new PieEntry(15,"Col2"));
             entries.Add(new PieEntry(15,"Col3"));
@@ -30,7 +32,12 @@ namespace DemoXF
 
             var dataSet4 = new PieDataSet(entries, "Pie DataSet")
             {
-                
+                Colors = new List<Color>()
+                {
+                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                },
+                ValueLineColor = Color.Blue,
+                SliceSpace = 5f,
             };
             var data4 = new PieChartData(dataSet4, labels)
             {

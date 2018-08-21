@@ -1,5 +1,6 @@
 ﻿using System;
 using UltimateXF.Widget.Charts.Models.Component;
+using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts.Models.PieChart
 {
@@ -11,7 +12,7 @@ namespace UltimateXF.Widget.Charts.Models.PieChart
         ValuePosition? IF_GetXValuePosition();
         ValuePosition? IF_GetYValuePosition();
         bool? IF_GetUsingSliceColorAsValueLineColor();
-        int? IF_GetValueLineColor();
+        Color? IF_GetValueLineColor();
         float? IF_GetValueLineWidth();
         float? IF_GetValueLinePart1OffsetPercentage();
         float? IF_GetValueLinePart1Length();

@@ -16,7 +16,7 @@ namespace DemoXF
             var entries2 = new List<EntryChart>();
             var labels = new List<string>();
 
-            Random random = new Random();
+            var random = new Random();
             for (int i = 0; i < 8; i++)
             {
                 entries.Add(new EntryChart(i, random.Next(20)));

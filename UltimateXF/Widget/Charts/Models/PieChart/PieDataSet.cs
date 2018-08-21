@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.Component;
+using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts.Models.PieChart
 {
@@ -82,8 +83,8 @@ namespace UltimateXF.Widget.Charts.Models.PieChart
             }
         }
 
-        private int? _ValueLineColor;
-        public int? ValueLineColor
+        private Color? _ValueLineColor;
+        public Color? ValueLineColor
         {
             get => _ValueLineColor;
             set
@@ -198,7 +199,7 @@ namespace UltimateXF.Widget.Charts.Models.PieChart
             return UsingSliceColorAsValueLineColor;
         }
 
-        public int? IF_GetValueLineColor()
+        public Color? IF_GetValueLineColor()
         {
             return ValueLineColor;
         }

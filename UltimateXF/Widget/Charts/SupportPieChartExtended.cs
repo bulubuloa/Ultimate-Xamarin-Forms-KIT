@@ -111,6 +111,7 @@ namespace UltimateXF.Widget.Charts
 
         public SupportPieChartExtended()
         {
+            XAxis = null;
         }
     }
 }

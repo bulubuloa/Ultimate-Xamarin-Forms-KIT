@@ -88,7 +88,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     OriginalChartView.Description.Text = SupportChartView.DescriptionChart.Text;
                 }
 
-                if (SupportChartView.XAxis != null)
+                if (SupportChartView.XAxis != null && OriginalChartView.XAxis!=null)
                 {
                     var SupportXAxis = SupportChartView.XAxis;
                     var OriginalAxis = OriginalChartView.XAxis;

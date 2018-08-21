@@ -72,20 +72,63 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             base.OnInitializeChartData();
             if (OriginalChartView != null && SupportChartView != null && SupportChartView.ChartData != null)
             {
-                var data = SupportChartView.ChartData.DataSets;
-                var dataSetItems = new List<PieChartDataSet>();
-                foreach (var item in data)
+                var dataSupport = SupportChartView.ChartData;
+                var dataSetSource = dataSupport.DataSets.FirstOrDefault();
+
+                if (dataSetSource != null)
                 {
-                    var entryOriginal = item.IF_GetValues().Select(obj => new ChartDataEntry(obj.GetPercent(), obj.GetPercent()));
-                    PieChartDataSet dataSet = new PieChartDataSet(entryOriginal.ToArray(), item.IF_GetLabel());
+                    var entryOriginal = dataSetSource.IF_GetValues().Select(item => new PieChartDataEntry(item.GetPercent(), item.GetText()));
+                    PieChartDataSet dataSet = new PieChartDataSet(entryOriginal.ToArray(), dataSetSource.IF_GetLabel());
+                    OnIntializeDataSet(dataSetSource, dataSet);
+                    PieChartData chartData = new PieChartData(new PieChartDataSet[]{dataSet});
+
+                    OriginalChartView.Data = chartData;
                 }
-
-                PieChartData chartData = new PieChartData(dataSetItems.ToArray());
-
-                OriginalChartView.Data = chartData;
                 OriginalChartView.ReloadInputViews();
                 OriginalChartView.SetNeedsDisplay();
             }
+        }
+
+        private void OnIntializeDataSet(Widget.Charts.Models.PieChart.IPieDataSet source, PieChartDataSet original)
+        {
+            /*
+             * Properies could not net
+             * IF_GetUsingSliceColorAsValueLineColor
+             */
+            Export.OnSettingsBaseDataSet(source, original);
+
+            if (source.IF_GetSliceSpace().HasValue)
+                original.SliceSpace = (source.IF_GetSliceSpace().Value);
+
+            if (source.IF_GetAutomaticallyDisableSliceSpacing().HasValue)
+                original.AutomaticallyDisableSliceSpacing = (source.IF_GetAutomaticallyDisableSliceSpacing().Value);
+
+            if (source.IF_GetShift().HasValue)
+                original.SelectionShift = (source.IF_GetShift().Value);
+
+            if (source.IF_GetValueLineColor().HasValue)
+                original.ValueLineColor = (source.IF_GetValueLineColor().Value.ToUIColor());
+
+            if (source.IF_GetValueLineWidth().HasValue)
+                original.ValueLineWidth = (source.IF_GetValueLineWidth().Value);
+
+            if (source.IF_GetValueLinePart1OffsetPercentage().HasValue)
+                original.ValueLinePart1OffsetPercentage = (source.IF_GetValueLinePart1OffsetPercentage().Value);
+
+            if (source.IF_GetValueLinePart1Length().HasValue)
+                original.ValueLinePart1Length = (source.IF_GetValueLinePart1Length().Value);
+
+            if (source.IF_GetValueLinePart2Length().HasValue)
+                original.ValueLinePart2Length = (source.IF_GetValueLinePart2Length().Value);
+
+            if (source.IF_GetValueLineVariableLength().HasValue)
+                original.ValueLineVariableLength = (source.IF_GetValueLineVariableLength().Value);
+
+            if (source.IF_GetXValuePosition().HasValue)
+                original.XValuePosition = source.IF_GetXValuePosition().Value == Widget.Charts.Models.PieChart.ValuePosition.INSIDE_SLICE ? PieChartValuePosition.InsideSlice : PieChartValuePosition.OutsideSlice;
+
+            if (source.IF_GetYValuePosition().HasValue)
+                original.YValuePosition = source.IF_GetYValuePosition().Value == Widget.Charts.Models.PieChart.ValuePosition.INSIDE_SLICE ? PieChartValuePosition.InsideSlice : PieChartValuePosition.OutsideSlice;
         }
     }
 }
