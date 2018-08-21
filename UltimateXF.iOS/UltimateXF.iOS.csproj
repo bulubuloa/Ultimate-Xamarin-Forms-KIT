@@ -135,6 +135,8 @@
     <Compile Include="Renderers\Extendeds\SupportHorizontalBarChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Extendeds\SupportCombinedChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Exporters\ExtendedChartExport.cs" />
+    <Compile Include="Renderers\Exporters\AxisValueFormatterExport.cs" />
+    <Compile Include="Renderers\Exporters\DataSetValueFormatterExport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

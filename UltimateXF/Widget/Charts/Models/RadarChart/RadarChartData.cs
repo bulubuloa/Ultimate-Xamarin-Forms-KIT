@@ -6,7 +6,7 @@ namespace UltimateXF.Widget.Charts.Models.RadarChart
 {
     public class RadarChartData : ChartDataXF<IRadarDataSet,RadarEntry>
     {
-        public RadarChartData(List<IRadarDataSet> _DataSetItems, List<string> _TitleItems) : base(_DataSetItems, _TitleItems)
+        public RadarChartData(List<IRadarDataSet> _DataSetItems) : base(_DataSetItems)
         {
         }
     }

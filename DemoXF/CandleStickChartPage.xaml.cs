@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
+using UltimateXF.Widget.Charts.Models.Formatters;
 using Xamarin.Forms;
 
 namespace DemoXF
@@ -31,7 +32,7 @@ namespace DemoXF
                 IncreasingColor = Color.Green
             };
 
-            var data4 = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSet4 }, labels);
+            var data4 = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSet4 });
 
             chart.ChartData = data4;
             chart.DescriptionChart.Text = "Test label chart description";
@@ -45,6 +46,7 @@ namespace DemoXF
             chart.AxisRight.Enabled = false;
 
             chart.XAxis.DrawGridLines = false;
+            chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
         }
     }
 }

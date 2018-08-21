@@ -10,7 +10,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>UltimateXF.Droid</RootNamespace>
     <AssemblyName>UltimateXF.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
@@ -130,6 +130,8 @@
     <Compile Include="Renderers\Extendeds\SupportHorizontalBarChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Exporters\CombinedChartExport.cs" />
     <Compile Include="Renderers\Extendeds\SupportCombinedChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Exporters\AxisValueFormatterExport.cs" />
+    <Compile Include="Renderers\Exporters\DataSetValueFormatterExport.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

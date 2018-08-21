@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UltimateXF.Widget.Charts.Models.Formatters;
 using UltimateXF.Widget.Charts.Models.RadarChart;
 using Xamarin.Forms;
 
@@ -42,9 +43,10 @@ namespace DemoXF
                 DrawFilled = true,
                 DrawValues = false,
             };
-            var data4 = new RadarChartData(new List<IRadarDataSet>() { dataSet4,dataSet5 }, labels);
+            var data4 = new RadarChartData(new List<IRadarDataSet>() { dataSet4,dataSet5 });
 
             radarChart.ChartData = data4;
+            radarChart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
         }
     }
 }

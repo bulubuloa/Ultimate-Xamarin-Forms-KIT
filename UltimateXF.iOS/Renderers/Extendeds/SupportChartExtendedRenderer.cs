@@ -1,12 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
-using UltimateXF.Widget.Charts.Models;
-using UltimateXF.Widget.Charts.Models.Component;
-using UltimateXF.Widget.Charts.Models.ComponentXF;
 using Xamarin.Forms.Platform.iOS;
 
 namespace UltimateXF.iOS.Renderers.Extendeds
@@ -96,9 +92,16 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                     OriginalAxis.SetupConfigBase(SupportXAxis);
                     OriginalAxis.SetupAxisConfigBase(SupportXAxis);
                     OriginalAxis.SetupXAxisConfig(SupportXAxis);
-                }
 
-                Console.WriteLine("dkm");
+                    if (SupportChartView.XAxis.AxisValueFormatter == null)
+                    {
+                        //OriginalChartView.XAxis.ValueFormatter = new FullTitleFormatter();
+                    }
+                    else
+                    {
+                        OriginalChartView.XAxis.ValueFormatter = new AxisValueFormatterExport(SupportChartView.XAxis.AxisValueFormatter);
+                    }
+                }
             }
         }
         protected virtual void OnSetNativeControl()

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.BarChart;
+using UltimateXF.Widget.Charts.Models.Formatters;
 using Xamarin.Forms;
 
 namespace DemoXF
@@ -37,7 +38,7 @@ namespace DemoXF
                 },
             };
 
-            var data4 = new BarChartData(new List<IBarDataSet>() { dataSet4 }, labels);
+            var data4 = new BarChartData(new List<IBarDataSet>() { dataSet4 });
 
             chart.ChartData = data4;
             chart.DescriptionChart.Text = "Test label chart description";
@@ -52,6 +53,7 @@ namespace DemoXF
 
             chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
             chart.XAxis.DrawGridLines = false;
+            chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
         }
     }
 }

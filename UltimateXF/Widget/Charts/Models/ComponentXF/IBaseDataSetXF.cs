@@ -19,6 +19,6 @@ namespace UltimateXF.Widget.Charts.Models.ComponentXF
         float? IF_GetValueTextSize();
         bool? IF_GetDrawIcons();
         bool? IF_GetDrawValues();
-        IValueFormatterXF IF_GetValueFormatter();
+        IDataSetValueFormatter IF_GetValueFormatter();
     }
 }

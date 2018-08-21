@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.BubbleChart;
+using UltimateXF.Widget.Charts.Models.Formatters;
 using Xamarin.Forms;
 
 namespace DemoXF
@@ -36,7 +37,7 @@ namespace DemoXF
                 },
             };
 
-            var data4 = new BubbleChartData(new List<IBubbleDataSet>() { dataSet4 }, labels);
+            var data4 = new BubbleChartData(new List<IBubbleDataSet>() { dataSet4 });
 
             chart.ChartData = data4;
             chart.DescriptionChart.Text = "Test label chart description";
@@ -50,6 +51,7 @@ namespace DemoXF
             chart.AxisRight.Enabled = false;
 
            chart.XAxis.DrawGridLines = false;
+            chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
         }
     }
 }

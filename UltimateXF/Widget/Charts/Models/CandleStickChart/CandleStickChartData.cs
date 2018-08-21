@@ -6,7 +6,7 @@ namespace UltimateXF.Widget.Charts.Models.CandleStickChart
 {
     public class CandleStickChartData : ChartDataXF<ICandleStickDataSet,CandleStickEntry>
     {
-        public CandleStickChartData(List<ICandleStickDataSet> _DataSetItems, List<string> _TitleItems) : base(_DataSetItems, _TitleItems)
+        public CandleStickChartData(List<ICandleStickDataSet> _DataSetItems) : base(_DataSetItems)
         {
         }
     }

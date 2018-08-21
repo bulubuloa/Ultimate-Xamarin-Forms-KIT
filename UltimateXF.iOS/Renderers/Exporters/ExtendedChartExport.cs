@@ -276,6 +276,10 @@ namespace UltimateXF.iOS.Renderers.Exporters
             {
                 originalBaseDataSet.DrawValuesEnabled = baseDataSetXF.IF_GetDrawValues().Value;
             }
+            if (baseDataSetXF.IF_GetValueFormatter() != null)
+            {
+                originalBaseDataSet.ValueFormatter = new DataSetValueFormatterExport(baseDataSetXF.IF_GetValueFormatter());
+            }
         }
 
         public void OnSettingsBarLineScatterCandleBubbleDataSet<TEntry>(IBarLineScatterCandleBubbleDataSetXF<TEntry> baseDataSetXF, BarLineScatterCandleBubbleChartDataSet originalBaseDataSet) where TEntry : BaseEntry

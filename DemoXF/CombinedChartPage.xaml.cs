@@ -5,6 +5,7 @@ using UltimateXF.Widget.Charts.Models.BarChart;
 using UltimateXF.Widget.Charts.Models.BubbleChart;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
 using UltimateXF.Widget.Charts.Models.CombinedChart;
+using UltimateXF.Widget.Charts.Models.Formatters;
 using UltimateXF.Widget.Charts.Models.LineChart;
 using UltimateXF.Widget.Charts.Models.ScatterChart;
 using Xamarin.Forms;
@@ -46,7 +47,7 @@ namespace DemoXF
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
             };
-            var dataBubble = new BubbleChartData(new List<IBubbleDataSet>() { dataSetBubble }, labels);
+            var dataBubble = new BubbleChartData(new List<IBubbleDataSet>() { dataSetBubble });
 
 
             var dataSetCandle = new CandleStickDataSet(entriesCandle, "Candle Stick DataSet 1")
@@ -54,7 +55,7 @@ namespace DemoXF
                 DecreasingColor = Color.Red,
                 IncreasingColor = Color.Green
             };
-            var dataCandle = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSetCandle }, labels);
+            var dataCandle = new CandleStickChartData(new List<ICandleStickDataSet>() { dataSetCandle });
 
 
             var dataSetLine = new LineDataSetXF(entrieLine, "Line DataSet 1")
@@ -67,7 +68,7 @@ namespace DemoXF
                 CircleHoleColor = Color.Green,
                 Mode = LineDataSetMode.CUBIC_BEZIER
             };
-            var dataLine = new LineChartData(new List<ILineDataSetXF>() { dataSetLine }, labels);
+            var dataLine = new LineChartData(new List<ILineDataSetXF>() { dataSetLine });
 
 
             var dataSetbar = new BarDataSet(entrieLine, "Bar DataSet 1")
@@ -76,14 +77,15 @@ namespace DemoXF
                     Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
             };
-            var dataBar = new BarChartData(new List<IBarDataSet>() { dataSetbar }, labels);
+            var dataBar = new BarChartData(new List<IBarDataSet>() { dataSetbar });
 
-            var combinData = new CombinedChartData(null,labels);
+            var combinData = new CombinedChartData(null);
             combinData.BubbleChartData = dataBubble;
             combinData.CandleStickChartData = dataCandle;
             combinData.LineChartData = dataLine;
             combinData.BarChartData = dataBar;
             chart.ChartData = combinData;
+            chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
         }
     }
 }

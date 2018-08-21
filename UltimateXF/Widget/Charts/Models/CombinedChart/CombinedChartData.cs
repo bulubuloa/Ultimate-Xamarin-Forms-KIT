@@ -65,7 +65,7 @@ namespace UltimateXF.Widget.Charts.Models.CombinedChart
             }
         }
 
-        public CombinedChartData(IDataSetXF<BaseEntry> dataSet, List<string> _Titles) : base(dataSet, _Titles)
+        public CombinedChartData(IDataSetXF<BaseEntry> dataSet) : base(dataSet)
         {
         }
     }

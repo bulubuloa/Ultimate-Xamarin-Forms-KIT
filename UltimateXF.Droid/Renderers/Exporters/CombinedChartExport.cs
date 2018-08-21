@@ -279,6 +279,11 @@ namespace UltimateXF.Droid.Renderers.Exporters
             {
                 originalBaseDataSet.SetDrawValues(baseDataSetXF.IF_GetDrawValues().Value);
             }
+
+            if (baseDataSetXF.IF_GetValueFormatter() != null)
+            {
+                originalBaseDataSet.ValueFormatter = new DataSetValueFormatterExport(baseDataSetXF.IF_GetValueFormatter());
+            }
         }
 
         public void OnSettingsBarLineScatterCandleBubbleDataSet<TEntry>(IBarLineScatterCandleBubbleDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.BarLineScatterCandleBubbleDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry

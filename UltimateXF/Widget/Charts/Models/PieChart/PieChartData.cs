@@ -7,7 +7,7 @@ namespace UltimateXF.Widget.Charts.Models.PieChart
 {
     public class PieChartData : ChartDataXF<IPieDataSet, PieEntry>
     {
-        public PieChartData(IPieDataSet dataSet, List<string> _Titles) : base(dataSet, _Titles)
+        public PieChartData(IPieDataSet dataSet) : base(dataSet)
         {
         }
     }

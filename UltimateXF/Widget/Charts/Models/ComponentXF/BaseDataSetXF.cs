@@ -146,13 +146,13 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        private IValueFormatterXF _ValueFormatter;
-        public IValueFormatterXF ValueFormatter
+        private IDataSetValueFormatter _ValueFormatter;
+        public IDataSetValueFormatter ValueFormatter
         {
-            get => ValueFormatter;
+            get => _ValueFormatter;
             set
             {
-                ValueFormatter = value;
+                _ValueFormatter = value;
                 OnPropertyChanged();
             }
         }
@@ -218,7 +218,7 @@ namespace UltimateXF.Widget.Charts.Models.Component
             return DrawValues;
         }
 
-        public IValueFormatterXF IF_GetValueFormatter()
+        public IDataSetValueFormatter IF_GetValueFormatter()
         {
             return ValueFormatter;
         }

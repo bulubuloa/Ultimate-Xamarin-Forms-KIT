@@ -96,6 +96,15 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     OriginalAxis.SetupConfigBase(SupportXAxis);
                     OriginalAxis.SetupAxisConfigBase(SupportXAxis);
                     OriginalAxis.SetupXAxisConfig(SupportXAxis);
+
+                    if(SupportChartView.XAxis.AxisValueFormatter == null)
+                    {
+                        //OriginalChartView.XAxis.ValueFormatter = new FullTitleFormatter();
+                    }
+                    else
+                    {
+                        OriginalChartView.XAxis.ValueFormatter = new AxisValueFormatterExport(SupportChartView.XAxis.AxisValueFormatter);
+                    }
                 }
             }
         }
