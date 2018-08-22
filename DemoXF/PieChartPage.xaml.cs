@@ -21,6 +21,19 @@ namespace DemoXF
         {
             InitializeComponent();
 
+            var FontFamily = "";
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    FontFamily = "Pacifico-Regular";
+                    break;
+                case Device.Android:
+                    FontFamily = "Fonts/Pacifico-Regular.ttf";
+                    break;
+                default:
+                    break;
+            }
+
             var entries = new List<PieEntry>();
 
 
@@ -39,7 +52,8 @@ namespace DemoXF
                 },
                 ValueLineColor = Color.Blue,
                 SliceSpace = 5f,
-                ValueFormatter = new CustomPercentDataSetValueFormatter()
+                ValueFormatter = new CustomPercentDataSetValueFormatter(),
+                ValueFontFamily = FontFamily
             };
             var data4 = new PieChartData(dataSet4)
             {

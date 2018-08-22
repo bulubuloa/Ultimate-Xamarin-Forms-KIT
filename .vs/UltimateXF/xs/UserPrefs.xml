@@ -1,5 +1,10 @@
-﻿<Properties StartupConfiguration="{69DDDC64-AE48-4836-980A-2863207BFF23}|Default">
-  <MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/RadarChartPage.xaml.cs">
+    <Files>
+      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="76" Column="50" />
+      <File FileName="DemoXF/PieChartPage.xaml.cs" Line="56" Column="45" NotebookId="1" />
+      <File FileName="DemoXF/RadarChartPage.xaml.cs" Line="24" Column="27" NotebookId="1" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
@@ -12,12 +17,12 @@
                 <Node name="CandleStickChartPage.xaml" expanded="True" />
                 <Node name="CombinedChartPage.xaml" expanded="True" />
                 <Node name="HorizontalBarCharPage.xaml" expanded="True" />
-                <Node name="LineChartPage.xaml" expanded="True">
-                  <Node name="LineChartPage.xaml.cs" selected="True" />
-                </Node>
+                <Node name="LineChartPage.xaml" expanded="True" />
                 <Node name="MainPage.xaml" expanded="True" />
                 <Node name="PieChartPage.xaml" expanded="True" />
-                <Node name="RadarChartPage.xaml" expanded="True" />
+                <Node name="RadarChartPage.xaml" expanded="True">
+                  <Node name="RadarChartPage.xaml.cs" selected="True" />
+                </Node>
                 <Node name="ScatterChartPage.xaml" expanded="True" />
               </Node>
               <Node name="DemoXF.Android" expanded="True">
@@ -60,7 +65,7 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
