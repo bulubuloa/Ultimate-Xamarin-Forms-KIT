@@ -10,12 +10,12 @@
     <OutputType>Library</OutputType>
     <RootNamespace>UltimateXF.Droid</RootNamespace>
     <AssemblyName>UltimateXF.Droid</AssemblyName>
-    <TargetFrameworkVersion>v8.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
     <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
     <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
-    <AndroidUseLatestPlatformSdk>true</AndroidUseLatestPlatformSdk>
+    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -130,6 +130,10 @@
     <Compile Include="Renderers\Extendeds\SupportHorizontalBarChartExtendedRenderer.cs" />
     <Compile Include="Renderers\Exporters\CombinedChartExport.cs" />
     <Compile Include="Renderers\Extendeds\SupportCombinedChartExtendedRenderer.cs" />
+    <Compile Include="Renderers\Exporters\AxisValueFormatterExport.cs" />
+    <Compile Include="Renderers\Exporters\DataSetValueFormatterExport.cs" />
+    <Compile Include="iFontExtend.cs" />
+    <Compile Include="SpecAndroid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

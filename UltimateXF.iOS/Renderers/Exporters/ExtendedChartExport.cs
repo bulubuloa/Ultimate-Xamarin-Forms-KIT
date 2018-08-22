@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using iOSCharts;
+using UIKit;
 using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.CandleStickChart;
 using UltimateXF.Widget.Charts.Models.Component;
@@ -249,8 +250,6 @@ namespace UltimateXF.iOS.Renderers.Exporters
             /*
                  * Properties could not set
                  * IF_GetGradientColor
-                 * IF_GetValueTextSize
-                 * IF_GetValueFormatter
                  */
             if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
             {
@@ -275,6 +274,36 @@ namespace UltimateXF.iOS.Renderers.Exporters
             if (baseDataSetXF.IF_GetDrawValues().HasValue)
             {
                 originalBaseDataSet.DrawValuesEnabled = baseDataSetXF.IF_GetDrawValues().Value;
+            }
+            if (baseDataSetXF.IF_GetValueFormatter() != null)
+            {
+                originalBaseDataSet.ValueFormatter = new DataSetValueFormatterExport(baseDataSetXF.IF_GetValueFormatter());
+            }
+
+            try
+            {
+                if (string.IsNullOrEmpty(baseDataSetXF.IF_GetValueFontFamily()))
+                {
+                    if (baseDataSetXF.IF_GetValueTextSize().HasValue)
+                    {
+                        originalBaseDataSet.ValueFont = UIFont.SystemFontOfSize(baseDataSetXF.IF_GetValueTextSize().Value);
+                    }
+                }
+                else
+                {
+                    if (baseDataSetXF.IF_GetValueTextSize().HasValue)
+                    {
+                        originalBaseDataSet.ValueFont = UIFont.FromName(baseDataSetXF.IF_GetValueFontFamily(), baseDataSetXF.IF_GetValueTextSize().Value);
+                    }
+                    else
+                    {
+                        originalBaseDataSet.ValueFont = UIFont.FromName(baseDataSetXF.IF_GetValueFontFamily(), originalBaseDataSet.ValueFont.PointSize);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

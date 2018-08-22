@@ -7,17 +7,6 @@ namespace UltimateXF.Widget.Charts.Models.Component
 {
     public abstract class ChartDataXF<TDataSet,TEntry> : BaseDataXF where TDataSet : IDataSetXF<TEntry> where TEntry : BaseEntry
     {
-        private List<string> _Titles;
-        public List<string> Titles
-        {
-            get => _Titles;
-            set
-            {
-                _Titles = value;
-                OnPropertyChanged();
-            }
-        }
-
         private float? _YMax;
         public float? YMax
         {
@@ -117,19 +106,17 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        public ChartDataXF(TDataSet dataSet, List<string> _Titles)
+        public ChartDataXF(TDataSet dataSet)
         {
             DataSets = new List<TDataSet>()
             {
                 dataSet
             };
-            Titles = _Titles;
         }
 
-        public ChartDataXF(List<TDataSet> dataSet,List<string> _Titles)
+        public ChartDataXF(List<TDataSet> dataSet)
         {
             DataSets = dataSet;
-            Titles = _Titles;
         } 
     }
 }

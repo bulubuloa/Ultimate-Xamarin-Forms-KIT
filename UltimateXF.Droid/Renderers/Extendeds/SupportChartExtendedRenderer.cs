@@ -2,9 +2,11 @@
 using System.ComponentModel;
 using Android.Content;
 using Android.Widget;
+using MikePhil.Charting.Animation;
 using MikePhil.Charting.Charts;
 using UltimateXF.Droid.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
+using UltimateXF.Widget.Charts.Models.Component;
 using Xamarin.Forms.Platform.Android;
 
 namespace UltimateXF.Droid.Renderers.Extendeds
@@ -49,6 +51,69 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             OriginalChartView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
         }
 
+        private Easing.EasingOption ConvertAnimationType(EasingOptionXF easingOptionXF)
+        {
+            switch (easingOptionXF)
+            {
+                case EasingOptionXF.Linear:
+                    return Easing.EasingOption.Linear;
+                case EasingOptionXF.EaseInQuad:
+                    return Easing.EasingOption.EaseInQuad;
+                case EasingOptionXF.EaseOutQuad:
+                    return Easing.EasingOption.EaseOutQuad;
+                case EasingOptionXF.EaseInOutQuad:
+                    return Easing.EasingOption.EaseInOutQuad;
+                case EasingOptionXF.EaseInCubic:
+                    return Easing.EasingOption.EaseInCubic;
+                case EasingOptionXF.EaseOutCubic:
+                    return Easing.EasingOption.EaseOutCubic;
+                case EasingOptionXF.EaseInOutCubic:
+                    return Easing.EasingOption.EaseInOutCubic;
+                case EasingOptionXF.EaseInQuart:
+                    return Easing.EasingOption.EaseInQuart;
+                case EasingOptionXF.EaseOutQuart:
+                    return Easing.EasingOption.EaseOutQuart;
+                case EasingOptionXF.EaseInOutQuart:
+                    return Easing.EasingOption.EaseInOutQuart;
+                case EasingOptionXF.EaseInSine:
+                    return Easing.EasingOption.EaseInSine;
+                case EasingOptionXF.EaseOutSine:
+                    return Easing.EasingOption.EaseOutSine;
+                case EasingOptionXF.EaseInOutSine:
+                    return Easing.EasingOption.EaseInOutSine;
+                case EasingOptionXF.EaseInExpo:
+                    return Easing.EasingOption.EaseInExpo;
+                case EasingOptionXF.EaseOutExpo:
+                    return Easing.EasingOption.EaseOutExpo;
+                case EasingOptionXF.EaseInOutExpo:
+                    return Easing.EasingOption.EaseInOutExpo;
+                case EasingOptionXF.EaseInCirc:
+                    return Easing.EasingOption.EaseInCirc;
+                case EasingOptionXF.EaseOutCirc:
+                    return Easing.EasingOption.EaseOutCirc;
+                case EasingOptionXF.EaseInOutCirc:
+                    return Easing.EasingOption.EaseInOutCirc;
+                case EasingOptionXF.EaseInElastic:
+                    return Easing.EasingOption.EaseInElastic;
+                case EasingOptionXF.EaseOutElastic:
+                    return Easing.EasingOption.EaseOutElastic;
+                case EasingOptionXF.EaseInOutElastic:
+                    return Easing.EasingOption.EaseInOutElastic;
+                case EasingOptionXF.EaseInBack:
+                    return Easing.EasingOption.EaseInBack;
+                case EasingOptionXF.EaseOutBack:
+                    return Easing.EasingOption.EaseOutBack;
+                case EasingOptionXF.EaseInOutBack:
+                    return Easing.EasingOption.EaseInOutBack;
+                case EasingOptionXF.EaseInBounce:
+                    return Easing.EasingOption.EaseInBounce;
+                case EasingOptionXF.EaseOutBounce:
+                    return Easing.EasingOption.EaseOutBounce;
+                default:
+                    return Easing.EasingOption.EaseInOutBounce;
+            }
+        }
+
         protected virtual void OnInitializeOriginalChartSettings()
         {
             if (SupportChartView != null && OriginalChartView != null)
@@ -88,6 +153,38 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     OriginalChartView.Description.Text = SupportChartView.DescriptionChart.Text;
                 }
 
+                if (SupportChartView.AnimationX != null)
+                {
+                    var animator = SupportChartView.AnimationX;
+                    if(animator.Duration.HasValue)
+                    {
+                        if (animator.EasingType.HasValue)
+                        {
+                            OriginalChartView.AnimateX(animator.Duration.Value, ConvertAnimationType(animator.EasingType.Value));
+                        }
+                        else
+                        {
+                            OriginalChartView.AnimateX(animator.Duration.Value);
+                        }
+                    }
+                }
+
+                if (SupportChartView.AnimationY != null)
+                {
+                    var animator = SupportChartView.AnimationY;
+                    if (animator.Duration.HasValue)
+                    {
+                        if (animator.EasingType.HasValue)
+                        {
+                            OriginalChartView.AnimateY(animator.Duration.Value, ConvertAnimationType(animator.EasingType.Value));
+                        }
+                        else
+                        {
+                            OriginalChartView.AnimateY(animator.Duration.Value);
+                        }
+                    }
+                }
+
                 if (SupportChartView.XAxis != null && OriginalChartView.XAxis!=null)
                 {
                     var SupportXAxis = SupportChartView.XAxis;
@@ -96,6 +193,15 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     OriginalAxis.SetupConfigBase(SupportXAxis);
                     OriginalAxis.SetupAxisConfigBase(SupportXAxis);
                     OriginalAxis.SetupXAxisConfig(SupportXAxis);
+
+                    if(SupportChartView.XAxis.AxisValueFormatter == null)
+                    {
+                        //OriginalChartView.XAxis.ValueFormatter = new FullTitleFormatter();
+                    }
+                    else
+                    {
+                        OriginalChartView.XAxis.ValueFormatter = new AxisValueFormatterExport(SupportChartView.XAxis.AxisValueFormatter);
+                    }
                 }
             }
         }

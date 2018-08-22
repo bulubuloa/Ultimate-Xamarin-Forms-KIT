@@ -1,12 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
-using System.Linq;
 using iOSCharts;
 using UltimateXF.iOS.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
-using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.Component;
-using UltimateXF.Widget.Charts.Models.ComponentXF;
 using Xamarin.Forms.Platform.iOS;
 
 namespace UltimateXF.iOS.Renderers.Extendeds
@@ -50,6 +47,69 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             OriginalChartView.Frame = this.Frame;
         }
 
+        private ChartEasingOption ConvertAnimationType(EasingOptionXF easingOptionXF)
+        {
+            switch (easingOptionXF)
+            {
+                case EasingOptionXF.Linear:
+                    return ChartEasingOption.Linear;
+                case EasingOptionXF.EaseInQuad:
+                    return ChartEasingOption.EaseInQuad;
+                case EasingOptionXF.EaseOutQuad:
+                    return ChartEasingOption.EaseOutQuad;
+                case EasingOptionXF.EaseInOutQuad:
+                    return ChartEasingOption.EaseInOutQuad;
+                case EasingOptionXF.EaseInCubic:
+                    return ChartEasingOption.EaseInCubic;
+                case EasingOptionXF.EaseOutCubic:
+                    return ChartEasingOption.EaseOutCubic;
+                case EasingOptionXF.EaseInOutCubic:
+                    return ChartEasingOption.EaseInOutCubic;
+                case EasingOptionXF.EaseInQuart:
+                    return ChartEasingOption.EaseInQuart;
+                case EasingOptionXF.EaseOutQuart:
+                    return ChartEasingOption.EaseOutQuart;
+                case EasingOptionXF.EaseInOutQuart:
+                    return ChartEasingOption.EaseInOutQuart;
+                case EasingOptionXF.EaseInSine:
+                    return ChartEasingOption.EaseInSine;
+                case EasingOptionXF.EaseOutSine:
+                    return ChartEasingOption.EaseOutSine;
+                case EasingOptionXF.EaseInOutSine:
+                    return ChartEasingOption.EaseInOutSine;
+                case EasingOptionXF.EaseInExpo:
+                    return ChartEasingOption.EaseInExpo;
+                case EasingOptionXF.EaseOutExpo:
+                    return ChartEasingOption.EaseOutExpo;
+                case EasingOptionXF.EaseInOutExpo:
+                    return ChartEasingOption.EaseInOutExpo;
+                case EasingOptionXF.EaseInCirc:
+                    return ChartEasingOption.EaseInCirc;
+                case EasingOptionXF.EaseOutCirc:
+                    return ChartEasingOption.EaseOutCirc;
+                case EasingOptionXF.EaseInOutCirc:
+                    return ChartEasingOption.EaseInOutCirc;
+                case EasingOptionXF.EaseInElastic:
+                    return ChartEasingOption.EaseInElastic;
+                case EasingOptionXF.EaseOutElastic:
+                    return ChartEasingOption.EaseOutElastic;
+                case EasingOptionXF.EaseInOutElastic:
+                    return ChartEasingOption.EaseInOutElastic;
+                case EasingOptionXF.EaseInBack:
+                    return ChartEasingOption.EaseInBack;
+                case EasingOptionXF.EaseOutBack:
+                    return ChartEasingOption.EaseOutBack;
+                case EasingOptionXF.EaseInOutBack:
+                    return ChartEasingOption.EaseInOutBack;
+                case EasingOptionXF.EaseInBounce:
+                    return ChartEasingOption.EaseInBounce;
+                case EasingOptionXF.EaseOutBounce:
+                    return ChartEasingOption.EaseOutBounce;
+                default:
+                    return ChartEasingOption.EaseInOutBounce;
+            }
+        }
+
         protected virtual void OnInitializeOriginalChartSettings()
         {
             if (SupportChartView != null && OriginalChartView != null)
@@ -88,6 +148,40 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                     OriginalChartView.ChartDescription.Text = SupportChartView.DescriptionChart.Text;
                 }
 
+                if (SupportChartView.AnimationX != null)
+                {
+                    var animator = SupportChartView.AnimationX;
+                    if (animator.Duration.HasValue)
+                    {
+                        var duration = ((double)animator.Duration.Value) / 1000d;
+                        if(animator.EasingType.HasValue)
+                        {
+                            OriginalChartView.AnimateWithXAxisDuration(duration, ConvertAnimationType(animator.EasingType.Value)); 
+                        }
+                        else
+                        {
+                            OriginalChartView.AnimateWithXAxisDuration(duration);
+                        }
+                    }
+                }
+
+                if (SupportChartView.AnimationY != null)
+                {
+                    var animator = SupportChartView.AnimationY;
+                    if (animator.Duration.HasValue)
+                    {
+                        var duration = ((double)animator.Duration.Value) / 1000d;
+                        if (animator.EasingType.HasValue)
+                        {
+                            OriginalChartView.AnimateWithYAxisDuration(duration, ConvertAnimationType(animator.EasingType.Value));
+                        }
+                        else
+                        {
+                            OriginalChartView.AnimateWithYAxisDuration(duration);
+                        }
+                    }
+                }
+
                 if (SupportChartView.XAxis != null && OriginalChartView.XAxis !=null)
                 {
                     var SupportXAxis = SupportChartView.XAxis;
@@ -96,9 +190,16 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                     OriginalAxis.SetupConfigBase(SupportXAxis);
                     OriginalAxis.SetupAxisConfigBase(SupportXAxis);
                     OriginalAxis.SetupXAxisConfig(SupportXAxis);
-                }
 
-                Console.WriteLine("dkm");
+                    if (SupportChartView.XAxis.AxisValueFormatter == null)
+                    {
+                        //OriginalChartView.XAxis.ValueFormatter = new FullTitleFormatter();
+                    }
+                    else
+                    {
+                        OriginalChartView.XAxis.ValueFormatter = new AxisValueFormatterExport(SupportChartView.XAxis.AxisValueFormatter);
+                    }
+                }
             }
         }
         protected virtual void OnSetNativeControl()

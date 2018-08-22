@@ -6,7 +6,7 @@ namespace UltimateXF.Widget.Charts.Models.BarChart
 {
     public class BarChartData : ChartDataXF<IBarDataSet,EntryChart> 
     {
-        public BarChartData(List<IBarDataSet> _DataSetItems, List<string> _TitleItems) : base(_DataSetItems,_TitleItems)
+        public BarChartData(List<IBarDataSet> _DataSetItems) : base(_DataSetItems)
         {
             
         }

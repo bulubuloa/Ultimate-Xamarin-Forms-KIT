@@ -225,6 +225,17 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
+        private IAxisValueFormatterXF _AxisValueFormatter;
+        public IAxisValueFormatterXF AxisValueFormatter
+        {
+            get => _AxisValueFormatter;
+            set
+            {
+                _AxisValueFormatter = value;
+                OnPropertyChanged();
+            }
+        }
+
         public AxisConfigBase()
         {
             

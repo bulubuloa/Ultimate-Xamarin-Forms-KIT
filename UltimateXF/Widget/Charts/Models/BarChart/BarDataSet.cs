@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models.Component;
-using UltimateXF.Widget.Charts.Models.Formatters;
 using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts.Models.BarChart

@@ -54,7 +54,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                 if (SupportChartView.MaxVisibleCount.HasValue)
                     OriginalChartView.SetMaxVisibleValueCount(SupportChartView.MaxVisibleCount.Value);
 
-                if (SupportChartView.AxisLeft != null)
+                if (SupportChartView.AxisLeft != null && OriginalChartView.AxisLeft!=null)
                 {
                     var SupportAxisLeft = SupportChartView.AxisLeft;
                     var OriginalLeftAxis = OriginalChartView.AxisLeft;
@@ -64,7 +64,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     OriginalLeftAxis.SetupYAxisConfig(SupportAxisLeft);
                 }
 
-                if (SupportChartView.AxisRight != null)
+                if (SupportChartView.AxisRight != null && OriginalChartView.AxisRight!=null)
                 {
                     var SupportAxisRight = SupportChartView.AxisRight;
                     var OriginalRightAxis = OriginalChartView.AxisRight;

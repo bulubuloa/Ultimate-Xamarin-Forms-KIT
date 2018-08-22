@@ -250,19 +250,16 @@ namespace UltimateXF.Droid.Renderers.Exporters
         {
             /*
                  * Properties could not set
-                 * IF_GetValueColors
                  * IF_GetGradientColor
-                 * IF_GetValueTextSize
-                 * IF_GetValueFormatter
                  */
             if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
             {
                 originalBaseDataSet.SetColors(baseDataSetXF.IF_GetColors().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
             }
-            //if (baseDataSetXF.IF_GetValueColors() != null && baseDataSetXF.IF_GetValueColors().Count > 0)
-            //{
-            //    originalBaseDataSet.ValueColors = (baseDataSetXF.IF_GetValueColors().Select(obj => obj.ToUIColor()).ToArray());
-            //}
+            if (baseDataSetXF.IF_GetValueColors() != null && baseDataSetXF.IF_GetValueColors().Count > 0)
+            {
+                originalBaseDataSet.SetValueTextColors(baseDataSetXF.IF_GetValueColors().Select(obj => new Java.Lang.Integer(obj.ToAndroid().ToArgb())).ToList());
+            }
             if (baseDataSetXF.IF_GetHighlightEnabled().HasValue)
             {
                 originalBaseDataSet.HighlightEnabled = baseDataSetXF.IF_GetHighlightEnabled().Value;
@@ -278,6 +275,25 @@ namespace UltimateXF.Droid.Renderers.Exporters
             if (baseDataSetXF.IF_GetDrawValues().HasValue)
             {
                 originalBaseDataSet.SetDrawValues(baseDataSetXF.IF_GetDrawValues().Value);
+            }
+            if (baseDataSetXF.IF_GetValueFormatter() != null)
+            {
+                originalBaseDataSet.ValueFormatter = new DataSetValueFormatterExport(baseDataSetXF.IF_GetValueFormatter());
+            }
+            if (baseDataSetXF.IF_GetValueTextSize().HasValue)
+            {
+                originalBaseDataSet.ValueTextSize = (baseDataSetXF.IF_GetValueTextSize().Value);
+            }
+            try
+            {
+                if (!string.IsNullOrEmpty(baseDataSetXF.IF_GetValueFontFamily()))
+                {
+                    originalBaseDataSet.ValueTypeface = SpecAndroid.CreateTypeface(UltimateXFSettup.Context, baseDataSetXF.IF_GetValueFontFamily());
+                }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
 

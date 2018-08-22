@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UltimateXF.Widget.Charts.Models;
+using UltimateXF.Widget.Charts.Models.Formatters;
 using UltimateXF.Widget.Charts.Models.ScatterChart;
 using Xamarin.Forms;
 
@@ -34,16 +35,17 @@ namespace DemoXF
             {
                
             };
-            var data4 = new ScatterChartData(new List<IScatterDataSet>() { dataSet4 }, labels);
+            var data4 = new ScatterChartData(new List<IScatterDataSet>() { dataSet4 });
 
             var dataSet5 = new ScatterDataSet(entries, "Bar DataSet")
             {
                 
             };
-            var data5 = new ScatterChartData(new List<IScatterDataSet>() { dataSet5 }, labels);
+            var data5 = new ScatterChartData(new List<IScatterDataSet>() { dataSet5 });
 
             scatterChart.ChartData = data4;
             scatterChart2.ChartData = data5;
+            scatterChart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
         }
     }
 }

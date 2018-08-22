@@ -6,7 +6,7 @@ namespace UltimateXF.Widget.Charts.Models.LineChart
 {
     public class LineChartData : ChartDataXF<ILineDataSetXF,EntryChart> 
     {
-        public LineChartData(List<ILineDataSetXF> _DataSetItems, List<string> _TitleItems) : base(_DataSetItems, _TitleItems)
+        public LineChartData(List<ILineDataSetXF> _DataSetItems) : base(_DataSetItems)
         {
             
         }

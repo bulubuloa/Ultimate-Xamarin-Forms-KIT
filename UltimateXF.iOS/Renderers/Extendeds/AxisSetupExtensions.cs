@@ -1,5 +1,6 @@
 ﻿using System;
 using iOSCharts;
+using UIKit;
 using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.Component;
 using Xamarin.Forms.Platform.iOS;
@@ -12,7 +13,6 @@ namespace UltimateXF.iOS.Renderers.Extendeds
         {
             /*
                     * Properties could not set
-                    * TextColor           
                     * Typeface
                     * TextSize
              */
@@ -33,6 +33,35 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                      * CustomAxisMin
                      * CustomAxisMax                     
             */
+            if (SupportXAxis.TextColor.HasValue)
+                OriginalAxis.LabelTextColor = SupportXAxis.TextColor.Value.ToUIColor();
+
+            try
+            {
+                if (string.IsNullOrEmpty(SupportXAxis.FontFamily))
+                {
+                    if (SupportXAxis.TextSize.HasValue)
+                    {
+                        OriginalAxis.LabelFont = UIFont.SystemFontOfSize(SupportXAxis.TextSize.Value);
+                    }
+                }
+                else
+                {
+                    if (SupportXAxis.TextSize.HasValue)
+                    {
+                        OriginalAxis.LabelFont = UIFont.FromName(SupportXAxis.FontFamily, SupportXAxis.TextSize.Value);
+                    }
+                    else
+                    {
+                        OriginalAxis.LabelFont = UIFont.FromName(SupportXAxis.FontFamily, OriginalAxis.LabelFont.PointSize);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+
             if (SupportXAxis.DrawGridLines.HasValue)
                 OriginalAxis.DrawGridLinesEnabled = SupportXAxis.DrawGridLines.Value;
 
@@ -125,13 +154,26 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             }
         }
 
+        public static YAxisLabelPosition GetYAxisLabelPosition(YAXISLabelPosition mode)
+        {
+            switch (mode)
+            {
+                case YAXISLabelPosition.INSIDE_CHART:
+                    return YAxisLabelPosition.InsideChart;
+                case YAXISLabelPosition.OUTSIDE_CHART:
+                    return YAxisLabelPosition.OutsideChart;
+                default:
+                    return YAxisLabelPosition.InsideChart;
+            }
+        }
+
+
         public static void SetupYAxisConfig(this ChartYAxis OriginalAxis, YAxisConfig SupportAxis)
         {
             /*
                  * Properties could not set
                  * UseAutoScaleRestrictionMin
                  * UseAutoScaleRestrictionMax
-                 * YAXISLabelPosition
                  * AxisDependency
             */
             if (SupportAxis.Inverted.HasValue)
@@ -161,11 +203,8 @@ namespace UltimateXF.iOS.Renderers.Extendeds
             if (SupportAxis.ZeroLineColor.HasValue)
                 OriginalAxis.ZeroLineColor = SupportAxis.ZeroLineColor.Value.ToUIColor();
 
-            //if (SupportAxis.YAXISLabelPosition.HasValue)
-            //    OriginalAxis.ZeroLineColor = SupportAxis.YAXISLabelPosition.Value);
-
-            //if (SupportAxis.AxisDependency.HasValue)
-                //OriginalAxis.ZeroLineColor = SupportAxis.AxisDependency.Value;
+            if (SupportAxis.YAXISLabelPosition.HasValue)
+                OriginalAxis.LabelPosition = (GetYAxisLabelPosition(SupportAxis.YAXISLabelPosition.Value));
         }
     }
 }
