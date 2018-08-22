@@ -1,12 +1,17 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/LineChartPage.xaml.cs">
+    <Files>
+      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="131" Column="2" />
+    </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
             <Node name="DemoAPP" expanded="True">
               <Node name="DemoXF" expanded="True">
-                <Node name="LineChartPage.xaml" expanded="True" />
+                <Node name="LineChartPage.xaml" expanded="True">
+                  <Node name="LineChartPage.xaml.cs" selected="True" />
+                </Node>
               </Node>
             </Node>
             <Node name="Library" expanded="True">
@@ -27,9 +32,7 @@
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True">
-                  <Node name="Extendeds" expanded="True">
-                    <Node name="SupportChartExtendedRenderer.cs" selected="True" />
-                  </Node>
+                  <Node name="Extendeds" expanded="True" />
                 </Node>
               </Node>
             </Node>
