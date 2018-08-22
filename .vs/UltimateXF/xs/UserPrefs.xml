@@ -1,39 +1,12 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="DemoXF/RadarChartPage.xaml.cs">
-    <Files>
-      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="76" Column="50" />
-      <File FileName="DemoXF/PieChartPage.xaml.cs" Line="56" Column="45" NotebookId="1" />
-      <File FileName="DemoXF/RadarChartPage.xaml.cs" Line="24" Column="27" NotebookId="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
             <Node name="DemoAPP" expanded="True">
               <Node name="DemoXF" expanded="True">
-                <Node name="App.xaml" expanded="True" />
-                <Node name="BarChartPage.xaml" expanded="True" />
-                <Node name="BubbleChartPage.xaml" expanded="True" />
-                <Node name="CandleStickChartPage.xaml" expanded="True" />
-                <Node name="CombinedChartPage.xaml" expanded="True" />
-                <Node name="HorizontalBarCharPage.xaml" expanded="True" />
                 <Node name="LineChartPage.xaml" expanded="True" />
-                <Node name="MainPage.xaml" expanded="True" />
-                <Node name="PieChartPage.xaml" expanded="True" />
-                <Node name="RadarChartPage.xaml" expanded="True">
-                  <Node name="RadarChartPage.xaml.cs" selected="True" />
-                </Node>
-                <Node name="ScatterChartPage.xaml" expanded="True" />
-              </Node>
-              <Node name="DemoXF.Android" expanded="True">
-                <Node name="Assets" expanded="True">
-                  <Node name="Fonts" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="DemoXF.iOS" expanded="True">
-                <Node name="Resources" expanded="True">
-                  <Node name="Fonts" expanded="True" />
-                </Node>
               </Node>
             </Node>
             <Node name="Library" expanded="True">
@@ -42,7 +15,6 @@
                   <Node name="Charts" expanded="True">
                     <Node name="Models" expanded="True">
                       <Node name="Component" expanded="True" />
-                      <Node name="ComponentXF" expanded="True" />
                     </Node>
                   </Node>
                 </Node>
@@ -55,11 +27,13 @@
               </Node>
               <Node name="UltimateXF.iOS" expanded="True">
                 <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
-                  <Node name="Extendeds" expanded="True" />
+                  <Node name="Extendeds" expanded="True">
+                    <Node name="SupportChartExtendedRenderer.cs" selected="True" />
+                  </Node>
                 </Node>
               </Node>
             </Node>
+            <Node name="UltimateXFNG.Nuget" expanded="True" />
           </Node>
         </State>
       </Pad>

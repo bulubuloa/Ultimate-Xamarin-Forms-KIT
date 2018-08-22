@@ -1400,8 +1400,6 @@ namespace DemoXF.Droid
 			global::UltimateXF.Droid.Resource.Style.Platform_V14_AppCompat_Light = global::DemoXF.Droid.Resource.Style.Platform_V14_AppCompat_Light;
 			global::UltimateXF.Droid.Resource.Style.Platform_V21_AppCompat = global::DemoXF.Droid.Resource.Style.Platform_V21_AppCompat;
 			global::UltimateXF.Droid.Resource.Style.Platform_V21_AppCompat_Light = global::DemoXF.Droid.Resource.Style.Platform_V21_AppCompat_Light;
-			global::UltimateXF.Droid.Resource.Style.Platform_V25_AppCompat = global::DemoXF.Droid.Resource.Style.Platform_V25_AppCompat;
-			global::UltimateXF.Droid.Resource.Style.Platform_V25_AppCompat_Light = global::DemoXF.Droid.Resource.Style.Platform_V25_AppCompat_Light;
 			global::UltimateXF.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner = global::DemoXF.Droid.Resource.Style.Platform_Widget_AppCompat_Spinner;
 			global::UltimateXF.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat = global::DemoXF.Droid.Resource.Style.RtlOverlay_DialogWindowTitle_AppCompat;
 			global::UltimateXF.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem = global::DemoXF.Droid.Resource.Style.RtlOverlay_Widget_AppCompat_ActionBar_TitleItem;

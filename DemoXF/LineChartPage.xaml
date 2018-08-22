@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <ContentPage x:Class="DemoXF.LineChartPage"
              xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ultimateChart="clr-namespace:UltimateXF.Widget.Charts;assembly=UltimateXF">
     <ContentPage.Content>
-        <StackLayout Orientation="Vertical" Padding="10" Spacing="20">
+        <StackLayout Orientation="Vertical"
+                     Padding="10"
+                     Spacing="20">
             <ultimateChart:SupportLineChartExtended x:Name="chart"
-                                              HorizontalOptions="FillAndExpand"
-                                              VerticalOptions="FillAndExpand"/>
-            
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand"
+                                                    DrawBorders="false"
+                                                    DoubleTapToZoomEnabled="false" />
+
             <ultimateChart:SupportLineChartExtended x:Name="chart2"
-                                              HorizontalOptions="FillAndExpand"
-                                              VerticalOptions="FillAndExpand" />
+                                                    HorizontalOptions="FillAndExpand"
+                                                    VerticalOptions="FillAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

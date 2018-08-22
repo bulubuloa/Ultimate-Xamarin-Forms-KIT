@@ -83,5 +83,19 @@ namespace UltimateXF.Widget.Charts
             get => (float?)GetValue(MaxHighlightDistanceProperty);
             set => SetValue(MaxHighlightDistanceProperty, value);
         }
+
+        public static readonly BindableProperty AnimationXProperty = BindableProperty.Create("AnimationX", typeof(AnimatorXF), typeof(SupportBaseChart), null);
+        public AnimatorXF AnimationX
+        {
+            get => (AnimatorXF)GetValue(AnimationXProperty);
+            set => SetValue(AnimationXProperty, value);
+        }
+
+        public static readonly BindableProperty AnimationYProperty = BindableProperty.Create("AnimationY", typeof(AnimatorXF), typeof(SupportBaseChart), null);
+        public AnimatorXF AnimationY
+        {
+            get => (AnimatorXF)GetValue(AnimationYProperty);
+            set => SetValue(AnimationYProperty, value);
+        }
     }
 }

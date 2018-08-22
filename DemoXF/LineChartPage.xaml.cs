@@ -121,6 +121,11 @@ namespace DemoXF
             chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
             chart.XAxis.DrawGridLines = false;
             chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
+            chart.AnimationX = new AnimatorXF()
+            {
+                Duration = 1000,
+                EasingType = EasingOptionXF.EaseOutCirc
+            };
         }
     }
 }
