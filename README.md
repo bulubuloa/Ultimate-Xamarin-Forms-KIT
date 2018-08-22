@@ -44,36 +44,90 @@ Setup for Android project (add to MainActivity before LoadApplication)
 
 #### LineChart & BarChart
 
-    <ultimateChart:SupportBarChart  
-	    x:Name="lineChart"  
-	    VerticalOptions="FillAndExpand"  
-	    HorizontalOptions="FillAndExpand"  
-	    Description="Renderer"  
-	    IsShowLeftAxis="false"  
-	    IsShowLeftAxisLine="true"  
-	    IsShowLeftAxisValue="true"  
-	    IsShowRightAxis="false"  
-	    IsShowRightAxisLine="false"  
-	    IsShowRightAxisValue="false"  
-	    IsShowXAxis="false"  
-	    IsShowXAxisLine="true"  
-	    IsShowXAxisValue="true"  
-	    XAxisPosition="BOTTOM"  />
+    <ultimateChart:SupportLineChartExtended 
+    	x:Name="chart"
+        HorizontalOptions="FillAndExpand"
+        VerticalOptions="FillAndExpand"
+        DrawBorders="false"
+        DoubleTapToZoomEnabled="false" />
 
 DataBinding
 
-    var  entries  =  new  List<EntryChart>();  
-    entries.Add(new  EntryChart(0,5));  
-    entries.Add(new  EntryChart(1,7));  
-    entries.Add(new  EntryChart(2,10));  
-    entries.Add(new  EntryChart(3,3));  
-    var  dataSet  =  new  BarDataSet(entries,  "Line Chart")  
-    {  
-	    DataColor  =  Color.Red,  
-	    DrawValue  =  false,  
-    };    
-    var  data  =  new  BarChartData(new  List<IBarDataSet>(){dataSet},new  List<string>());  
-    lineChart.ChartData  =  data;
+     var entries = new List<EntryChart>();
+     var entries2 = new List<EntryChart>();
+     var labels = new List<string>();
+
+     var random = new Random();
+     for (int i = 0; i < 7; i++)
+     {
+     	entries.Add(new EntryChart(i, random.Next(1000,50000)));
+        entries2.Add(new EntryChart(i, random.Next(1000,50000)));
+        labels.Add("Entry" + i);
+     }
+     var FontFamily = "";
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    FontFamily = "Pacifico-Regular";
+                    break;
+                case Device.Android:
+                    FontFamily = "Fonts/Pacifico-Regular.ttf";
+                    break;
+                default:
+                    break;
+            }
+            var dataSet4 = new LineDataSetXF(entries, "Line DataSet 1")
+            {
+                CircleRadius = 10,
+                CircleHoleRadius = 4f,
+                CircleColors = new List<Color>(){
+                    Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                },
+                CircleHoleColor = Color.Green,
+                ValueColors = new List<Color>(){
+                    Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                },
+                Mode = LineDataSetMode.CUBIC_BEZIER,
+                ValueFormatter = new CustomDataSetValueFormatter(),
+                ValueFontFamily = FontFamily
+            };
+
+            Xamarin.Forms.OnPlatform<string> onPlatform = (Xamarin.Forms.OnPlatform<string>)Application.Current.Resources["PacificoRegular"];
+            var xxx = onPlatform.Default;
+
+            var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
+            {
+                Colors = new List<Color>{
+                    Color.Green
+                },
+                CircleHoleColor = Color.Blue,
+                CircleColors = new List<Color>{
+                    Color.Blue
+                },
+                CircleRadius = 3,
+                DrawValues = false,
+
+            };
+
+            var data4 = new LineChartData(new List<ILineDataSetXF>() { dataSet4,dataSet5 });
+
+            chart.ChartData = data4;
+            chart.DescriptionChart.Text = "Test label chart description";
+            chart.AxisLeft.DrawGridLines = false;
+            chart.AxisLeft.DrawAxisLine = true;
+            chart.AxisLeft.Enabled = true;
+
+            chart.AxisRight.DrawAxisLine = false;
+            chart.AxisRight.DrawGridLines = false;
+            chart.AxisRight.Enabled = false;
+
+            chart.AxisRight.FontFamily = FontFamily;
+            chart.AxisLeft.FontFamily = FontFamily;
+            chart.XAxis.FontFamily = FontFamily;
+
+            chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
+            chart.XAxis.DrawGridLines = false;
+            chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
 
 **Chart types:**
 
