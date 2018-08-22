@@ -14,6 +14,7 @@ namespace UltimateXF.Widget.Charts.Models.ComponentXF
         GradientColor IF_GetGradientColor();
         List<GradientColor> IF_GetGradientColors();
         string IF_GetLabel();
+        string IF_GetValueFontFamily();
         bool? IF_GetHighlightEnabled();
         bool? IF_GetVisible();
         float? IF_GetValueTextSize();

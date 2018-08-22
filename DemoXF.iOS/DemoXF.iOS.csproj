@@ -212,5 +212,10 @@
       <Name>UltimateXF.iOS</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Fonts\lato\Lato-Bold.ttf" />
+    <BundleResource Include="Resources\Fonts\lato\Lato-Regular.ttf" />
+    <BundleResource Include="Resources\Fonts\Pacifico-Regular.ttf" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

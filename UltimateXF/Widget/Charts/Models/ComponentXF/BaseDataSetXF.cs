@@ -25,6 +25,17 @@ namespace UltimateXF.Widget.Charts.Models.Component
          * protected MPPointF mIconsOffset = new MPPointF();
          * 
          */
+        private string _ValueFontFamily;
+        public string ValueFontFamily
+        {
+            get => _ValueFontFamily;
+            set
+            {
+                _ValueFontFamily = value;
+                OnPropertyChanged();
+            }
+        }
+
         private List<TEntry> _Values;
         public List<TEntry> Values
         {
@@ -221,6 +232,11 @@ namespace UltimateXF.Widget.Charts.Models.Component
         public IDataSetValueFormatter IF_GetValueFormatter()
         {
             return ValueFormatter;
+        }
+
+        public string IF_GetValueFontFamily()
+        {
+            return ValueFontFamily;
         }
     }
 }

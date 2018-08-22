@@ -29,7 +29,7 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             if (SupportXAxis.TextColor.HasValue)
                 OriginalAxis.TextColor = SupportXAxis.TextColor.Value.ToAndroid();
 
-            if (string.IsNullOrEmpty(SupportXAxis.FontFamily))
+            if (!string.IsNullOrEmpty(SupportXAxis.FontFamily))
             {
                 OriginalAxis.Typeface = SpecAndroid.CreateTypeface(UltimateXFSettup.Context, SupportXAxis.FontFamily);
             }

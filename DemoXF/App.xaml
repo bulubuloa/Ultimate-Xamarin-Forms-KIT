@@ -1,5 +1,13 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="DemoXF.App">
+<?xml version="1.0" encoding="utf-8" ?>
+<Application x:Class="DemoXF.App"
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <Application.Resources>
-    </Application.Resources>
+        <ResourceDictionary>
+            <OnPlatform x:Key="PacificoRegular"
+                        x:TypeArguments="x:String"
+                        Android="Fonts/Pacifico-Regular.ttf#Pacifico"
+                        iOS="Pacifico-Regular" />
+        </ResourceDictionary>
+    </Application.Resources>    
 </Application>

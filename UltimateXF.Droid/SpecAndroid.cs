@@ -1,4 +1,7 @@
 ﻿using System;
+using Android.Content;
+using Android.Graphics;
+
 namespace UltimateXF.Droid
 {
     public class SpecAndroid

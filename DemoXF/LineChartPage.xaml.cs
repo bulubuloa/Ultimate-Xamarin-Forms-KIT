@@ -57,20 +57,36 @@ namespace DemoXF
                 labels.Add("Entry" + i);
             }
 
+            var FontFamily = "";
+            switch (Device.RuntimePlatform)
+            {
+                case Device.iOS:
+                    FontFamily = "Pacifico-Regular";
+                    break;
+                case Device.Android:
+                    FontFamily = "Fonts/Pacifico-Regular.ttf";
+                    break;
+                default:
+                    break;
+            }
             var dataSet4 = new LineDataSetXF(entries, "Line DataSet 1")
             {
                 CircleRadius = 10,
                 CircleHoleRadius = 4f,
-                CircleColors =  new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                CircleColors = new List<Color>(){
+                    Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
                 CircleHoleColor = Color.Green,
                 ValueColors = new List<Color>(){
-                    Color.Accent, Color.Azure, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+                    Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
                 },
                 Mode = LineDataSetMode.CUBIC_BEZIER,
-                ValueFormatter = new CustomDataSetValueFormatter()
+                ValueFormatter = new CustomDataSetValueFormatter(),
+                ValueFontFamily = FontFamily
             };
+
+            Xamarin.Forms.OnPlatform<string> onPlatform = (Xamarin.Forms.OnPlatform<string>)Application.Current.Resources["PacificoRegular"];
+            var xxx = onPlatform.Default;
 
             var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
             {
@@ -83,6 +99,7 @@ namespace DemoXF
                 },
                 CircleRadius = 3,
                 DrawValues = false,
+
             };
 
             var data4 = new LineChartData(new List<ILineDataSetXF>() { dataSet4,dataSet5 });
@@ -96,6 +113,10 @@ namespace DemoXF
             chart.AxisRight.DrawAxisLine = false;
             chart.AxisRight.DrawGridLines = false;
             chart.AxisRight.Enabled = false;
+
+            chart.AxisRight.FontFamily = FontFamily;
+            chart.AxisLeft.FontFamily = FontFamily;
+            chart.XAxis.FontFamily = FontFamily;
 
             chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
             chart.XAxis.DrawGridLines = false;

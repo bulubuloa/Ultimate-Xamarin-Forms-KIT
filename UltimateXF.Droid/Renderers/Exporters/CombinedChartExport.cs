@@ -284,6 +284,17 @@ namespace UltimateXF.Droid.Renderers.Exporters
             {
                 originalBaseDataSet.ValueTextSize = (baseDataSetXF.IF_GetValueTextSize().Value);
             }
+            try
+            {
+                if (!string.IsNullOrEmpty(baseDataSetXF.IF_GetValueFontFamily()))
+                {
+                    originalBaseDataSet.ValueTypeface = SpecAndroid.CreateTypeface(UltimateXFSettup.Context, baseDataSetXF.IF_GetValueFontFamily());
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
         public void OnSettingsBarLineScatterCandleBubbleDataSet<TEntry>(IBarLineScatterCandleBubbleDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.BarLineScatterCandleBubbleDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
