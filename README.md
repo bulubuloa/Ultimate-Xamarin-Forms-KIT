@@ -1,7 +1,7 @@
 ## Xamarin Forms Custom Renderer 
 I create this package for sharing all my xamarin forms custom controls
 
-[![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-V2.0.0-green.svg)](https://www.nuget.org/packages/UltimateXF/)
+[![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-v2.1.0-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
 
 ### MPAndroidChart Binding   
 
@@ -11,11 +11,11 @@ I create this package for sharing all my xamarin forms custom controls
 
 Setup for iOS project (add to AppDelegate before LoadApplication)
 
-    UltimateXF.iOS.UltimateXF.Initialize();
+     UltimateXFSettup.Initialize();
 
 Setup for Android project (add to MainActivity before LoadApplication)
 
-    UltimateXF.Droid.UltimateXF.Initialize(this);
+     UltimateXFSettup.Initialize(this);
 
  **Required:**
  - ***[Xamarin.Forms](>= 3.1.0.697729)***
