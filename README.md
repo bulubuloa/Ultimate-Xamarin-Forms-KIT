@@ -1,7 +1,7 @@
 ## Xamarin Forms Custom Renderer 
 I create this package for sharing all my xamarin forms custom controls
 
-[![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-v1.26.0-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
+[![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-V2.0.0-green.svg)](https://www.nuget.org/packages/UltimateXF/)
 
 ### MPAndroidChart Binding   
 
@@ -53,18 +53,18 @@ Setup for Android project (add to MainActivity before LoadApplication)
 
 DataBinding
 
-     var entries = new List<EntryChart>();
-     var entries2 = new List<EntryChart>();
-     var labels = new List<string>();
+            var entries = new List<EntryChart>();
+            var entries2 = new List<EntryChart>();
+            var labels = new List<string>();
 
-     var random = new Random();
-     for (int i = 0; i < 7; i++)
-     {
-     	entries.Add(new EntryChart(i, random.Next(1000,50000)));
-        entries2.Add(new EntryChart(i, random.Next(1000,50000)));
-        labels.Add("Entry" + i);
-     }
-     var FontFamily = "";
+     	    var random = new Random();
+	    for (int i = 0; i < 7; i++)
+	    {
+		entries.Add(new EntryChart(i, random.Next(1000,50000)));
+		entries2.Add(new EntryChart(i, random.Next(1000,50000)));
+		labels.Add("Entry" + i);
+	    }
+     	    var FontFamily = "";
             switch (Device.RuntimePlatform)
             {
                 case Device.iOS:
@@ -91,9 +91,6 @@ DataBinding
                 ValueFormatter = new CustomDataSetValueFormatter(),
                 ValueFontFamily = FontFamily
             };
-
-            Xamarin.Forms.OnPlatform<string> onPlatform = (Xamarin.Forms.OnPlatform<string>)Application.Current.Resources["PacificoRegular"];
-            var xxx = onPlatform.Default;
 
             var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
             {
