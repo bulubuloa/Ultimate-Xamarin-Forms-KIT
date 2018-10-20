@@ -21,8 +21,8 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        private int? _FillAlpha;
-        public int? FillAlpha
+        private float? _FillAlpha;
+        public float? FillAlpha
         {
             get => _FillAlpha;
             set
@@ -63,7 +63,7 @@ namespace UltimateXF.Widget.Charts.Models.Component
             return FillColor;
         }
 
-        public int? IF_GetFillAlpha()
+        public float? IF_GetFillAlpha()
         {
             return FillAlpha;
         }

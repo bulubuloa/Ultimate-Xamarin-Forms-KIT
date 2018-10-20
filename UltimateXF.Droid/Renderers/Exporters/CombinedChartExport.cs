@@ -252,6 +252,8 @@ namespace UltimateXF.Droid.Renderers.Exporters
                  * Properties could not set
                  * IF_GetGradientColor
                  */
+
+            
             if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
             {
                 originalBaseDataSet.SetColors(baseDataSetXF.IF_GetColors().Select(obj => obj.ToAndroid().ToArgb()).ToArray());
@@ -328,7 +330,6 @@ namespace UltimateXF.Droid.Renderers.Exporters
         public void OnSettingsLineRadarDataSet<TEntry>(ILineRadarDataSetXF<TEntry> baseDataSetXF, MikePhil.Charting.Data.LineRadarDataSet originalBaseDataSet) where TEntry : Widget.Charts.Models.BaseEntry
         {
             OnSettingsLineScatterCandleRadarDataSet(baseDataSetXF, originalBaseDataSet);
-
             if (baseDataSetXF.IF_GetFillColor().HasValue)
             {
                 originalBaseDataSet.FillColor = baseDataSetXF.IF_GetFillColor().Value.ToAndroid();
@@ -336,7 +337,7 @@ namespace UltimateXF.Droid.Renderers.Exporters
 
             if (baseDataSetXF.IF_GetFillAlpha().HasValue)
             {
-                originalBaseDataSet.FillAlpha = baseDataSetXF.IF_GetFillAlpha().Value;
+                originalBaseDataSet.FillAlpha = (int)baseDataSetXF.IF_GetFillAlpha().Value;
             }
 
             if (baseDataSetXF.IF_GetLineWidth().HasValue)

@@ -82,7 +82,10 @@ namespace DemoXF
                 },
                 Mode = LineDataSetMode.CUBIC_BEZIER,
                 ValueFormatter = new CustomDataSetValueFormatter(),
-                ValueFontFamily = FontFamily
+                ValueFontFamily = FontFamily,
+                FillAlpha = 0.8f,
+                GradientColor = new GradientColor(Color.Blue,Color.Red,30),
+                DrawFilled = true,
             };
 
             Xamarin.Forms.OnPlatform<string> onPlatform = (Xamarin.Forms.OnPlatform<string>)Application.Current.Resources["PacificoRegular"];
@@ -99,7 +102,7 @@ namespace DemoXF
                 },
                 CircleRadius = 3,
                 DrawValues = false,
-
+                GradientColor = new GradientColor(Color.Red,Color.Green)
             };
 
             var data4 = new LineChartData(new List<ILineDataSetXF>() { dataSet4,dataSet5 });

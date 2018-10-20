@@ -10,11 +10,13 @@ namespace UltimateXF.Widget.Charts.Models.Component
     {
         public Color StartColor;
         public Color EndColor;
+        public float Angle;
 
-        public GradientColor(Color startColor, Color endColor)
+        public GradientColor(Color startColor, Color endColor,float angle = 90f)
         {
             this.StartColor = startColor;
             this.EndColor = endColor;
+            this.Angle = angle;
         }
     }
 
@@ -80,16 +82,16 @@ namespace UltimateXF.Widget.Charts.Models.Component
             }
         }
 
-        private List<GradientColor> _GradientColors;
-        public List<GradientColor> GradientColors
-        {
-            get => _GradientColors;
-            set
-            {
-                _GradientColors = value;
-                OnPropertyChanged();
-            }
-        }
+        //private List<GradientColor> _GradientColors;
+        //public List<GradientColor> GradientColors
+        //{
+        //    get => _GradientColors;
+        //    set
+        //    {
+        //        _GradientColors = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
 
         private string _Label;
         public string Label
@@ -194,10 +196,10 @@ namespace UltimateXF.Widget.Charts.Models.Component
             return GradientColor;
         }
 
-        public List<GradientColor> IF_GetGradientColors()
-        {
-            return GradientColors;
-        }
+        //public List<GradientColor> IF_GetGradientColors()
+        //{
+        //    return GradientColors;
+        //}
 
         public string IF_GetLabel()
         {

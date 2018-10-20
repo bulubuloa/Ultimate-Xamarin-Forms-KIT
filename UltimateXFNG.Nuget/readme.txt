@@ -1,2 +1,2 @@
-﻿
-This readme.txt file will be displayed immediately after the NuGet package is installed.
+﻿If you have any problems when using this library, plz contact me via email below to resolve it together
+Email: quachhoangqb@gmail.com

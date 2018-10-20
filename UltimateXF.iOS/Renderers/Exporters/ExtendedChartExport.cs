@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using CoreGraphics;
+using Foundation;
 using iOSCharts;
 using UIKit;
 using UltimateXF.Widget.Charts.Models;
@@ -105,6 +107,7 @@ namespace UltimateXF.iOS.Renderers.Exporters
             {
                 var entryOriginal = item.IF_GetValues().Select(obj => new BarChartDataEntry(obj.GetXPosition(), obj.GetYPosition()));
                 var dataSet = new BarChartDataSet(entryOriginal.ToArray(), item.IF_GetLabel());
+                
                 OnIntializeDataSetBar(item, dataSet);
                 dataSetItems.Add(dataSet);
             }
@@ -251,6 +254,7 @@ namespace UltimateXF.iOS.Renderers.Exporters
                  * Properties could not set
                  * IF_GetGradientColor
                  */
+            
             if (baseDataSetXF.IF_GetColors() != null && baseDataSetXF.IF_GetColors().Count > 0)
             {
                 originalBaseDataSet.SetColors(baseDataSetXF.IF_GetColors().Select(obj => obj.ToUIColor()).ToArray(), 1f);
@@ -310,7 +314,6 @@ namespace UltimateXF.iOS.Renderers.Exporters
         public void OnSettingsBarLineScatterCandleBubbleDataSet<TEntry>(IBarLineScatterCandleBubbleDataSetXF<TEntry> baseDataSetXF, BarLineScatterCandleBubbleChartDataSet originalBaseDataSet) where TEntry : BaseEntry
         {
             OnSettingsBaseDataSet(baseDataSetXF, originalBaseDataSet);
-
             if (baseDataSetXF.IF_GetighLightColor().HasValue)
             {
                 originalBaseDataSet.HighlightColor = baseDataSetXF.IF_GetighLightColor().Value.ToUIColor();
@@ -320,7 +323,6 @@ namespace UltimateXF.iOS.Renderers.Exporters
         public void OnSettingsLineScatterCandleRadarDataSet<TEntry>(ILineScatterCandleRadarDataSetXF<TEntry> baseDataSetXF, LineScatterCandleRadarChartDataSet originalBaseDataSet) where TEntry : BaseEntry
         {
             OnSettingsBarLineScatterCandleBubbleDataSet(baseDataSetXF, originalBaseDataSet);
-
             if (baseDataSetXF.IF_GetDrawVerticalHighlightIndicator().HasValue)
             {
                 originalBaseDataSet.DrawVerticalHighlightIndicatorEnabled = baseDataSetXF.IF_GetDrawVerticalHighlightIndicator().Value;
@@ -339,6 +341,13 @@ namespace UltimateXF.iOS.Renderers.Exporters
         {
             OnSettingsLineScatterCandleRadarDataSet(baseDataSetXF, originalBaseDataSet);
 
+            if(baseDataSetXF.IF_GetGradientColor()!=null)
+            {
+                var gradientData = baseDataSetXF.IF_GetGradientColor();
+                var gradient = new CGGradient(CGColorSpace.CreateDeviceRGB(), new CGColor[] { gradientData.StartColor.ToCGColor(), gradientData.EndColor.ToCGColor() });
+                originalBaseDataSet.Fill = ChartFill.FillWithLinearGradient(NSObject.FromObject(gradient), NSNumber.FromFloat(gradientData.Angle));
+            }
+
             if (baseDataSetXF.IF_GetFillColor().HasValue)
             {
                 originalBaseDataSet.FillColor = baseDataSetXF.IF_GetFillColor().Value.ToUIColor();
@@ -346,7 +355,7 @@ namespace UltimateXF.iOS.Renderers.Exporters
 
             if (baseDataSetXF.IF_GetFillAlpha().HasValue)
             {
-                originalBaseDataSet.FillAlpha = baseDataSetXF.IF_GetFillAlpha().Value;
+               originalBaseDataSet.FillAlpha = baseDataSetXF.IF_GetFillAlpha().Value;
             }
 
             if (baseDataSetXF.IF_GetLineWidth().HasValue)
