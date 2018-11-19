@@ -1,7 +1,7 @@
 ## Xamarin Forms Custom Renderer 
 I create this package for sharing all my xamarin forms custom controls
 
-[![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-v2.2.0-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
+Available on NuGet: [![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-v2.2.0-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
 
 ### MPAndroidChart Binding   
 
