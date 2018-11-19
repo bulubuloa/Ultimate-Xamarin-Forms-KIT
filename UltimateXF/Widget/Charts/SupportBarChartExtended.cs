@@ -17,6 +17,12 @@ namespace UltimateXF.Widget.Charts
 
         public SupportBarChartExtended()
         {
+            AxisLeft = new YAxisConfig();
+            AxisRight = new YAxisConfig();
+            XAxis = new XAxisConfig();
+            DescriptionChart = new ChartDescription();
+            AnimationX = new AnimatorXF();
+            AnimationY = new AnimatorXF();
         }
     }
 }

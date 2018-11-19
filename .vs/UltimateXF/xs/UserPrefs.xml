@@ -1,52 +1,20 @@
 ﻿<Properties StartupConfiguration="{F6305287-2F89-43B2-AF3B-BC9E8037A52C}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="UltimateXF/Widget/Charts/SupportLineChartExtended.cs">
-    <Files>
-      <File FileName="DemoXF/LineChartPage.xaml.cs" Line="75" Column="39" />
-      <File FileName="UltimateXF.Droid/Renderers/Exporters/CombinedChartExport.cs" Line="352" Column="10" />
-      <File FileName="DemoXF.iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="UltimateXF/Widget/Charts/SupportLineChartExtended.cs" Line="8" Column="51" />
-      <File FileName="UltimateXF.iOS/Renderers/Exporters/ExtendedChartExport.cs" Line="349" Column="126" NotebookId="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
             <Node name="DemoAPP" expanded="True">
-              <Node name="DemoXF" expanded="True">
-                <Node name="LineChartPage.xaml" expanded="True" />
-              </Node>
               <Node name="DemoXF.iOS" expanded="True" />
             </Node>
-            <Node name="Library" expanded="True">
-              <Node name="UltimateXF" expanded="True">
-                <Node name="Widget" expanded="True">
-                  <Node name="Charts" expanded="True">
-                    <Node name="Models" expanded="True">
-                      <Node name="Component" expanded="True" />
-                    </Node>
-                    <Node name="SupportLineChartExtended.cs" selected="True" />
-                  </Node>
-                </Node>
-              </Node>
-              <Node name="UltimateXF.Droid" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
-                </Node>
-              </Node>
-              <Node name="UltimateXF.iOS" expanded="True">
-                <Node name="Renderers" expanded="True">
-                  <Node name="Exporters" expanded="True" />
-                  <Node name="Extendeds" expanded="True" />
-                </Node>
-              </Node>
-            </Node>
-            <Node name="UltimateXFNG.Nuget" expanded="True" />
+            <Node name="Library" expanded="True" />
+            <Node name="UltimateXFNG.Nuget" selected="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -54,5 +22,5 @@
   <MonoDevelop.Ide.ItemProperties.Library.UltimateXF.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.E5AZCY489464" />
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.bacd535954e069cb541d979bfee0213ea979867e" />
+  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3E1706BF-323D-427B-A7B0-D4465227F3F9" />
 </Properties>

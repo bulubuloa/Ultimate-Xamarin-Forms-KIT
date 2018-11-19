@@ -13,5 +13,15 @@ namespace UltimateXF.Widget.Charts
             get => (LineChartData)GetValue(ChartDataProperty);
             set => SetValue(ChartDataProperty, value);
         }
+
+        public SupportLineChartExtended()
+        {
+            AxisLeft = new YAxisConfig();
+            AxisRight = new YAxisConfig();
+            XAxis = new XAxisConfig();
+            DescriptionChart = new ChartDescription();
+            AnimationX = new AnimatorXF();
+            AnimationY = new AnimatorXF();
+        }
     }
 }

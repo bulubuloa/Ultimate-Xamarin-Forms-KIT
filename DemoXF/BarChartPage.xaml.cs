@@ -54,6 +54,8 @@ namespace DemoXF
             chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
             chart.XAxis.DrawGridLines = false;
             chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
+
+            chart2.ChartData = data4;
         }
     }
 }
