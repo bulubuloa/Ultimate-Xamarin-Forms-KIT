@@ -23,9 +23,8 @@ Setup for Android project (add to MainActivity before LoadApplication)
  - ***Your app could not run on simulator(iOS) - only real device)***
  - ***Install Xamarin.Swift4 package for iOS project(maybe if your app can't start)*** 
 		
-
-    >[Xamarin.Swift4] (>= 4.0.0)
-    >[Xamarin.Swift4.Core]  (>= 4.1.2)
+[Xamarin.Swift4] (>= 4.0.0)  
+[Xamarin.Swift4.Core]  (>= 4.1.2)  
     		[Xamarin.Swift4.CoreAudio](>= 4.1.2)
     		[Xamarin.Swift4.CoreData]  (>= 4.1.2)
     		[Xamarin.Swift4.CoreFoundation] (>= 4.1.2)
