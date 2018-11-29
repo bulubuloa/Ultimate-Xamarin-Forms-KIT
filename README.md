@@ -1,5 +1,5 @@
-## Xamarin Forms Custom Renderer 
-I create this package for sharing all my xamarin forms custom controls
+## MPAndroidChart/iOSChart for Xamarin Forms Custom Renderer 
+A powerful 🚀 Android/iOS chart view / graph view library, binding support for Xamarin.Forms, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, dragging and animations.
 
 ### Available on NuGet: 
 ![Build status](https://ci.appveyor.com/api/projects/status/7g3sppml9ewumr9i/branch/master?svg=true) [![NuGet Badge](https://buildstats.info/nuget/UltimateXF)](https://www.nuget.org/packages/UltimateXF/)
