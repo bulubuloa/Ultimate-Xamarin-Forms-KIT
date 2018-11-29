@@ -44,12 +44,12 @@ Setup for Android project (add to MainActivity before LoadApplication)
 
 #### LineChart & BarChart
 
-    <ultimateChart:SupportLineChartExtended 
-    	x:Name="chart"
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
-        DrawBorders="false"
-        DoubleTapToZoomEnabled="false" />
+        <ultimateChart:SupportLineChartExtended  
+    	       x:Name="chart"  
+               HorizontalOptions="FillAndExpand"  
+               VerticalOptions="FillAndExpand"  
+               DrawBorders="false"  
+               DoubleTapToZoomEnabled="false" />  
 
 DataBinding
 
