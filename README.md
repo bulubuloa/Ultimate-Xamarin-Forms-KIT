@@ -2,7 +2,7 @@
 I create this package for sharing all my xamarin forms custom controls
 
 ### Available on NuGet: 
-[![NuGet Badge](https://buildstats.info/nuget/UltimateXF)](https://www.nuget.org/packages/UltimateXF/)
+[![Build status](https://ci.appveyor.com/api/projects/status/7g3sppml9ewumr9i/branch/master?svg=true)] [![NuGet Badge](https://buildstats.info/nuget/UltimateXF)](https://www.nuget.org/packages/UltimateXF/)
 
 ### MPAndroidChart Binding   
 
