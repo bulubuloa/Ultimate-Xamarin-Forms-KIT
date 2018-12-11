@@ -179,5 +179,5 @@ DataBinding
 ![alt tag](https://raw.github.com/PhilJay/MPAndroidChart/master/screenshots/radarchart.png)
 
 # License
-<p>Copyright 2018 QuachHoang
+<p>You can use this library for any project, or custom, edit it if you want, no need license and permissions 
 <p>Special thanks Daniel Cohen Gindi & Philipp Jahoda
