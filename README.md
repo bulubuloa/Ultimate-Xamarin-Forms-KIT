@@ -1,7 +1,8 @@
-## Xamarin Forms Custom Renderer 
-I create this package for sharing all my xamarin forms custom controls
+## MPAndroidChart/iOSChart for Xamarin Forms Custom Renderer 
+A powerful 🚀 Android/iOS chart view / graph view library, binding support for Xamarin.Forms, supporting line- bar- pie- radar- bubble- and candlestick charts as well as scaling, dragging and animations.
 
-Available on NuGet: [![NuGet](https://img.shields.io/badge/Nuget%20UltimateXF-v2.2.0-blue.svg)](https://www.nuget.org/packages/UltimateXF/)
+### Available on NuGet: 
+![Build status](https://ci.appveyor.com/api/projects/status/7g3sppml9ewumr9i/branch/master?svg=true) [![NuGet Badge](https://buildstats.info/nuget/UltimateXF)](https://www.nuget.org/packages/UltimateXF/)
 
 ### MPAndroidChart Binding   
 
@@ -22,34 +23,33 @@ Setup for Android project (add to MainActivity before LoadApplication)
  - ***Your app could not run on simulator(iOS) - only real device)***
  - ***Install Xamarin.Swift4 package for iOS project(maybe if your app can't start)*** 
 		
-
-    [Xamarin.Swift4] (>= 4.0.0)
-    		[Xamarin.Swift4.Core]  (>= 4.1.2)
-    		[Xamarin.Swift4.CoreAudio](>= 4.1.2)
-    		[Xamarin.Swift4.CoreData]  (>= 4.1.2)
-    		[Xamarin.Swift4.CoreFoundation] (>= 4.1.2)
-    		[Xamarin.Swift4.CoreGraphics]  (>= 4.1.2)
-    		[Xamarin.Swift4.CoreImage] (>= 4.1.2)
-    		[Xamarin.Swift4.CoreMedia] (>= 4.1.2)
-    		[Xamarin.Swift4.Darwin] (>= 4.1.2)
-    		[Xamarin.Swift4.Dispatch]  (>= 4.1.2)
-    		[Xamarin.Swift4.Foundation] (>= 4.1.2)
-    		[Xamarin.Swift4.Metal] (>= 4.1.2)
-    		[Xamarin.Swift4.ObjectiveC] (>= 4.1.2)
-    		[Xamarin.Swift4.OS] (>= 4.1.2)
-    		[Xamarin.Swift4.QuartzCore]  (>= 4.1.2)
-    		[Xamarin.Swift4.UIKit] (>= 4.1.2)
-
+       [Xamarin.Swift4] (>= 4.0.0)  
+       [Xamarin.Swift4.Core]  (>= 4.1.2)  
+       [Xamarin.Swift4.CoreAudio](>= 4.1.2)  
+       [Xamarin.Swift4.CoreData]  (>= 4.1.2)  
+       [Xamarin.Swift4.CoreFoundation] (>= 4.1.2)  
+       [Xamarin.Swift4.CoreGraphics]  (>= 4.1.2)  
+       [Xamarin.Swift4.CoreImage] (>= 4.1.2)  
+       [Xamarin.Swift4.CoreMedia] (>= 4.1.2)  
+       [Xamarin.Swift4.Darwin] (>= 4.1.2)  
+       [Xamarin.Swift4.Dispatch]  (>= 4.1.2)  
+       [Xamarin.Swift4.Foundation] (>= 4.1.2)  
+       [Xamarin.Swift4.Metal] (>= 4.1.2)  
+       [Xamarin.Swift4.ObjectiveC] (>= 4.1.2)  
+       [Xamarin.Swift4.OS] (>= 4.1.2)  
+       [Xamarin.Swift4.QuartzCore]  (>= 4.1.2)  
+       [Xamarin.Swift4.UIKit] (>= 4.1.2)  
+ 
 - ***You can downgrade swift support version for you project or your device (just download this project source and downgrade version of library for each project)***
 
 #### LineChart & BarChart
 
-    <ultimateChart:SupportLineChartExtended 
-    	x:Name="chart"
-        HorizontalOptions="FillAndExpand"
-        VerticalOptions="FillAndExpand"
-        DrawBorders="false"
-        DoubleTapToZoomEnabled="false" />
+        <ultimateChart:SupportLineChartExtended  
+    	       x:Name="chart"  
+               HorizontalOptions="FillAndExpand"  
+               VerticalOptions="FillAndExpand"  
+               DrawBorders="false"  
+               DoubleTapToZoomEnabled="false" />  
 
 DataBinding
 
@@ -179,5 +179,5 @@ DataBinding
 ![alt tag](https://raw.github.com/PhilJay/MPAndroidChart/master/screenshots/radarchart.png)
 
 # License
-<p>Copyright 2018 QuachHoang
+<p>You can use this library for any project, or custom, edit it if you want, no need license and permissions 
 <p>Special thanks Daniel Cohen Gindi & Philipp Jahoda
