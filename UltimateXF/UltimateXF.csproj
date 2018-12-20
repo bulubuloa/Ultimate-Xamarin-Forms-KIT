@@ -29,5 +29,6 @@
     <Folder Include="Widget\Charts\Models\CombinedChart\" />
     <Folder Include="Widget\Charts\Models\Component\" />
     <Folder Include="Widget\Charts\Models\ComponentXF\" />
+    <Folder Include="Widget\Charts\Models\Legend\" />
   </ItemGroup>
 </Project>

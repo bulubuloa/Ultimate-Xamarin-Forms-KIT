@@ -1,11 +1,12 @@
 ﻿using System;
 using UltimateXF.Widget.Charts.Models;
 using UltimateXF.Widget.Charts.Models.Component;
+using UltimateXF.Widget.Charts.Models.Legend;
 using Xamarin.Forms;
 
 namespace UltimateXF.Widget.Charts
 {
-    public class SupportBaseChart : View
+    public abstract class SupportBaseChart : View
     {
         public static readonly BindableProperty XAxisProperty = BindableProperty.Create("XAxis", typeof(XAxisConfig), typeof(SupportBaseChart), new XAxisConfig());
         public XAxisConfig XAxis
@@ -96,6 +97,13 @@ namespace UltimateXF.Widget.Charts
         {
             get => (AnimatorXF)GetValue(AnimationYProperty);
             set => SetValue(AnimationYProperty, value);
+        }
+
+        public static readonly BindableProperty LegendProperty = BindableProperty.Create("LegendXF", typeof(LegendXF), typeof(SupportBaseChart), null);
+        public LegendXF Legend
+        {
+            get => (LegendXF)GetValue(LegendProperty);
+            set => SetValue(LegendProperty, value);
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using iOSCharts;
+using UIKit;
 using UltimateXF.iOS.Renderers.Exporters;
 using UltimateXF.Widget.Charts;
 using UltimateXF.Widget.Charts.Models.Component;
@@ -198,6 +199,217 @@ namespace UltimateXF.iOS.Renderers.Extendeds
                     else
                     {
                         OriginalChartView.XAxis.ValueFormatter = new AxisValueFormatterExport(SupportChartView.XAxis.AxisValueFormatter);
+                    }
+                }
+
+                if (SupportChartView.Legend != null)
+                {
+                    var SupportLegend = SupportChartView.Legend;
+                    var OriginalLegend = OriginalChartView.Legend;
+
+                    if (SupportLegend.Enabled.HasValue)
+                    {
+                        OriginalLegend.Enabled = SupportLegend.Enabled.Value;
+                    }
+
+                    if (SupportLegend.XOffset.HasValue)
+                    {
+                        OriginalLegend.XOffset = SupportLegend.XOffset.Value;
+                    }
+
+                    if (SupportLegend.YOffset.HasValue)
+                    {
+                        OriginalLegend.YOffset = SupportLegend.YOffset.Value;
+                    }
+
+                    try
+                    {
+                        if (string.IsNullOrEmpty(SupportLegend.FontFamily))
+                        {
+                            if (SupportLegend.TextSize.HasValue)
+                            {
+                                OriginalLegend.Font = UIFont.SystemFontOfSize(SupportLegend.TextSize.Value);
+                            }
+                        }
+                        else
+                        {
+                            if (SupportLegend.TextSize.HasValue)
+                            {
+                                OriginalLegend.Font = UIFont.FromName(SupportLegend.FontFamily, SupportLegend.TextSize.Value);
+                            }
+                            else
+                            {
+                                OriginalLegend.Font = UIFont.FromName(SupportLegend.FontFamily, OriginalLegend.Font.PointSize);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+
+                    }
+
+
+                    if (SupportLegend.TextColor.HasValue)
+                    {
+                        OriginalLegend.TextColor = SupportLegend.TextColor.Value.ToUIColor();
+                    }
+
+                    if (SupportLegend.LegendHorizontalAlignment.HasValue)
+                    {
+                        switch (SupportLegend.LegendHorizontalAlignment.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendHorizontalAlignment.LEFT:
+                                OriginalLegend.HorizontalAlignment = ChartLegendHorizontalAlignment.Left;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendHorizontalAlignment.CENTER:
+                                OriginalLegend.HorizontalAlignment = ChartLegendHorizontalAlignment.Center;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendHorizontalAlignment.RIGHT:
+                                OriginalLegend.HorizontalAlignment = ChartLegendHorizontalAlignment.Right;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendVerticalAlignment.HasValue)
+                    {
+                        switch (SupportLegend.LegendVerticalAlignment.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendVerticalAlignment.TOP:
+                                OriginalLegend.VerticalAlignment = ChartLegendVerticalAlignment.Top;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendVerticalAlignment.CENTER:
+                                OriginalLegend.VerticalAlignment = ChartLegendVerticalAlignment.Center;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendVerticalAlignment.BOTTOM:
+                                OriginalLegend.VerticalAlignment = ChartLegendVerticalAlignment.Bottom;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendOrientation.HasValue)
+                    {
+                        switch (SupportLegend.LegendOrientation.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendOrientation.HORIZONTAL:
+                                OriginalLegend.Orientation = ChartLegendOrientation.Horizontal;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendOrientation.VERTICAL:
+                                OriginalLegend.Orientation = ChartLegendOrientation.Vertical;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendDirection.HasValue)
+                    {
+                        switch (SupportLegend.LegendDirection.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendDirection.LEFT_TO_RIGHT:
+                                OriginalLegend.Direction = ChartLegendDirection.LeftToRight;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendDirection.RIGHT_TO_LEFT:
+                                OriginalLegend.Direction = ChartLegendDirection.RightToLeft;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendForm.HasValue)
+                    {
+                        switch (SupportLegend.LegendForm.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendForm.NONE:
+                                OriginalLegend.Form = ChartLegendForm.None;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.EMPTY:
+                                OriginalLegend.Form = ChartLegendForm.Empty;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.DEFAULT:
+                                OriginalLegend.Form = ChartLegendForm.Default;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.SQUARE:
+                                OriginalLegend.Form = ChartLegendForm.Square;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.CIRCLE:
+                                OriginalLegend.Form = ChartLegendForm.Circle;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.LINE:
+                                OriginalLegend.Form = ChartLegendForm.Line;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.DrawInsideEnabled.HasValue)
+                    {
+                        OriginalLegend.DrawInside = (SupportLegend.DrawInsideEnabled.Value);
+                    }
+
+                    if (SupportLegend.FormSize.HasValue)
+                    {
+                        OriginalLegend.FormSize = (SupportLegend.FormSize.Value);
+                    }
+
+                    if (SupportLegend.FormLineWidth.HasValue)
+                    {
+                        OriginalLegend.FormLineWidth = (SupportLegend.FormLineWidth.Value);
+                    }
+
+                    if (SupportLegend.XEntrySpace.HasValue)
+                    {
+                        OriginalLegend.XEntrySpace = (SupportLegend.XEntrySpace.Value);
+                    }
+
+                    if (SupportLegend.YEntrySpace.HasValue)
+                    {
+                        OriginalLegend.YEntrySpace = (SupportLegend.YEntrySpace.Value);
+                    }
+
+                    if (SupportLegend.FormToTextSpace.HasValue)
+                    {
+                        OriginalLegend.FormToTextSpace = (SupportLegend.FormToTextSpace.Value);
+                    }
+
+                    if (SupportLegend.StackSpace.HasValue)
+                    {
+                        OriginalLegend.StackSpace = (SupportLegend.StackSpace.Value);
+                    }
+
+                    if (SupportLegend.WordWrapEnabled.HasValue)
+                    {
+                        OriginalLegend.WordWrapEnabled = (SupportLegend.WordWrapEnabled.Value);
+                    }
+
+                    if (SupportLegend.MaxSizePercent.HasValue)
+                    {
+                        OriginalLegend.MaxSizePercent = (SupportLegend.MaxSizePercent.Value);
+                    }
+
+                    if (SupportLegend.NeededWidth.HasValue)
+                    {
+                        OriginalLegend.NeededWidth = (SupportLegend.NeededWidth.Value);
+                    }
+
+                    if (SupportLegend.NeededHeight.HasValue)
+                    {
+                        OriginalLegend.NeededHeight = (SupportLegend.NeededHeight.Value);
+                    }
+
+                    if (SupportLegend.TextHeightMax.HasValue)
+                    {
+                        OriginalLegend.TextHeightMax = (SupportLegend.TextHeightMax.Value);
+                    }
+
+                    if (SupportLegend.TextWidthMax.HasValue)
+                    {
+                        OriginalLegend.TextWidthMax = (SupportLegend.TextWidthMax.Value);
                     }
                 }
             }

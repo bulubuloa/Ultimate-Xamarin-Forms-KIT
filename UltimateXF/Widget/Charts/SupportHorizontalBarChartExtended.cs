@@ -1,5 +1,6 @@
 ﻿using System;
 using UltimateXF.Widget.Charts.Models.Component;
+using UltimateXF.Widget.Charts.Models.Legend;
 
 namespace UltimateXF.Widget.Charts
 {
@@ -13,6 +14,7 @@ namespace UltimateXF.Widget.Charts
             DescriptionChart = new ChartDescription();
             AnimationX = new AnimatorXF();
             AnimationY = new AnimatorXF();
+            Legend = new LegendXF();
         }
     }
 }

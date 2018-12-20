@@ -12,7 +12,8 @@ using Xamarin.Forms.Platform.Android;
 namespace UltimateXF.Droid.Renderers.Extendeds
 {
     public class SupportChartExtendedRenderer<TSupportView, TOriginalChart> : ViewRenderer<TSupportView, TOriginalChart>
-        where TSupportView : SupportBaseChart where TOriginalChart : Chart
+        where TSupportView : SupportBaseChart 
+        where TOriginalChart : Chart
     {
 
         protected TSupportView SupportChartView;
@@ -201,6 +202,200 @@ namespace UltimateXF.Droid.Renderers.Extendeds
                     else
                     {
                         OriginalChartView.XAxis.ValueFormatter = new AxisValueFormatterExport(SupportChartView.XAxis.AxisValueFormatter);
+                    }
+                }
+
+                if(SupportChartView.Legend!=null)
+                {
+                    var SupportLegend = SupportChartView.Legend;
+                    var OriginalLegend = OriginalChartView.Legend;
+
+                    if(SupportLegend.Enabled.HasValue)
+                    {
+                        OriginalLegend.Enabled = SupportLegend.Enabled.Value;
+                    }
+
+                    if (SupportLegend.XOffset.HasValue)
+                    {
+                        OriginalLegend.XOffset = SupportLegend.XOffset.Value;
+                    }
+
+                    if (SupportLegend.YOffset.HasValue)
+                    {
+                        OriginalLegend.YOffset = SupportLegend.YOffset.Value;
+                    }
+
+                    if (SupportLegend.TextSize.HasValue)
+                    {
+                        OriginalLegend.TextSize = SupportLegend.TextSize.Value;
+                    }
+                    
+                    if (!string.IsNullOrEmpty(SupportLegend.FontFamily))
+                    {
+                        OriginalLegend.Typeface = SpecAndroid.CreateTypeface(UltimateXFSettup.Context, SupportLegend.FontFamily);
+                    }
+
+                    if (SupportLegend.TextColor.HasValue)
+                    {
+                        OriginalLegend.TextColor = SupportLegend.TextColor.Value.ToAndroid();
+                    }
+
+                    if (SupportLegend.LegendHorizontalAlignment.HasValue)
+                    {
+                        switch (SupportLegend.LegendHorizontalAlignment.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendHorizontalAlignment.LEFT:
+                                OriginalLegend.HorizontalAlignment = MikePhil.Charting.Components.Legend.LegendHorizontalAlignment.Left;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendHorizontalAlignment.CENTER:
+                                OriginalLegend.HorizontalAlignment = MikePhil.Charting.Components.Legend.LegendHorizontalAlignment.Center;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendHorizontalAlignment.RIGHT:
+                                OriginalLegend.HorizontalAlignment = MikePhil.Charting.Components.Legend.LegendHorizontalAlignment.Right;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendVerticalAlignment.HasValue)
+                    {
+                        switch (SupportLegend.LegendVerticalAlignment.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendVerticalAlignment.TOP:
+                                OriginalLegend.VerticalAlignment = MikePhil.Charting.Components.Legend.LegendVerticalAlignment.Top;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendVerticalAlignment.CENTER:
+                                OriginalLegend.VerticalAlignment = MikePhil.Charting.Components.Legend.LegendVerticalAlignment.Center;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendVerticalAlignment.BOTTOM:
+                                OriginalLegend.VerticalAlignment = MikePhil.Charting.Components.Legend.LegendVerticalAlignment.Bottom;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendOrientation.HasValue)
+                    {
+                        switch (SupportLegend.LegendOrientation.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendOrientation.HORIZONTAL:
+                                OriginalLegend.Orientation = MikePhil.Charting.Components.Legend.LegendOrientation.Horizontal;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendOrientation.VERTICAL:
+                                OriginalLegend.Orientation = MikePhil.Charting.Components.Legend.LegendOrientation.Vertical;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendDirection.HasValue)
+                    {
+                        switch (SupportLegend.LegendDirection.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendDirection.LEFT_TO_RIGHT:
+                                OriginalLegend.Direction = MikePhil.Charting.Components.Legend.LegendDirection.LeftToRight;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendDirection.RIGHT_TO_LEFT:
+                                OriginalLegend.Direction = MikePhil.Charting.Components.Legend.LegendDirection.RightToLeft;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.LegendForm.HasValue)
+                    {
+                        switch (SupportLegend.LegendForm.Value)
+                        {
+                            case Widget.Charts.Models.Legend.LegendForm.NONE:
+                                OriginalLegend.Form = MikePhil.Charting.Components.Legend.LegendForm.None;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.EMPTY:
+                                OriginalLegend.Form = MikePhil.Charting.Components.Legend.LegendForm.Empty;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.DEFAULT:
+                                OriginalLegend.Form = MikePhil.Charting.Components.Legend.LegendForm.Default;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.SQUARE:
+                                OriginalLegend.Form = MikePhil.Charting.Components.Legend.LegendForm.Square;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.CIRCLE:
+                                OriginalLegend.Form = MikePhil.Charting.Components.Legend.LegendForm.Circle;
+                                break;
+                            case Widget.Charts.Models.Legend.LegendForm.LINE:
+                                OriginalLegend.Form = MikePhil.Charting.Components.Legend.LegendForm.Line;
+                                break;
+                            default:
+                                break;
+                        }
+                    }
+
+                    if (SupportLegend.DrawInsideEnabled.HasValue)
+                    {
+                        OriginalLegend.SetDrawInside(SupportLegend.DrawInsideEnabled.Value);
+                    }
+
+                    if (SupportLegend.FormSize.HasValue)
+                    {
+                        OriginalLegend.FormSize = (SupportLegend.FormSize.Value);
+                    }
+
+                    if (SupportLegend.FormLineWidth.HasValue)
+                    {
+                        OriginalLegend.FormLineWidth = (SupportLegend.FormLineWidth.Value);
+                    }
+
+                    if (SupportLegend.XEntrySpace.HasValue)
+                    {
+                        OriginalLegend.XEntrySpace = (SupportLegend.XEntrySpace.Value);
+                    }
+
+                    if (SupportLegend.YEntrySpace.HasValue)
+                    {
+                        OriginalLegend.YEntrySpace = (SupportLegend.YEntrySpace.Value);
+                    }
+
+                    if (SupportLegend.FormToTextSpace.HasValue)
+                    {
+                        OriginalLegend.FormToTextSpace = (SupportLegend.FormToTextSpace.Value);
+                    }
+
+                    if (SupportLegend.StackSpace.HasValue)
+                    {
+                        OriginalLegend.StackSpace = (SupportLegend.StackSpace.Value);
+                    }
+
+                    if (SupportLegend.WordWrapEnabled.HasValue)
+                    {
+                        OriginalLegend.WordWrapEnabled = (SupportLegend.WordWrapEnabled.Value);
+                    }
+
+                    if (SupportLegend.MaxSizePercent.HasValue)
+                    {
+                        OriginalLegend.MaxSizePercent = (SupportLegend.MaxSizePercent.Value);
+                    }
+
+                    if (SupportLegend.NeededWidth.HasValue)
+                    {
+                        OriginalLegend.MNeededWidth = (SupportLegend.NeededWidth.Value);
+                    }
+
+                    if (SupportLegend.NeededHeight.HasValue)
+                    {
+                        OriginalLegend.MNeededHeight = (SupportLegend.NeededHeight.Value);
+                    }
+
+                    if (SupportLegend.TextHeightMax.HasValue)
+                    {
+                        OriginalLegend.MTextHeightMax = (SupportLegend.TextHeightMax.Value);
+                    }
+
+                    if (SupportLegend.TextWidthMax.HasValue)
+                    {
+                        OriginalLegend.MTextWidthMax = (SupportLegend.TextWidthMax.Value);
                     }
                 }
             }

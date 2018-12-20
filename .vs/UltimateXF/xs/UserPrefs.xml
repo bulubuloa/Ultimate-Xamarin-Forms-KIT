@@ -4,9 +4,6 @@
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="UltimateXF" expanded="True">
-            <Node name="DemoAPP" expanded="True">
-              <Node name="DemoXF.iOS" expanded="True" />
-            </Node>
             <Node name="Library" expanded="True" />
             <Node name="UltimateXFNG.Nuget" selected="True" />
           </Node>
@@ -14,13 +11,13 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release|iPhone" />
+  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.E5AZCY489464" />
+  <MonoDevelop.Ide.ItemProperties.Library.UltimateXF.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.Library.UltimateXF.Droid PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.Android PreferredExecutionTarget="Android.E5AZCY489464" />
-  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.3E1706BF-323D-427B-A7B0-D4465227F3F9" />
+  <MonoDevelop.Ide.ItemProperties.DemoAPP.DemoXF.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.bacd535954e069cb541d979bfee0213ea979867e" />
 </Properties>

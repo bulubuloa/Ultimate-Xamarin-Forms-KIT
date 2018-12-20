@@ -1,5 +1,6 @@
 ﻿using System;
 using UltimateXF.Widget.Charts.Models.Component;
+using UltimateXF.Widget.Charts.Models.Legend;
 using UltimateXF.Widget.Charts.Models.LineChart;
 using Xamarin.Forms;
 
@@ -22,6 +23,7 @@ namespace UltimateXF.Widget.Charts
             DescriptionChart = new ChartDescription();
             AnimationX = new AnimatorXF();
             AnimationY = new AnimatorXF();
+            Legend = new LegendXF();
         }
     }
 }

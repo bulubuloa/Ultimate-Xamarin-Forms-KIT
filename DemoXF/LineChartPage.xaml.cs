@@ -46,89 +46,155 @@ namespace DemoXF
             InitializeComponent();
 
             var entries = new List<EntryChart>();
-            var entries2 = new List<EntryChart>();
-            var labels = new List<string>();
 
             var random = new Random();
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 20; i++)
             {
-                entries.Add(new EntryChart(i, random.Next(1000,50000)));
-                entries2.Add(new EntryChart(i, random.Next(1000,50000)));
-                labels.Add("Entry" + i);
+                entries.Add(new EntryChart(i, random.Next(1000, 50000)));
             }
 
-            var FontFamily = "";
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                    FontFamily = "Pacifico-Regular";
-                    break;
-                case Device.Android:
-                    FontFamily = "Fonts/Pacifico-Regular.ttf";
-                    break;
-                default:
-                    break;
-            }
-            var dataSet4 = new LineDataSetXF(entries, "Line DataSet 1")
-            {
-                CircleRadius = 10,
-                CircleHoleRadius = 4f,
-                CircleColors = new List<Color>(){
-                    Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                },
-                CircleHoleColor = Color.Green,
-                ValueColors = new List<Color>(){
-                    Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
-                },
-                Mode = LineDataSetMode.CUBIC_BEZIER,
-                ValueFormatter = new CustomDataSetValueFormatter(),
-                ValueFontFamily = FontFamily,
-                FillAlpha = 0.8f,
-                GradientColor = new GradientColor(Color.Blue,Color.Red,30),
-                DrawFilled = true,
-            };
+            //for (int i = 1; i <= DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month); i++)
+            //{
+            //    var ordersForDay = ordersResponse.Orders.Where(x => x.DatePlacedLocal.Value.Day.Equals(i)).ToList();
+            //    float amount = 0.1f;
 
-            Xamarin.Forms.OnPlatform<string> onPlatform = (Xamarin.Forms.OnPlatform<string>)Application.Current.Resources["PacificoRegular"];
-            var xxx = onPlatform.Default;
+            //    foreach (var order in ordersForDay)
+            //        amount += float.Parse(order.GrandTotal);
 
-            var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
+            //    var entry = new EntryChart(i - 1, amount);
+            //    entries.Add(entry);
+            //}
+
+            var dataSet = new LineDataSetXF(entries, "Daily Sales")
             {
-                Colors = new List<Color>{
-                    Color.Green
-                },
-                CircleHoleColor = Color.Blue,
-                CircleColors = new List<Color>{
-                    Color.Blue
-                },
-                CircleRadius = 3,
+                //Colors = new List<Color> { App.GetAppResourceColorByKey("NetoDarkBlue") },
+                //CircleColors = new List<Color> { App.GetAppResourceColorByKey("NetoDarkBlue") },
+                DrawCircleHole = false,
                 DrawValues = false,
-                GradientColor = new GradientColor(Color.Red,Color.Green)
+                CircleRadius = 1.5f,
+                //GradientColor = new GradientColor(App.GetAppResourceColorByKey("NetoDarkBlue"), App.GetAppResourceColorByKey("NetoLightBlue")),
+                FillAlpha = 0.2f,
+                DrawFilled = true,
+                LineWidth = 1.5f,
+                CubicIntensity = 10.0f,
+                Mode = LineDataSetMode.CUBIC_BEZIER
             };
 
-            var data4 = new LineChartData(new List<ILineDataSetXF>() { dataSet4,dataSet5 });
+            var lineChartData = new LineChartData(new List<ILineDataSetXF>() { dataSet });
 
-            chart.ChartData = data4;
-            chart.DescriptionChart.Text = "Test label chart description";
-            chart.AxisLeft.DrawGridLines = false;
-            chart.AxisLeft.DrawAxisLine = true;
-            chart.AxisLeft.Enabled = true;
+            var xAxisConfig = new XAxisConfig()
+            {
+                DrawGridLines = false,
+                XAXISPosition = XAXISPosition.BOTTOM
+            };
 
-            chart.AxisRight.DrawAxisLine = false;
-            chart.AxisRight.DrawGridLines = false;
-            chart.AxisRight.Enabled = false;
-
-            chart.AxisRight.FontFamily = FontFamily;
-            chart.AxisLeft.FontFamily = FontFamily;
-            chart.XAxis.FontFamily = FontFamily;
-
-            chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
-            chart.XAxis.DrawGridLines = false;
-            chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
             chart.AnimationX = new AnimatorXF()
             {
-                Duration = 1000,
-                EasingType = EasingOptionXF.EaseOutCirc
+                Duration = 5,
+                EasingType = EasingOptionXF.EaseInOutBounce
             };
+
+            chart.XAxis = xAxisConfig;
+            chart.AxisLeft.GridColor = Color.White;
+
+            chart.AxisRight.DrawGridLinesBehindData = false;
+            chart.AxisRight.Enabled = false;
+
+            chart.AxisLeft.DrawGridLinesBehindData = false;
+            chart.AxisLeft.Enabled = false;
+
+            chart.DescriptionChart.Text = string.Empty;
+
+            chart.Legend.Enabled = false;
+
+            chart.ChartData = lineChartData;
+
+
+
+            //var entries = new List<EntryChart>();
+            //var entries2 = new List<EntryChart>();
+            //var labels = new List<string>();
+
+            //var random = new Random();
+            //for (int i = 0; i < 7; i++)
+            //{
+            //    entries.Add(new EntryChart(i, random.Next(1000,50000)));
+            //    entries2.Add(new EntryChart(i, random.Next(1000,50000)));
+            //    labels.Add("Entry" + i);
+            //}
+
+            //var FontFamily = "";
+            //switch (Device.RuntimePlatform)
+            //{
+            //    case Device.iOS:
+            //        FontFamily = "Pacifico-Regular";
+            //        break;
+            //    case Device.Android:
+            //        FontFamily = "Fonts/Pacifico-Regular.ttf";
+            //        break;
+            //    default:
+            //        break;
+            //}
+            //var dataSet4 = new LineDataSetXF(entries, "Line DataSet 1")
+            //{
+            //    CircleRadius = 10,
+            //    CircleHoleRadius = 4f,
+            //    CircleColors = new List<Color>(){
+            //        Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+            //    },
+            //    CircleHoleColor = Color.Green,
+            //    ValueColors = new List<Color>(){
+            //        Color.Accent, Color.Red, Color.Bisque, Color.Gray, Color.Green, Color.Chocolate, Color.Black
+            //    },
+            //    Mode = LineDataSetMode.CUBIC_BEZIER,
+            //    ValueFormatter = new CustomDataSetValueFormatter(),
+            //    ValueFontFamily = FontFamily,
+            //    FillAlpha = 0.8f,
+            //    GradientColor = new GradientColor(Color.Blue,Color.Red,30),
+            //    DrawFilled = true,
+            //};
+
+            //Xamarin.Forms.OnPlatform<string> onPlatform = (Xamarin.Forms.OnPlatform<string>)Application.Current.Resources["PacificoRegular"];
+            //var xxx = onPlatform.Default;
+
+            //var dataSet5 = new LineDataSetXF(entries2, "Line DataSet 2")
+            //{
+            //    Colors = new List<Color>{
+            //        Color.Green
+            //    },
+            //    CircleHoleColor = Color.Blue,
+            //    CircleColors = new List<Color>{
+            //        Color.Blue
+            //    },
+            //    CircleRadius = 3,
+            //    DrawValues = false,
+            //    GradientColor = new GradientColor(Color.Red,Color.Green)
+            //};
+
+            //var data4 = new LineChartData(new List<ILineDataSetXF>() { dataSet4,dataSet5 });
+
+            //chart.ChartData = data4;
+            //chart.DescriptionChart.Text = "Test label chart description";
+            //chart.AxisLeft.DrawGridLines = false;
+            //chart.AxisLeft.DrawAxisLine = true;
+            //chart.AxisLeft.Enabled = true;
+
+            //chart.AxisRight.DrawAxisLine = false;
+            //chart.AxisRight.DrawGridLines = false;
+            //chart.AxisRight.Enabled = false;
+
+            //chart.AxisRight.FontFamily = FontFamily;
+            //chart.AxisLeft.FontFamily = FontFamily;
+            //chart.XAxis.FontFamily = FontFamily;
+
+            //chart.XAxis.XAXISPosition = XAXISPosition.BOTTOM;
+            //chart.XAxis.DrawGridLines = false;
+            //chart.XAxis.AxisValueFormatter = new TextByIndexXAxisFormatter(labels);
+            //chart.AnimationX = new AnimatorXF()
+            //{
+            //    Duration = 1000,
+            //    EasingType = EasingOptionXF.EaseOutCirc
+            //};
         }
     }
 }
