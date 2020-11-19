@@ -5,7 +5,7 @@ using UltimateXF.Widget.Charts.Models.Component;
 
 namespace UltimateXF.Droid.Renderers.Exporters
 {
-    public class AxisValueFormatterExport : Java.Lang.Object,IAxisValueFormatter
+    public class AxisValueFormatterExport : ValueFormatter
     {
         private IAxisValueFormatterXF IAxisValueFormatterXF;
 
@@ -14,7 +14,8 @@ namespace UltimateXF.Droid.Renderers.Exporters
             IAxisValueFormatterXF = _IAxisValueFormatterXF;
         }
 
-        public string GetFormattedValue(float value, AxisBase axis)
+        [Obsolete]
+        public override string GetFormattedValue(float value, AxisBase axis)
         {
             try
             {
@@ -25,5 +26,29 @@ namespace UltimateXF.Droid.Renderers.Exporters
                 return "" + value;
             }
         }
+
+        public override string GetFormattedValue(float value)
+        {
+            try
+            {
+                return IAxisValueFormatterXF.GetFormattedValue(value);
+            }
+            catch (Exception ex)
+            {
+                return "" + value;
+            }
+        }
+
+        //public string GetFormattedValue(float value, AxisBase axis)
+        //{
+        //    try
+        //    {
+        //        return IAxisValueFormatterXF.GetFormattedValue(value);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return "" + value;
+        //    }
+        //}
     }
 }

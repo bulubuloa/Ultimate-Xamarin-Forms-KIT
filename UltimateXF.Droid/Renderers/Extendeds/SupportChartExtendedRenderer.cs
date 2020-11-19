@@ -52,66 +52,66 @@ namespace UltimateXF.Droid.Renderers.Extendeds
             OriginalChartView.LayoutParameters = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MatchParent, LinearLayout.LayoutParams.MatchParent);
         }
 
-        private Easing.EasingOption ConvertAnimationType(EasingOptionXF easingOptionXF)
+        private Easing.IEasingFunction ConvertAnimationType(EasingOptionXF easingOptionXF)
         {
             switch (easingOptionXF)
             {
                 case EasingOptionXF.Linear:
-                    return Easing.EasingOption.Linear;
+                    return Easing.Linear;
                 case EasingOptionXF.EaseInQuad:
-                    return Easing.EasingOption.EaseInQuad;
+                    return Easing.EaseInQuad;
                 case EasingOptionXF.EaseOutQuad:
-                    return Easing.EasingOption.EaseOutQuad;
+                    return Easing.EaseOutQuad;
                 case EasingOptionXF.EaseInOutQuad:
-                    return Easing.EasingOption.EaseInOutQuad;
+                    return Easing.EaseInOutQuad;
                 case EasingOptionXF.EaseInCubic:
-                    return Easing.EasingOption.EaseInCubic;
+                    return Easing.EaseInCubic;
                 case EasingOptionXF.EaseOutCubic:
-                    return Easing.EasingOption.EaseOutCubic;
+                    return Easing.EaseOutCubic;
                 case EasingOptionXF.EaseInOutCubic:
-                    return Easing.EasingOption.EaseInOutCubic;
+                    return Easing.EaseInOutCubic;
                 case EasingOptionXF.EaseInQuart:
-                    return Easing.EasingOption.EaseInQuart;
+                    return Easing.EaseInQuart;
                 case EasingOptionXF.EaseOutQuart:
-                    return Easing.EasingOption.EaseOutQuart;
+                    return Easing.EaseOutQuart;
                 case EasingOptionXF.EaseInOutQuart:
-                    return Easing.EasingOption.EaseInOutQuart;
+                    return Easing.EaseInOutQuart;
                 case EasingOptionXF.EaseInSine:
-                    return Easing.EasingOption.EaseInSine;
+                    return Easing.EaseInSine;
                 case EasingOptionXF.EaseOutSine:
-                    return Easing.EasingOption.EaseOutSine;
+                    return Easing.EaseOutSine;
                 case EasingOptionXF.EaseInOutSine:
-                    return Easing.EasingOption.EaseInOutSine;
+                    return Easing.EaseInOutSine;
                 case EasingOptionXF.EaseInExpo:
-                    return Easing.EasingOption.EaseInExpo;
+                    return Easing.EaseInExpo;
                 case EasingOptionXF.EaseOutExpo:
-                    return Easing.EasingOption.EaseOutExpo;
+                    return Easing.EaseOutExpo;
                 case EasingOptionXF.EaseInOutExpo:
-                    return Easing.EasingOption.EaseInOutExpo;
+                    return Easing.EaseInOutExpo;
                 case EasingOptionXF.EaseInCirc:
-                    return Easing.EasingOption.EaseInCirc;
+                    return Easing.EaseInCirc;
                 case EasingOptionXF.EaseOutCirc:
-                    return Easing.EasingOption.EaseOutCirc;
+                    return Easing.EaseOutCirc;
                 case EasingOptionXF.EaseInOutCirc:
-                    return Easing.EasingOption.EaseInOutCirc;
+                    return Easing.EaseInOutCirc;
                 case EasingOptionXF.EaseInElastic:
-                    return Easing.EasingOption.EaseInElastic;
+                    return Easing.EaseInElastic;
                 case EasingOptionXF.EaseOutElastic:
-                    return Easing.EasingOption.EaseOutElastic;
+                    return Easing.EaseOutElastic;
                 case EasingOptionXF.EaseInOutElastic:
-                    return Easing.EasingOption.EaseInOutElastic;
+                    return Easing.EaseInOutElastic;
                 case EasingOptionXF.EaseInBack:
-                    return Easing.EasingOption.EaseInBack;
+                    return Easing.EaseInBack;
                 case EasingOptionXF.EaseOutBack:
-                    return Easing.EasingOption.EaseOutBack;
+                    return Easing.EaseOutBack;
                 case EasingOptionXF.EaseInOutBack:
-                    return Easing.EasingOption.EaseInOutBack;
+                    return Easing.EaseInOutBack;
                 case EasingOptionXF.EaseInBounce:
-                    return Easing.EasingOption.EaseInBounce;
+                    return Easing.EaseInBounce;
                 case EasingOptionXF.EaseOutBounce:
-                    return Easing.EasingOption.EaseOutBounce;
+                    return Easing.EaseOutBounce;
                 default:
-                    return Easing.EasingOption.EaseInOutBounce;
+                    return Easing.EaseInOutBounce;
             }
         }
 
