@@ -107,7 +107,7 @@
       <Name>DemoXF</Name>
     </ProjectReference>
     <ProjectReference Include="..\UltimateXF.Droid\UltimateXF.Droid.csproj">
-      <Project>{0D0B1980-A785-4D3E-B174-21D9B7E5C6DC}</Project>
+      <Project>{4EF34830-5B90-4771-B93A-6B3C7AB26C3E}</Project>
       <Name>UltimateXF.Droid</Name>
     </ProjectReference>
   </ItemGroup>

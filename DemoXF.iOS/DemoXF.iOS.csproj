@@ -154,7 +154,7 @@
       <Version>4.5.0.725</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Swift">
-      <Version>1.0.6</Version>
+      <Version>1.0.7</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
@@ -163,7 +163,7 @@
       <Name>DemoXF</Name>
     </ProjectReference>
     <ProjectReference Include="..\UltimateXF.iOS\UltimateXF.iOS.csproj">
-      <Project>{B31AC013-E3D3-4696-9985-DC7D4104A4E9}</Project>
+      <Project>{A486E26E-AF6F-485A-BDD2-C0AE9EEEC57F}</Project>
       <Name>UltimateXF.iOS</Name>
       <IsAppExtension>false</IsAppExtension>
       <IsWatchApp>false</IsWatchApp>

@@ -16,7 +16,6 @@
     <Deterministic>True</Deterministic>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
-    <AndroidUseLatestPlatformSdk>false</AndroidUseLatestPlatformSdk>
     <TargetFrameworkVersion>v9.0</TargetFrameworkVersion>
     <AndroidUseAapt2>true</AndroidUseAapt2>
   </PropertyGroup>
@@ -81,6 +80,11 @@
     <PackageReference Include="Xamarin.Forms">
       <Version>4.5.0.725</Version>
     </PackageReference>
+    <PackageReference Include="NuGet.Build.Packaging">
+      <Version>0.2.2</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\strings.xml" />
@@ -90,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UltimateXF\UltimateXF.csproj">
-      <Project>{3a4a6a1e-14cd-4daa-9602-e096599edf01}</Project>
+      <Project>{BCF3934C-3F39-4A6D-9ED6-8F50B628DF2E}</Project>
       <Name>UltimateXF</Name>
     </ProjectReference>
   </ItemGroup>
