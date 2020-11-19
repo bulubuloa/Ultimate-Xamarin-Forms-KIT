@@ -31,4 +31,5 @@
     <Folder Include="Widget\Charts\Models\ComponentXF\" />
     <Folder Include="Widget\Charts\Models\Legend\" />
   </ItemGroup>
+  <ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadXFormsNugetUpgradeInfoBarUltimateXFHideInfoBar="True" /></VisualStudio></ProjectExtensions>
 </Project>
