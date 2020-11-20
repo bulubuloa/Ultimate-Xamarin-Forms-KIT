@@ -19,8 +19,8 @@ Setup for Android project (add to MainActivity before LoadApplication)
      UltimateXFSettup.Initialize(this);
 
  **Required:**
- - ***[Xamarin.Forms](>= 4.5.0.725)***
- - ***Your app could not run on simulator(iOS) - only real device)***
+ - ***[Xamarin.Forms](>= 3.1.0.697729)***
+ - ***Your app could not run on simulator(iOS)***
  - ***Install Xamarin.Swift package for iOS project(maybe if your app can't start)*** 
 		
        [Xamarin.Swift] (>= 1.0.7)  
