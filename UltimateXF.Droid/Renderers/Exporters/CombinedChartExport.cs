@@ -75,7 +75,7 @@ namespace UltimateXF.Droid.Renderers.Exporters
                 original.SetCircleColors(source.IF_GetCircleColors().Select(item => item.ToAndroid().ToArgb()).ToArray());
 
             if (source.IF_GetCircleHoleColor().HasValue)
-                original.SetCircleColorHole(source.IF_GetCircleHoleColor().Value.ToAndroid());
+                original.CircleHoleColor = source.IF_GetCircleHoleColor().Value.ToAndroid();
 
             if (source.IF_GetCircleRadius().HasValue)
                 original.CircleRadius = source.IF_GetCircleRadius().Value;

@@ -6,7 +6,7 @@ using UltimateXF.Widget.Charts.Models.Formatters;
 
 namespace UltimateXF.Droid.Renderers.Exporters
 {
-    public class DataSetValueFormatterExport : Java.Lang.Object, IValueFormatter
+    public class DataSetValueFormatterExport : ValueFormatter
     {
         private IDataSetValueFormatter IDataSetValueFormatter;
 
@@ -15,7 +15,20 @@ namespace UltimateXF.Droid.Renderers.Exporters
             IDataSetValueFormatter = _IDataSetValueFormatter;
         }
 
-        public string GetFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler)
+        public override string GetFormattedValue(float value)
+        {
+            try
+            {
+                return IDataSetValueFormatter.GetFormattedValue(value, 0);
+            }
+            catch (Exception ex)
+            {
+                return "" + value;
+            }
+        }
+
+        [Obsolete]
+        public override string GetFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler)
         {
             try
             {

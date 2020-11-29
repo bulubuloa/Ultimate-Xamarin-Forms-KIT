@@ -273,7 +273,7 @@ namespace UltimateXF.iOS.Renderers.Exporters
             }
             if (baseDataSetXF.IF_GetDrawIcons().HasValue)
             {
-                originalBaseDataSet.DrawIconsEnabled = baseDataSetXF.IF_GetDrawIcons().Value ? 1 : 0;
+                originalBaseDataSet.DrawIconsEnabled = baseDataSetXF.IF_GetDrawIcons().Value;
             }
             if (baseDataSetXF.IF_GetDrawValues().HasValue)
             {
